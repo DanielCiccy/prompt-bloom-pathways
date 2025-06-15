@@ -8,7 +8,17 @@ const de = {
     scanQR: "QR scannen",
     start: "Sitzung starten",
     motto_bold: "Universelle Cognitive Trust Engine",
-    motto_light: "für Lernende, Lehrende & Eltern"
+    motto_light: "für Lernende, Lehrende & Eltern",
+    welcomeTitle: "Willkommen bei Prompt Renfort",
+    welcomeDesc: "Ein sicherer und respektvoller Raum für kognitives Lernen mit Begleitung.",
+    privacyBlock: "Wir speichern niemals personenbezogene Daten ohne Einwilligung.\nDieses Angebot erfüllt die Vorgaben der europäischen DSGVO.\nIhr freier Wille, Ihre Denkzeit und Ihr Recht auf Entwicklung werden geschützt.",
+    dataBelongs: "Die Daten gehören Ihnen",
+    noAnswersStored: "Keine KI-Antworten werden gespeichert",
+    trustedMind: "Ihr Geist wird hier geschätzt",
+    preceptorLead: "Prompt Renfort ist Ihr KI-Präzeptor.",
+    entryInstructions1: "Scannen Sie den QR-Code Ihrer Aufgabe oder geben Sie den Code ein, um eine betreute Lernsitzung zu starten.",
+    entryInstructions2: "Ihr Einsatz wird anerkannt – nicht nur Ihr Ergebnis.",
+    footer: (params?: { year: number }) => `© ${params?.year ?? new Date().getFullYear()} Prompt Renfort – Kognitiver Assistent (Prototyp).`
   },
   chat: {
     welcome: "Hallo, ich bin Prompt Renfort. Teile deine Aufgabe oder Frage, wann immer du bereit bist.",
@@ -26,5 +36,4 @@ const de = {
     newSession: "Neue Sitzung starten"
   }
 };
-
 export default de;

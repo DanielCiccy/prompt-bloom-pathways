@@ -8,7 +8,17 @@ const en = {
     scanQR: "Scan QR",
     start: "Start Session",
     motto_bold: "Universal Cognitive Trust Engine",
-    motto_light: "empowering learners, teachers & parents alike"
+    motto_light: "empowering learners, teachers & parents alike",
+    welcomeTitle: "Welcome to Prompt Renfort",
+    welcomeDesc: "A secure and respectful space for guided cognitive learning.",
+    privacyBlock: "We never store personal data without consent.\nThis experience complies with the EU’s GDPR.\nWe protect your free will, your thinking time, and your right to grow.",
+    dataBelongs: "Data belongs to you",
+    noAnswersStored: "No AI answers are stored",
+    trustedMind: "Your mind is trusted here",
+    preceptorLead: "Prompt Renfort is your AI preceptor.",
+    entryInstructions1: "Scan your assignment’s QR code or enter the code to begin a guided learning session.",
+    entryInstructions2: "Your effort will be recognized — not just your result.",
+    footer: (params?: { year: number }) => `© ${params?.year ?? new Date().getFullYear()} Prompt Renfort – Cognitive Assistant Prototype.`
   },
   chat: {
     welcome: "Hello, I’m Prompt Renfort. Please share your assignment or question when you’re ready.",

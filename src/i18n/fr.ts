@@ -8,7 +8,17 @@ const fr = {
     scanQR: "Scanner le QR",
     start: "Démarrer la session",
     motto_bold: "Moteur universel de confiance cognitive",
-    motto_light: "au service des élèves, enseignants & parents"
+    motto_light: "au service des élèves, enseignants & parents",
+    welcomeTitle: "Bienvenue sur Prompt Renfort",
+    welcomeDesc: "Un espace sécurisé et respectueux pour un accompagnement cognitif guidé.",
+    privacyBlock: "Nous ne stockons jamais de données personnelles sans consentement.\nCette expérience est conforme au RGPD européen.\nVotre libre arbitre, votre temps de réflexion et votre droit à grandir sont protégés.",
+    dataBelongs: "Les données vous appartiennent",
+    noAnswersStored: "Aucune réponse d’IA n’est stockée",
+    trustedMind: "Votre esprit est respecté ici",
+    preceptorLead: "Prompt Renfort est votre précepteur IA.",
+    entryInstructions1: "Scannez le QR code de votre devoir ou entrez le code pour démarrer une session guidée.",
+    entryInstructions2: "Votre effort sera valorisé — pas seulement le résultat.",
+    footer: (params?: { year: number }) => `© ${params?.year ?? new Date().getFullYear()} Prompt Renfort – Assistant cognitif (prototype).`
   },
   chat: {
     welcome: "Bonjour, je suis Prompt Renfort. Partage ton devoir ou ta question quand tu veux.",

@@ -8,7 +8,17 @@ const es = {
     scanQR: "Escanear QR",
     start: "Iniciar sesión",
     motto_bold: "Motor Universal de Confianza Cognitiva",
-    motto_light: "al servicio de estudiantes, profesores y familias"
+    motto_light: "al servicio de estudiantes, profesores y familias",
+    welcomeTitle: "Bienvenido a Prompt Renfort",
+    welcomeDesc: "Un espacio seguro y respetuoso para el aprendizaje cognitivo guiado.",
+    privacyBlock: "Nunca almacenamos datos personales sin consentimiento.\nEsta experiencia cumple con el RGPD europeo.\nProtegemos tu libre albedrío, tu tiempo de reflexión y tu derecho a crecer.",
+    dataBelongs: "Los datos te pertenecen",
+    noAnswersStored: "No se almacenan respuestas de IA",
+    trustedMind: "Aquí se confía en tu mente",
+    preceptorLead: "Prompt Renfort es tu preceptor de IA.",
+    entryInstructions1: "Escanea el código QR de tu asignación o ingresa el código para comenzar una sesión guiada.",
+    entryInstructions2: "Tu esfuerzo será reconocido — no solo el resultado.",
+    footer: (params?: { year: number }) => `© ${params?.year ?? new Date().getFullYear()} Prompt Renfort – Asistente cognitivo (prototipo).`
   },
   chat: {
     welcome: "Hola, soy Prompt Renfort. Comparte tu tarea o pregunta cuando estés listo.",
@@ -26,5 +36,4 @@ const es = {
     newSession: "Iniciar nueva sesión"
   }
 };
-
 export default es;
