@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Controller, useFormContext } from "react-hook-form";
 import { Input } from "@/components/ui/input";
@@ -57,6 +56,17 @@ const ageRanges = [
   { value: "other", labelKey: "other_age" },
 ];
 
+import TitleField from "./AssignmentFormFields/TitleField";
+import DescriptionField from "./AssignmentFormFields/DescriptionField";
+import DeadlineDateField from "./AssignmentFormFields/DeadlineDateField";
+import DeadlineTimeField from "./AssignmentFormFields/DeadlineTimeField";
+import SchoolNameField from "./AssignmentFormFields/SchoolNameField";
+import CityField from "./AssignmentFormFields/CityField";
+import CountryField from "./AssignmentFormFields/CountryField";
+import GradeLevelField from "./AssignmentFormFields/GradeLevelField";
+import LanguageField from "./AssignmentFormFields/LanguageField";
+import TargetAgeRangeField from "./AssignmentFormFields/TargetAgeRangeField";
+
 const AssignmentForm: React.FC<{ feedbackSection: React.ReactNode; onSubmit: (e: React.FormEvent<HTMLFormElement>) => void; submitting: boolean; feedbackSubmitting: boolean; }> = ({
   feedbackSection,
   onSubmit,
@@ -71,205 +81,22 @@ const AssignmentForm: React.FC<{ feedbackSection: React.ReactNode; onSubmit: (e:
       className="w-full flex flex-col gap-4"
       autoComplete="off"
     >
-      <div>
-        <label htmlFor="title" className="block text-sm text-blue-900 mb-1 font-semibold">Titre du devoir</label>
-        <Controller
-          name="title"
-          control={control}
-          rules={{ required: "Titre requis" }}
-          render={({ field, fieldState }) => (
-            <>
-              <Input
-                id="title"
-                placeholder="ex: Projet Géographie"
-                {...field}
-              />
-              {fieldState.error && (
-                <span className="block text-xs text-red-500 mt-1">{fieldState.error.message}</span>
-              )}
-            </>
-          )}
-        />
+      <TitleField />
+      <DescriptionField />
+      <div className="flex flex-col md:flex-row gap-3">
+        <DeadlineDateField />
+        <DeadlineTimeField />
       </div>
-      <div>
-        <label htmlFor="description" className="block text-sm text-blue-900 mb-1 font-semibold">Description</label>
-        <Controller
-          name="description"
-          control={control}
-          render={({ field }) => (
-            <Textarea
-              id="description"
-              placeholder="Décrivez le devoir, les ressources, les liens..."
-              {...field}
-              rows={3}
-            />
-          )}
-        />
+      <SchoolNameField />
+      <div className="flex flex-col md:flex-row gap-3">
+        <CityField />
+        <CountryField />
       </div>
       <div className="flex flex-col md:flex-row gap-3">
-        <div className="flex-1">
-          <label htmlFor="deadline_date" className="block text-sm text-blue-900 font-semibold mb-1">Date limite</label>
-          <Controller
-            name="deadline_date"
-            control={control}
-            rules={{ required: "Date requise" }}
-            render={({ field, fieldState }) => (
-              <>
-                <Input id="deadline_date" type="date" {...field} />
-                {fieldState.error && <span className="block text-xs text-red-500 mt-1">{fieldState.error.message}</span>}
-              </>
-            )}
-          />
-        </div>
-        <div className="flex-1">
-          <label htmlFor="deadline_time" className="block text-sm text-blue-900 font-semibold mb-1">Heure limite</label>
-          <Controller
-            name="deadline_time"
-            control={control}
-            rules={{ required: "Heure requise" }}
-            render={({ field, fieldState }) => (
-              <>
-                <Input id="deadline_time" type="time" {...field} />
-                {fieldState.error && <span className="block text-xs text-red-500 mt-1">{fieldState.error.message}</span>}
-              </>
-            )}
-          />
-        </div>
+        <GradeLevelField />
+        <LanguageField />
       </div>
-      <div>
-        <label htmlFor="school_name" className="block text-sm text-blue-900 mb-1 font-semibold">Établissement scolaire</label>
-        <Controller
-          name="school_name"
-          control={control}
-          rules={{ required: "Établissement requis" }}
-          render={({ field, fieldState }) => (
-            <>
-              <Input id="school_name" placeholder="Nom de l'école ou lycée" {...field} />
-              {fieldState.error && <span className="block text-xs text-red-500 mt-1">{fieldState.error.message}</span>}
-            </>
-          )}
-        />
-      </div>
-      <div className="flex flex-col md:flex-row gap-3">
-        <div className="flex-1">
-          <label htmlFor="city" className="block text-sm text-blue-900 mb-1 font-semibold">Ville</label>
-          <Controller
-            name="city"
-            control={control}
-            rules={{ required: "Ville requise" }}
-            render={({ field, fieldState }) => (
-              <>
-                <Input id="city" placeholder="Ville" {...field} />
-                {fieldState.error && <span className="block text-xs text-red-500 mt-1">{fieldState.error.message}</span>}
-              </>
-            )}
-          />
-        </div>
-        <div className="flex-1">
-          <label htmlFor="country" className="block text-sm text-blue-900 mb-1 font-semibold">Pays</label>
-          <Controller
-            name="country"
-            control={control}
-            rules={{ required: "Pays requis" }}
-            render={({ field, fieldState }) => (
-              <>
-                <Select
-                  value={field.value}
-                  onValueChange={field.onChange}
-                >
-                  <SelectTrigger>
-                    <SelectValue placeholder="Sélectionnez le pays…" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {countries.map((opt) => (
-                      <SelectItem key={opt.value} value={opt.value}>{opt.label}</SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-                {fieldState.error && <span className="block text-xs text-red-500 mt-1">{fieldState.error.message}</span>}
-              </>
-            )}
-          />
-        </div>
-      </div>
-      <div className="flex flex-col md:flex-row gap-3">
-        <div className="flex-1">
-          <label htmlFor="grade_level" className="block text-sm text-blue-900 mb-1 font-semibold">Niveau / Classe</label>
-          <Controller
-            name="grade_level"
-            control={control}
-            rules={{ required: "Niveau requis" }}
-            render={({ field, fieldState }) => (
-              <>
-                <Select
-                  value={field.value}
-                  onValueChange={field.onChange}
-                >
-                  <SelectTrigger>
-                    <SelectValue placeholder="Sélectionnez le niveau…" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {grades.map((opt) => (
-                      <SelectItem key={opt.value} value={opt.value}>{opt.label}</SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-                {fieldState.error && <span className="block text-xs text-red-500 mt-1">{fieldState.error.message}</span>}
-              </>
-            )}
-          />
-        </div>
-        <div className="flex-1">
-          <label htmlFor="language" className="block text-sm text-blue-900 mb-1 font-semibold">Langue</label>
-          <Controller
-            name="language"
-            control={control}
-            rules={{ required: "Langue requise" }}
-            render={({ field, fieldState }) => (
-              <>
-                <Select value={field.value} onValueChange={field.onChange}>
-                  <SelectTrigger>
-                    <SelectValue placeholder="Sélectionnez la langue…" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {languages.map((opt) => (
-                      <SelectItem key={opt.value} value={opt.value}>{opt.label}</SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-                {fieldState.error && <span className="block text-xs text-red-500 mt-1">{fieldState.error.message}</span>}
-              </>
-            )}
-          />
-        </div>
-      </div>
-      {/* Target age range dropdown */}
-      <div>
-        <label htmlFor="target_age_range" className="block text-sm text-blue-900 mb-1 font-semibold">
-          {t("create_assignment.target_age_range_label")}
-        </label>
-        <Controller
-          name="target_age_range"
-          control={control}
-          render={({ field }) => (
-            <Select
-              value={field.value || ""}
-              onValueChange={field.onChange}
-            >
-              <SelectTrigger>
-                <SelectValue placeholder={t("create_assignment.target_age_range_placeholder")} />
-              </SelectTrigger>
-              <SelectContent>
-                {ageRanges.map((opt) => (
-                  <SelectItem key={opt.value} value={opt.value}>
-                    {t(`create_assignment.age_ranges.${opt.labelKey}`)}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
-          )}
-        />
-      </div>
+      <TargetAgeRangeField />
       {/* Feedback section */}
       {feedbackSection}
     </form>
