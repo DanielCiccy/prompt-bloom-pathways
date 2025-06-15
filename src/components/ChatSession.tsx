@@ -5,6 +5,8 @@ import TreeGrowth from "./TreeGrowth";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import SessionSummary from "./SessionSummary";
+import { toast } from "@/hooks/use-toast";
+import { Camera } from "lucide-react";
 
 interface Message {
   role: "user" | "ai";
@@ -13,7 +15,6 @@ interface Message {
 }
 
 function gentleAIReply(question: string, progressCount: number): string {
-  // Simulated, Socratic and supportive Reply
   const openers = [
     "Let's reflect on your approach.",
     "That's a thoughtful question!",
@@ -23,7 +24,6 @@ function gentleAIReply(question: string, progressCount: number): string {
     "Great, let’s break it down step by step.",
   ];
   const guidance = [
-    // Gentle, guiding prompts - never direct answers
     "How would you begin to tackle this problem?",
     "Can you explain your thinking so far?",
     "What do you notice about the information provided?",
@@ -33,7 +33,6 @@ function gentleAIReply(question: string, progressCount: number): string {
     "What’s your confidence level on your current approach?",
     "Let’s rephrase the problem together—how would you put it in your own words?"
   ];
-  // Rotate "recognition" feedback every few user messages
   let recog = "";
   if (progressCount % 4 === 1) recog = "🌱 Keep going, every question grows your understanding.";
   if (progressCount % 4 === 3) recog = "🍃 I can see your effort building.";
@@ -43,7 +42,6 @@ function gentleAIReply(question: string, progressCount: number): string {
 }
 
 function getRecognitions(session: Message[]): {label:string; color: string}[] {
-  // Simple example: more advanced recognition logic can be added
   const recognitions: {label:string; color:string}[] = [];
   if (session.length > 2) recognitions.push({ label: "Curiosity", color: "#21a179" });
   if (session.length > 5) recognitions.push({ label: "Persistence", color: "#ff9911" });
@@ -51,24 +49,95 @@ function getRecognitions(session: Message[]): {label:string; color: string}[] {
   return recognitions;
 }
 
-const ChatSession: React.FC<{assignmentCode: string; onEnd: () => void}> = ({
+function formatTime(seconds: number): string {
+  const m = Math.floor(seconds / 60);
+  const s = seconds % 60;
+  return `${m}:${s.toString().padStart(2, "0")}`;
+}
+
+type AssignmentType = any; // Pour usage rapide, on pourrait typer selon la structure precise
+
+const DEFAULT_EXAM_TIME_MINUTES = 30; // Durée par défaut si aucune info
+
+const ChatSession: React.FC<{assignmentCode: string; assignment?: AssignmentType; onEnd: () => void}> = ({
   assignmentCode,
+  assignment,
   onEnd
 }) => {
   const [messages, setMessages] = useState<Message[]>([
     { role: "ai", content: t("chat.welcome"), time: Date.now() },
   ]);
   const [input, setInput] = useState("");
-  const [startTime] = useState(Date.now());
+  const [startTime, setStartTime] = useState<number | null>(null);
   const [ended, setEnded] = useState(false);
+  const [countdown, setCountdown] = useState<number | null>(null);
+  const [photoRequested, setPhotoRequested] = useState(false);
   const chatEndRef = useRef<HTMLDivElement | null>(null);
+  const timerRef = useRef<NodeJS.Timeout | null>(null);
+  const photoTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages, ended]);
 
+  // Démarre le compte à rebours à la première saisie utilisateur
+  useEffect(() => {
+    if (messages.find(m => m.role === "user") && !startTime) {
+      const now = Date.now();
+      setStartTime(now);
+      // Récupère la durée depuis l'assignement (en minutes) ou défaut
+      let durationMinutes = DEFAULT_EXAM_TIME_MINUTES;
+      if (assignment?.deadline_time) {
+        //  e.g. "01:30:00" => 90min if need be, mais logique simple ici :
+        const [h, m, s] = assignment.deadline_time.split(":");
+        durationMinutes = Number(h) * 60 + Number(m);
+        // TODO : gérer les durations négatives ou aberrantes
+        if (!durationMinutes || durationMinutes < 1) 
+          durationMinutes = DEFAULT_EXAM_TIME_MINUTES;
+      }
+      setCountdown(durationMinutes * 60);
+
+      // Démarre la photo-check aléatoire après 1min env, faux délai au début
+      const startPhotoTimeout = setTimeout(triggerPhotoCheck, 60000 + Math.random() * 20000);
+      photoTimeoutRef.current = startPhotoTimeout;
+    }
+    // eslint-disable-next-line
+  }, [messages, assignment]);
+
+  // Compte à rebours actif
+  useEffect(() => {
+    if (countdown === null || ended) return;
+    if (countdown <= 0) {
+      setEnded(true);
+      setCountdown(0);
+      return;
+    }
+    timerRef.current = setTimeout(() => setCountdown(countdown - 1), 1000);
+    return () => {
+      if (timerRef.current) clearTimeout(timerRef.current);
+    };
+  }, [countdown, ended]);
+
+  // Gestion de la "prise de photo" aléatoire
+  function triggerPhotoCheck() {
+    setPhotoRequested(true);
+    toast({
+      title: "Vérification de présence",
+      description: "Merci de montrer votre visage devant la caméra. (Aucune donnée n'est enregistrée, uniquement contrôle visuel)",
+      icon: <Camera className="w-6 h-6 text-orange-600" />
+    });
+    // Simuler une vérification, puis programmer la prochaine aléatoire
+    setTimeout(() => {
+      setPhotoRequested(false);
+      // Prochaine check dans 4 à 12 min (pas trop fréquemment !)
+      if (!ended) {
+        photoTimeoutRef.current = setTimeout(triggerPhotoCheck, 240000 + Math.random() * 480000);
+      }
+    }, 15000);
+  }
+
   function sendMessage() {
-    if (!input.trim()) return;
+    if (!input.trim() || ended) return;
     const now = Date.now();
     setMessages((prev) => [
       ...prev,
@@ -80,7 +149,7 @@ const ChatSession: React.FC<{assignmentCode: string; onEnd: () => void}> = ({
         ...prev,
         {
           role: "ai",
-          content: gentleAIReply(input, prev.filter(m => m.role==="user").length),
+          content: gentleAIReply(input, prev.filter(m => m.role === "user").length),
           time: Date.now(),
         },
       ]);
@@ -99,20 +168,23 @@ const ChatSession: React.FC<{assignmentCode: string; onEnd: () => void}> = ({
     setTimeout(() => {
       window.scrollTo({ top: 0, behavior: "smooth" });
     }, 400);
+    if (photoTimeoutRef.current) clearTimeout(photoTimeoutRef.current);
+    if (timerRef.current) clearTimeout(timerRef.current);
   }
 
-  const recognitions = getRecognitions(messages.filter(m => m.role==="user"));
+  const recognitions = getRecognitions(messages.filter(m => m.role === "user"));
 
+  // Affichage 
   if (ended)
     return (
       <SessionSummary
-        questions={messages.filter(m => m.role==="user").length}
+        questions={messages.filter(m => m.role === "user").length}
         recognitions={recognitions}
-        start={new Date(startTime)}
+        start={startTime ? new Date(startTime) : new Date()}
         end={new Date()}
         sessionData={{
           assignment: assignmentCode,
-          start: new Date(startTime).toISOString(),
+          start: startTime ? new Date(startTime).toISOString() : "",
           end: new Date().toISOString(),
           messages,
           recognitions
@@ -121,10 +193,56 @@ const ChatSession: React.FC<{assignmentCode: string; onEnd: () => void}> = ({
       />
     );
 
+  // Header avec informations devoir
   return (
     <div className="w-full max-w-2xl mx-auto rounded-lg shadow-lg bg-white p-4 md:p-8 mt-3 mb-10 relative animate-fade-in">
+      {/* Info devoir */}
+      <div className="mb-5">
+        <h2 className="text-xl font-bold text-blue-900">{assignment?.title || "Devoir"}</h2>
+        <div className="flex flex-col md:flex-row md:gap-8 gap-1 text-sm text-gray-700 mt-1">
+          <div>
+            <span className="font-semibold text-orange-700">Code : </span>
+            <span className="font-mono">{assignmentCode}</span>
+          </div>
+          {assignment?.deadline_time && (
+            <div>
+              <span className="font-semibold text-orange-700">Temps imparti : </span>
+              {assignment.deadline_time.slice(0,5)}
+            </div>
+          )}
+          {assignment?.deadline_date && (
+            <div>
+              <span className="font-semibold text-blue-800">Date butoir : </span>
+              {assignment.deadline_date}
+            </div>
+          )}
+          {assignment?.school_name && (
+            <div>
+              <span className="font-semibold text-blue-800">Établissement : </span>
+              {assignment.school_name}
+            </div>
+          )}
+        </div>
+        {/* Compte à rebours */}
+        {countdown !== null && (
+          <div className="mt-3 flex items-center gap-2 text-lg font-bold text-green-700">
+            <span className="rounded-full bg-green-100 px-3 py-1">
+              ⏰ {formatTime(countdown)}
+            </span>
+            <span className="text-xs text-gray-500 font-normal">Temps restant</span>
+          </div>
+        )}
+        {/* Vérification caméra si demandée */}
+        {photoRequested && (
+          <div className="mt-2 flex items-center gap-2 animate-pulse text-orange-600">
+            <Camera className="w-6 h-6" />
+            <span>Vérification… Merci de montrer votre visage à l'écran !</span>
+          </div>
+        )}
+      </div>
+      {/* Chat */}
       <div className="absolute right-6 top-8 z-10">
-        <TreeGrowth count={messages.filter(m => m.role==="user").length} />
+        <TreeGrowth count={messages.filter(m => m.role === "user").length} />
       </div>
       <div className="text-sm text-muted-foreground mb-2 pl-2">
         <span className="font-semibold text-orange-600">Assignment:</span> {assignmentCode}
@@ -191,8 +309,9 @@ const ChatSession: React.FC<{assignmentCode: string; onEnd: () => void}> = ({
           className="flex-1 text-lg"
           maxLength={350}
           autoFocus
+          disabled={ended || countdown === 0}
         />
-        <Button type="submit" size="lg" className="bg-primary text-white hover:bg-primary/90">
+        <Button type="submit" size="lg" className="bg-primary text-white hover:bg-primary/90" disabled={ended || countdown === 0}>
           {t("chat.send")}
         </Button>
         <Button
@@ -201,6 +320,7 @@ const ChatSession: React.FC<{assignmentCode: string; onEnd: () => void}> = ({
           type="button"
           className="ml-2"
           onClick={endSession}
+          disabled={ended}
         >
           {t("chat.endSession")}
         </Button>
