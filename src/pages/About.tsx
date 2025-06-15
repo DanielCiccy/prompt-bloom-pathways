@@ -1,3 +1,5 @@
+
+import AppHeader from "@/components/AppHeader";
 import Navbar from "@/components/Navbar";
 
 const about = [
@@ -30,7 +32,9 @@ Il arrive au moment où la connaissance veut s’enraciner.`
 ];
 
 const About = () => (
-  <div>
+  <div className="min-h-screen w-full bg-gradient-to-b from-orange-50 via-white to-blue-50 flex flex-col items-center">
+    <AppHeader />
+    <Navbar />
     <div className="max-w-2xl mx-auto py-8 px-4">
       <h1 className="text-2xl font-bold mb-6 flex items-center gap-2">
         🏆 Pourquoi « Prompt Renfort » ?
@@ -68,3 +72,4 @@ const About = () => (
 );
 
 export default About;
+
