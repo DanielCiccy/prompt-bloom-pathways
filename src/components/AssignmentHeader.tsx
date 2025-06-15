@@ -24,6 +24,12 @@ const AssignmentHeader: React.FC<AssignmentHeaderProps> = ({
   return (
     <div className="mb-5">
       <h2 className="text-xl font-bold text-blue-900">{assignment?.title || "Devoir"}</h2>
+      {/* Description du devoir, en bloc stylé */}
+      {assignment?.description && (
+        <div className="mt-2 mb-2 text-base bg-blue-50 border border-blue-100 rounded p-3 text-blue-900 whitespace-pre-line">
+          {assignment.description}
+        </div>
+      )}
       <div className="flex flex-col md:flex-row md:gap-8 gap-1 text-sm text-gray-700 mt-1">
         <div>
           <span className="font-semibold text-orange-700">Code : </span>
