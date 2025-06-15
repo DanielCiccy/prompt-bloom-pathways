@@ -50,6 +50,21 @@ npm run dev
 - Click on "New codespace" to launch a new Codespace environment.
 - Edit files directly within the Codespace and commit and push your changes once you're done.
 
+## Project Ambition
+
+Prompt Renfort vise à offrir un accompagnement IA bienveillant, personnalisé, et traçable pour chaque apprenant, parent ou éducateur—en respectant la confidentialité, l’éthique, et la pédagogie active.
+
+**Points clés :**
+- L’utilisateur bénéficie d’un “précepteur” numérique (Prompt Renfort) et non d’une simple interface de chat.
+- Les sessions sont lancées par QR code, code d’activation, ou mode exploration, selon la progression de l’apprenant.
+- L’IA repose sur OpenAI mais valorise la privacy, la RGPD et permet, à termes, la traçabilité décentralisée (blockchain/badge).
+- L’interface renforce la métaphore de la croissance (arbre, graines, progression visuelle).
+- Toute la logique métier est pensée pour être modulaire et documentée, et chaque contribution est encouragée à suivre la philosophie du projet (aide “socratique”, autonomie de l’utilisateur).
+
+## Documentation technique
+
+Voir le fichier [NOTES.md](./NOTES.md) pour les diagrammes techniques, l’architecture des flux, et les discussions sur les choix techniques.
+
 ## What technologies are used for this project?
 
 This project is built with:
