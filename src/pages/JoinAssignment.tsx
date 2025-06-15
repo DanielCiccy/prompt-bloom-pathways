@@ -21,7 +21,8 @@ const JoinAssignment: React.FC = () => {
       if (!assignmentCode || assignmentCode.length < 6) {
         throw new Error();
       }
-      navigate("/assignment-session");
+-     navigate("/assignment-session");
++     navigate(`/assignment-session?code=${encodeURIComponent(assignmentCode)}`);
     } catch {
       toast({
         title: "Invalid code or expired assignment.",
