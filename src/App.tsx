@@ -10,6 +10,7 @@ import ProfileChoice from "./pages/ProfileChoice";
 import Navbar from "@/components/Navbar";
 import ParentSignup from "@/pages/ParentSignup";
 import FamilyManagement from "@/pages/FamilyManagement";
+import About from "./pages/About";
 
 const queryClient = new QueryClient();
 
@@ -26,6 +27,7 @@ const App = () => (
           <Route path="/élève-students" element={<EleveStudents />} />
           <Route path="/parent-inscription" element={<ParentSignup />} />
           <Route path="/famille" element={<FamilyManagement />} />
+          <Route path="/about" element={<About />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

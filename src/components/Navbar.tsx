@@ -1,12 +1,13 @@
 
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
-import { User, Home, Users2 } from "lucide-react";
+import { User, Home, Users2, Info } from "lucide-react";
 
 const navLinks = [
   { to: "/", label: "Accueil", icon: <Home className="w-5 h-5" /> },
   { to: "/profil", label: "Profil", icon: <User className="w-5 h-5" /> },
   { to: "/famille", label: "Famille", icon: <Users2 className="w-5 h-5" /> },
+  { to: "/about", label: "À propos", icon: <Info className="w-5 h-5" /> },
 ];
 
 const Navbar: React.FC = () => {
