@@ -5,6 +5,7 @@ import AssignmentEntry from "@/components/AssignmentEntry";
 import ChatSession from "@/components/ChatSession";
 import { t } from "@/i18n/i18n";
 import { Lock, Book, Check } from "lucide-react";
+import LanguageSelector from "@/components/LanguageSelector";
 
 const Index = () => {
   const [assignment, setAssignment] = useState<string | null>(null);
@@ -12,6 +13,10 @@ const Index = () => {
   return (
     <div className="min-h-screen w-full bg-gradient-to-b from-orange-50 via-white to-blue-50 flex flex-col items-center justify-center">
       <header className="w-full max-w-xl mx-auto mt-8 mb-6 flex flex-col items-center">
+        {/* Language selector - top right */}
+        <div className="w-full flex justify-end mb-2">
+          <LanguageSelector />
+        </div>
         <PromptRenfortLogo />
         {/* Motto block */}
         <div className="text-xl md:text-2xl text-orange-600 mb-1 font-semibold text-center">
