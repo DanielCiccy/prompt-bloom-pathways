@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import AppHeader from "@/components/AppHeader";
-import Navbar from "@/components/Navbar";
 import { useNavigate } from "react-router-dom";
 
 // Définition du type d'enfant
@@ -86,7 +85,6 @@ const FamilyManagement: React.FC = () => {
   return (
     <div className="min-h-screen w-full bg-gradient-to-b from-orange-50 via-white to-blue-50 flex flex-col items-center">
       <AppHeader />
-      <Navbar />
       <div className="bg-white/90 p-6 rounded-xl shadow-xl mt-8 w-full max-w-lg">
         <h2 className="text-xl font-bold mb-4 text-blue-900">Gestion de la famille</h2>
         <form onSubmit={handleAddChild} className="flex flex-col gap-3 mb-5">

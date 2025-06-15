@@ -1,4 +1,3 @@
-
 import Navbar from "@/components/Navbar";
 
 const about = [
@@ -32,7 +31,6 @@ Il arrive au moment où la connaissance veut s’enraciner.`
 
 const About = () => (
   <div>
-    <Navbar />
     <div className="max-w-2xl mx-auto py-8 px-4">
       <h1 className="text-2xl font-bold mb-6 flex items-center gap-2">
         🏆 Pourquoi « Prompt Renfort » ?

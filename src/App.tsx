@@ -1,3 +1,4 @@
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -20,7 +21,8 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        {/* Affiche Navbar juste après AppHeader (sur toutes les pages) */}
+        {/* Navbar globalement en haut (avant les routes) */}
+        <Navbar />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/profil" element={<ProfileChoice />} />
