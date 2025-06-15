@@ -1,7 +1,8 @@
 
-import React from "react";
-import { Link, useLocation } from "react-router-dom";
-import { User, Home, Users2, Info } from "lucide-react";
+import React, { useEffect, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { User, Home, Users2, Info, LogOut } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
 
 const navLinks = [
   { to: "/", label: "Accueil", icon: <Home className="w-5 h-5" /> },
@@ -12,6 +13,28 @@ const navLinks = [
 
 const Navbar: React.FC = () => {
   const location = useLocation();
+  const navigate = useNavigate();
+  const [session, setSession] = useState<any>(null);
+
+  useEffect(() => {
+    // Set up auth state listener FIRST
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+      setSession(session);
+    });
+
+    // THEN check for existing session
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      setSession(session);
+    });
+
+    return () => subscription.unsubscribe();
+  }, []);
+
+  const handleLogout = async () => {
+    await supabase.auth.signOut();
+    setSession(null);
+    navigate("/");
+  };
 
   return (
     <nav className="w-full bg-white border-b shadow-sm mb-2">
@@ -28,6 +51,23 @@ const Navbar: React.FC = () => {
             <span>{link.label}</span>
           </Link>
         ))}
+        {!session ? (
+          <Link
+            to="/auth"
+            className="ml-3 flex items-center gap-2 px-3 py-1 rounded text-blue-700 font-semibold hover:bg-blue-50 transition"
+          >
+            <User className="w-5 h-5" />
+            Se connecter
+          </Link>
+        ) : (
+          <button
+            className="ml-3 flex items-center gap-2 px-3 py-1 rounded text-red-700 font-semibold hover:bg-red-50 transition"
+            onClick={handleLogout}
+          >
+            <LogOut className="w-5 h-5" />
+            Déconnexion
+          </button>
+        )}
       </div>
     </nav>
   );

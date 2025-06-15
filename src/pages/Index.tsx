@@ -6,6 +6,7 @@ import BrandingBar from "@/components/BrandingBar";
 import { useNavigate } from "react-router-dom";
 import { User, LogIn, Clock2, Brain, ShieldCheck, Puzzle, Award } from "lucide-react";
 import AppHeader from "@/components/AppHeader";
+import { Link } from "react-router-dom";
 
 const Index = () => {
   const navigate = useNavigate();
@@ -20,6 +21,12 @@ const Index = () => {
       >
         Je choisis mon profil
       </button>
+      <Link
+        to="/auth"
+        className="block text-center underline text-blue-700 font-medium mb-3 text-sm hover:text-blue-900"
+      >
+        Se connecter ou créer un compte
+      </Link>
       {/* Bloc Future Feature : Cognitive Trace & Value Ledger */}
       <section className="w-full max-w-lg mx-auto mt-4 mb-0">
         <div className="rounded-xl border bg-gradient-to-r from-blue-50 via-white to-orange-50 shadow-md px-4 py-5 flex flex-col gap-2 items-start">
