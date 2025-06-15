@@ -73,7 +73,9 @@ const Index = () => {
         )}
       </main>
       <footer className="text-xs text-slate-500 mt-8 mb-2 select-none">
-        {t("landing.footer", { year: new Date().getFullYear() })}
+        {typeof t("landing.footer") === "function"
+          ? t("landing.footer")({ year: new Date().getFullYear() })
+          : t("landing.footer")}
       </footer>
     </div>
   );
