@@ -1,5 +1,5 @@
 
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import AppHeader from "@/components/AppHeader";
 import Navbar from "@/components/Navbar";
 
@@ -26,19 +26,27 @@ const ageRanges = [
 
 const defaultAvatar = "/placeholder.svg";
 
+// 4 avatars de démonstration (utilisation d’images libres)
+const avatarOptions = [
+  "/placeholder.svg",
+  "https://images.unsplash.com/photo-1535268647677-300dbf3d78d1?auto=format&fit=facearea&w=80&h=80&facepad=2&q=80", // chat
+  "https://images.unsplash.com/photo-1582562124811-c09040d0a901?auto=format&fit=facearea&w=80&h=80&facepad=2&q=80", // chat orange
+  "https://images.unsplash.com/photo-1466721591366-2d5fba72006d?auto=format&fit=facearea&w=80&h=80&facepad=2&q=80", // animal
+  // On pourrait ajouter d’autres images libres selon besoin
+];
+
 const FamilyManagement: React.FC = () => {
   const [children, setChildren] = useState<Child[]>(initialChildren);
   const [newChild, setNewChild] = useState<Child>({
     firstName: "",
     lastName: "",
     pseudo: "",
-    avatarUrl: "",
+    avatarUrl: avatarOptions[0],
     city: "",
     country: "",
     school: "",
     ageRange: "",
   });
-  const fileRef = useRef<HTMLInputElement>(null);
 
   const handleAddChild = (e: React.FormEvent) => {
     e.preventDefault();
@@ -56,21 +64,17 @@ const FamilyManagement: React.FC = () => {
         firstName: "",
         lastName: "",
         pseudo: "",
-        avatarUrl: "",
+        avatarUrl: avatarOptions[0],
         city: "",
         country: "",
         school: "",
         ageRange: "",
       });
-      if (fileRef.current) fileRef.current.value = "";
     }
   };
 
-  // Avatar upload handler
-  const handleAvatarChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (!file) return;
-    const url = URL.createObjectURL(file);
+  // Sélection d’avatar
+  const handleAvatarSelect = (url: string) => {
     setNewChild((c) => ({
       ...c,
       avatarUrl: url,
@@ -110,21 +114,30 @@ const FamilyManagement: React.FC = () => {
             onChange={e => setNewChild(c => ({ ...c, pseudo: e.target.value }))}
             required
           />
-          <div className="flex items-center gap-2">
-            <input
-              ref={fileRef}
-              type="file"
-              accept="image/*"
-              className="block w-full text-xs"
-              onChange={handleAvatarChange}
-            />
-            {newChild.avatarUrl && (
-              <img
-                src={newChild.avatarUrl}
-                alt="avatar preview"
-                className="w-10 h-10 rounded-full object-cover border ml-2"
-              />
-            )}
+          {/* Sélection d’avatar */}
+          <div>
+            <div className="mb-1 text-sm text-gray-800 font-medium">Choisir un avatar :</div>
+            <div className="flex gap-3 items-center">
+              {avatarOptions.map((url, idx) => (
+                <button
+                  type="button"
+                  key={url}
+                  onClick={() => handleAvatarSelect(url)}
+                  className={`focus:outline-none border-2 ${
+                    newChild.avatarUrl === url
+                      ? "border-blue-500 ring-2 ring-blue-200"
+                      : "border-transparent"
+                  } rounded-full p-0.5 transition-shadow`}
+                  aria-label={`Avatar ${idx + 1}`}
+                >
+                  <img
+                    src={url}
+                    alt={`avatar option ${idx + 1}`}
+                    className="w-12 h-12 rounded-full object-cover bg-gray-100"
+                  />
+                </button>
+              ))}
+            </div>
           </div>
           <input
             type="text"
