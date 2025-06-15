@@ -40,6 +40,10 @@ const es = {
       alert: "La autenticación estará disponible pronto.\nEstarás acompañado, tu recorrido será seguido y podrás consultar tus progresos entre sesiones.",
       info: "<strong>Ventaja:</strong> Al iniciar sesión, podrás demostrar que realmente has interactuado, reflexionado y construido con la IA: no es un simple copia-pega de una respuesta, sino un verdadero recorrido personal, trazable y revalorizable.",
     },
+    visitorBlock: {
+      button: "Descubrir como invitado",
+      info: `<strong>Modo invitado:</strong> Accedes a Prompt Renfort de forma autónoma, sin que se registre ningún dato personal.<br />Tu experiencia será guiada por IA para fomentar tu reflexión y valorar tu esfuerzo.`
+    }
   },
   chat: {
     welcome: "Hola, soy Prompt Renfort. Comparte tu tarea o pregunta cuando estés listo.",

@@ -79,12 +79,12 @@ const Index = () => {
               onClick={() => navigate("/élève-students")}
             >
               <LogIn className="w-6 h-6" />
-              Découvrir en visiteur libre
+              {t("landing.visitorBlock.button")}
             </button>
-            <div className="text-sm text-orange-800 font-normal text-center">
-              <strong>Visiteur libre :</strong> Tu accèdes à Prompt Renfort en autonomie, sans qu’aucune donnée nominative ne soit enregistrée.
-              <br />Ton expérience sera guidée par l’IA pour encourager ta réflexion et valoriser ton effort.
-            </div>
+            <div
+              className="text-sm text-orange-800 font-normal text-center"
+              dangerouslySetInnerHTML={{ __html: t("landing.visitorBlock.info") as string }}
+            />
           </div>
         </div>
       </header>

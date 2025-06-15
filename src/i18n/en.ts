@@ -40,6 +40,10 @@ const en = {
       alert: "Authentication will be available soon.\nYou will be accompanied; your journey will be tracked, and you’ll be able to find your progress across sessions.",
       info: "<strong>Advantage:</strong> By signing in, you can prove you truly interacted, thought, and built with AI: this is not just a copy-paste answer, but a real personal journey that is traceable and rewarding.",
     },
+    visitorBlock: {
+      button: "Discover as a guest",
+      info: `<strong>Guest mode:</strong> You access Prompt Renfort independently, with no personal data recorded.<br />Your journey will be guided by AI to encourage your thinking and to value your effort.`
+    }
   },
   chat: {
     welcome: "Hello, I’m Prompt Renfort. Please share your assignment or question when you’re ready.",

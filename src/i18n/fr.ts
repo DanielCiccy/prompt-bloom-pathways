@@ -41,6 +41,10 @@ const fr = {
       alert: "L’authentification sera bientôt disponible.\nTu seras alors accompagné(e), ton parcours sera suivi et tu pourras retrouver tes progrès d’une session à l’autre.",
       info: "<strong>Avantage :</strong> En t’identifiant, tu pourras prouver que tu as vraiment échangé, réfléchi et construit avec l’IA : ce n’est pas un simple copié-collé d’une réponse, mais un vrai cheminement personnel, traçable et valorisable.",
     },
+    visitorBlock: {
+      button: "Découvrir en visiteur libre",
+      info: `<strong>Visiteur libre :</strong> Tu accèdes à Prompt Renfort en autonomie, sans qu’aucune donnée nominative ne soit enregistrée.<br />Ton expérience sera guidée par l’IA pour encourager ta réflexion et valoriser ton effort.`
+    }
   },
   chat: {
     welcome: "Bonjour, je suis Prompt Renfort. Partage ton devoir ou ta question quand tu veux.",

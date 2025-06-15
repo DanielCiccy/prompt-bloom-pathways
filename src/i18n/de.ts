@@ -40,6 +40,10 @@ const de = {
       alert: "Authentifizierung ist bald verfügbar.\nDu wirst begleitet, dein Weg wird nachverfolgt und du findest deine Fortschritte in allen Sitzungen.",
       info: "<strong>Vorteil:</strong> Mit Anmeldung kannst du beweisen, dass du wirklich mit der KI gearbeitet, reflektiert und aufgebaut hast: Das ist nicht einfach nur eine kopierte Antwort, sondern ein persönlicher, nachvollziehbarer Weg.",
     },
+    visitorBlock: {
+      button: "Als Gast entdecken",
+      info: `<strong>Gastmodus:</strong> Du nutzt Prompt Renfort eigenständig, ohne dass personenbezogene Daten gespeichert werden.<br />Die KI begleitet dich, regt zum Nachdenken an und würdigt deinen Einsatz.`
+    }
   },
   chat: {
     welcome: "Hallo, ich bin Prompt Renfort. Teile deine Aufgabe oder Frage, wann immer du bereit bist.",

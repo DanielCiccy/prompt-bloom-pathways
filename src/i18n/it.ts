@@ -40,6 +40,10 @@ const it = {
       alert: "L’autenticazione sarà presto disponibile.\nSarai accompagnato, il tuo percorso sarà seguito e potrai ritrovare i tuoi progressi tra una sessione e l’altra.",
       info: "<strong>Vantaggio:</strong> Accedendo potrai dimostrare di aver veramente dialogato, riflettuto e costruito con l’IA: non si tratta di una semplice risposta incollata, ma di un vero percorso personale, tracciabile e valorizzabile.",
     },
+    visitorBlock: {
+      button: "Scopri come ospite",
+      info: `<strong>Modalità ospite:</strong> Accedi a Prompt Renfort in completa autonomia, senza che vengano registrati dati personali.<br />La tua esperienza sarà guidata dall’IA per valorizzare il tuo pensiero e il tuo impegno.`
+    },
   },
   chat: {
     welcome: "Ciao, sono Prompt Renfort. Condividi la tua assegnazione o domanda appena sei pronto.",
@@ -57,4 +61,5 @@ const it = {
     newSession: "Inizia nuova sessione"
   },
 };
+
 export default it;
