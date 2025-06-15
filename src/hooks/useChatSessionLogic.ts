@@ -20,10 +20,24 @@ export function useChatSessionLogic({
 }) {
   const DEFAULT_EXAM_TIME_MINUTES = 30;
 
+  // Génère le message de bienvenue spécialisé selon l'existence du devoir
+  function getWelcomeMessage(): string {
+    if (assignment?.title && assignment?.description) {
+      return `Bienvenue ! Ce devoir porte sur : ${assignment.title}.\n\n${assignment.description}\n\nLorsque tu es prêt, pose ta première question ou explique ta démarche.`;
+    }
+    if (assignment?.title) {
+      return `Bienvenue ! Ce devoir porte sur : ${assignment.title}.\n\nPose ta première question ou explique ta démarche.`;
+    }
+    if (assignment?.description) {
+      return `Bienvenue !\nDescription du devoir : ${assignment.description}\n\nPose ta première question ou explique ta démarche.`;
+    }
+    return "Bienvenue ! Pose-moi une question ou explique ta démarche.";
+  }
+
   const [messages, setMessages] = React.useState<Message[]>([
     {
       role: "ai",
-      content: "Bienvenue ! Pose-moi une question ou explique ta démarche.",
+      content: getWelcomeMessage(),
       time: Date.now(),
     },
   ]);
