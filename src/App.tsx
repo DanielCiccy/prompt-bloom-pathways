@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -15,7 +14,7 @@ import FamilyManagement from "@/pages/FamilyManagement";
 import About from "./pages/About";
 import Auth from "@/pages/Auth";
 import CreateAssignmentTeacher from "./pages/CreateAssignmentTeacher";
-import JoinAssignmentStudent from "./pages/JoinAssignmentStudent";
+import JoinAssignment from "./pages/JoinAssignment";
 
 const queryClient = new QueryClient();
 
@@ -30,7 +29,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/create-assignment" element={<CreateAssignmentTeacher />} />
-          <Route path="/rejoindre" element={<JoinAssignmentStudent />} />
+          <Route path="/join-assignment" element={<JoinAssignment />} />
           <Route path="/profile" element={<ProfileChoice />} />
           <Route path="/eleve-students" element={<EleveStudents />} />
           <Route path="/parent-signup" element={<ParentSignup />} />

@@ -51,7 +51,7 @@ const Index: React.FC = () => {
 
         {/* Bouton Rejoindre un devoir */}
         <button
-          onClick={() => navigate("/rejoindre")}
+          onClick={() => navigate("/join-assignment")}
           className="flex flex-col items-center justify-center bg-orange-500 hover:bg-orange-600 text-white rounded-2xl px-8 py-8 font-bold text-2xl shadow-lg transition gap-3 w-full"
         >
           <QrCode className="w-12 h-12 mb-2" />
