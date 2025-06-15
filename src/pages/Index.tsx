@@ -4,7 +4,7 @@ import PromptRenfortLogo from "@/components/PromptRenfortLogo";
 import AssignmentEntry from "@/components/AssignmentEntry";
 import ChatSession from "@/components/ChatSession";
 import { t } from "@/i18n/i18n";
-import { Lock, Book, Checkmark } from "lucide-react";
+import { Lock, Book, Check } from "lucide-react";
 
 const Index = () => {
   const [assignment, setAssignment] = useState<string | null>(null);
@@ -40,7 +40,7 @@ const Index = () => {
               <span className="font-medium">No AI answers are stored</span>
             </div>
             <div className="flex items-center gap-2 justify-center text-green-700">
-              <Checkmark className="w-5 h-5" aria-label="Checkmark icon" />
+              <Check className="w-5 h-5" aria-label="Check icon" />
               <span className="font-medium">Your mind is trusted here</span>
             </div>
           </div>
