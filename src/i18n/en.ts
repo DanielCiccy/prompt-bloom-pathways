@@ -105,7 +105,38 @@ It arrives when knowledge seeks to take root.`,
   createAssignment: {
     title: "Create assignment",
     subtitle: "This page allows teachers and parents to quickly create a group assignment.\nOnce validated, a QR code, code, and shareable link will be automatically generated for learners.",
-    soonBlock: "The assignment settings form will appear here.",
+    createBtn: "Create assignment",
+    creating: "Creating...",
+    sendingFeedback: "Sending feedback...",
+    codeLabel: "Assignment code:",
+    qrInstruction: "Share this code or the QR with your students!",
+    backHome: "Back to home",
+    mustBeLoggedIn: "You must be logged in to create an assignment.",
+    createError: "Creation error",
+    feedback: {
+      errorTitle: "Feedback sending failed",
+      errorDesc: "Your suggestion could not be sent. Please try again.",
+      thanksTitle: "Thank you for your suggestion!",
+      thanksDesc: "Your idea or feedback has been submitted to the team.",
+    },
+    levels: {
+      elementary: "Elementary",
+      middle: "Middle school",
+      high: "High school",
+      university: "University"
+    },
+    grades: {
+      "6": "6th", "5": "5th", "4": "4th", "3": "3rd", "2nde": "10th (France)", "1ère": "11th (France)",
+      terminale: "12th (France)", college: "College", lycee: "Lycée", other: "Other"
+    },
+    languages: {
+      fr: "French", en: "English", es: "Spanish", de: "German", it: "Italian"
+    },
+    countries: {
+      FR: "France", BE: "Belgium", ES: "Spain", DE: "Germany", IT: "Italy", US: "United States",
+      UK: "United Kingdom", CA: "Canada", PT: "Portugal", CH: "Switzerland", MA: "Morocco", TN: "Tunisia",
+      SN: "Senegal", CM: "Cameroon", OTHER: "Other"
+    },
     target_age_range_label: "Target age range (optional, e.g. 12-14 y/o)",
     target_age_range_placeholder: "Select age range…",
     age_ranges: {

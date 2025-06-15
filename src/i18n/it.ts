@@ -93,6 +93,40 @@ Arriva quando la conoscenza vuole mettere radici.`,
     logout: "Esci"
   },
   create_assignment: {
+    title: "Crea compito / gruppo Prompt Renfort",
+    subtitle: "Questa pagina consente a insegnanti e genitori di creare un compito o gruppo di apprendimento.\nUna volta validato, verranno generati automaticamente un QR, un codice e un link da condividere.",
+    createBtn: "Crea compito",
+    creating: "Creazione in corso...",
+    sendingFeedback: "Invio suggerimento...",
+    codeLabel: "Codice del compito:",
+    qrInstruction: "Condividi questo codice o QR con i tuoi studenti!",
+    backHome: "Torna alla home",
+    mustBeLoggedIn: "Devi essere loggato per creare un compito.",
+    createError: "Errore di creazione",
+    feedback: {
+      errorTitle: "Errore durante l’invio del suggerimento",
+      errorDesc: "Il tuo suggerimento non è stato inviato. Per favore riprova.",
+      thanksTitle: "Grazie per il tuo suggerimento!",
+      thanksDesc: "La tua idea o feedback è stata trasmessa al team.",
+    },
+    levels: {
+      elementary: "Elementare",
+      middle: "Media",
+      high: "Superiore",
+      university: "Università"
+    },
+    grades: {
+      "6": "6ª", "5": "5ª", "4": "4ª", "3": "3ª", "2nde": "2ª Sup.", "1ère": "1ª Sup.",
+      terminale: "Finale Sup.", college: "Media", lycee: "Superiore", other: "Altro"
+    },
+    languages: {
+      fr: "Francese", en: "Inglese", es: "Spagnolo", de: "Tedesco", it: "Italiano"
+    },
+    countries: {
+      FR: "Francia", BE: "Belgio", ES: "Spagna", DE: "Germania", IT: "Italia", US: "Stati Uniti",
+      UK: "Regno Unito", CA: "Canada", PT: "Portogallo", CH: "Svizzera", MA: "Marocco", TN: "Tunisia",
+      SN: "Senegal", CM: "Camerun", OTHER: "Altro"
+    },
     target_age_range_label: "Fascia d'età target (opzionale, es: 12-14 anni)",
     target_age_range_placeholder: "Seleziona la fascia d'età…",
     age_ranges: {

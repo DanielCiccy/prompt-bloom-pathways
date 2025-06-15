@@ -1,3 +1,4 @@
+
 import React, { useMemo, useState } from "react";
 import { ArrowLeft } from "lucide-react";
 import { useNavigate } from "react-router-dom";
@@ -15,49 +16,47 @@ import SuggestionBox from "@/components/SuggestionBox";
 
 // --- Field helpers ---
 const classLevels = [
-  { value: "elementary", label: "Élémentaire" },
-  { value: "middle", label: "Collège" },
-  { value: "high", label: "Lycée" },
-  { value: "university", label: "Université" },
+  { value: "elementary", label: t("createAssignment.levels.elementary") },
+  { value: "middle", label: t("createAssignment.levels.middle") },
+  { value: "high", label: t("createAssignment.levels.high") },
+  { value: "university", label: t("createAssignment.levels.university") },
 ];
 const grades = [
-  { value: "6", label: "6ème" },
-  { value: "5", label: "5ème" },
-  { value: "4", label: "4ème" },
-  { value: "3", label: "3ème" },
-  { value: "2nde", label: "2nde" },
-  { value: "1ère", label: "1ère" },
-  { value: "terminale", label: "Terminale" },
-  { value: "college", label: "Collège" },
-  { value: "lycee", label: "Lycée" },
-  { value: "other", label: "Autre" },
+  { value: "6", label: t("createAssignment.grades.6") },
+  { value: "5", label: t("createAssignment.grades.5") },
+  { value: "4", label: t("createAssignment.grades.4") },
+  { value: "3", label: t("createAssignment.grades.3") },
+  { value: "2nde", label: t("createAssignment.grades.2nde") },
+  { value: "1ère", label: t("createAssignment.grades.1ère") },
+  { value: "terminale", label: t("createAssignment.grades.terminale") },
+  { value: "college", label: t("createAssignment.grades.college") },
+  { value: "lycee", label: t("createAssignment.grades.lycee") },
+  { value: "other", label: t("createAssignment.grades.other") },
 ];
 const languages = [
-  { value: "fr", label: "Français" },
-  { value: "en", label: "English" },
-  { value: "es", label: "Español" },
-  { value: "de", label: "Deutsch" },
-  { value: "it", label: "Italiano" },
+  { value: "fr", label: t("createAssignment.languages.fr") },
+  { value: "en", label: t("createAssignment.languages.en") },
+  { value: "es", label: t("createAssignment.languages.es") },
+  { value: "de", label: t("createAssignment.languages.de") },
+  { value: "it", label: t("createAssignment.languages.it") },
 ];
-// ISO-3166 (abbreviated list for callback simplicity, can expand as needed)
 const countries = [
-  { value: "FR", label: "France" },
-  { value: "BE", label: "Belgique" },
-  { value: "ES", label: "Espagne" },
-  { value: "DE", label: "Allemagne" },
-  { value: "IT", label: "Italie" },
-  { value: "US", label: "États-Unis" },
-  { value: "UK", label: "Royaume-Uni" },
-  { value: "CA", label: "Canada" },
-  { value: "PT", label: "Portugal" },
-  { value: "CH", label: "Suisse" },
-  { value: "MA", label: "Maroc" },
-  { value: "TN", label: "Tunisie" },
-  { value: "SN", label: "Sénégal" },
-  { value: "CM", label: "Cameroun" },
-  { value: "OTHER", label: "Autre" },
+  { value: "FR", label: t("createAssignment.countries.FR") },
+  { value: "BE", label: t("createAssignment.countries.BE") },
+  { value: "ES", label: t("createAssignment.countries.ES") },
+  { value: "DE", label: t("createAssignment.countries.DE") },
+  { value: "IT", label: t("createAssignment.countries.IT") },
+  { value: "US", label: t("createAssignment.countries.US") },
+  { value: "UK", label: t("createAssignment.countries.UK") },
+  { value: "CA", label: t("createAssignment.countries.CA") },
+  { value: "PT", label: t("createAssignment.countries.PT") },
+  { value: "CH", label: t("createAssignment.countries.CH") },
+  { value: "MA", label: t("createAssignment.countries.MA") },
+  { value: "TN", label: t("createAssignment.countries.TN") },
+  { value: "SN", label: t("createAssignment.countries.SN") },
+  { value: "CM", label: t("createAssignment.countries.CM") },
+  { value: "OTHER", label: t("createAssignment.countries.OTHER") },
 ];
-
 // --- Age Ranges (internationalized) ---
 const ageRanges = [
   { value: "6-8", labelKey: "ages_6_8" },
@@ -134,7 +133,7 @@ const CreateAssignmentTeacher: React.FC = () => {
 
   const onSubmit = async (data: AssignmentForm) => {
     if (!user) {
-      alert("Vous devez être connecté pour créer un devoir.");
+      alert(t("createAssignment.mustBeLoggedIn"));
       return;
     }
     setSubmitting(true);
@@ -159,7 +158,7 @@ const CreateAssignmentTeacher: React.FC = () => {
       .maybeSingle();
 
     if (error) {
-      alert("Erreur lors de la création : " + error.message);
+      alert(t("createAssignment.createError") + " : " + error.message);
       setSubmitting(false);
       return;
     }
@@ -182,14 +181,14 @@ const CreateAssignmentTeacher: React.FC = () => {
         .insert([feedbackObj]);
       if (feedbackError) {
         toast({
-          title: "Erreur lors de l’envoi du feedback",
-          description: "Votre suggestion n’a pas pu être envoyée. Merci de réessayer.",
+          title: t("createAssignment.feedback.errorTitle"),
+          description: t("createAssignment.feedback.errorDesc"),
           variant: "destructive"
         });
       } else {
         toast({
-          title: "Merci beaucoup pour votre suggestion !",
-          description: "Votre idée ou retour a bien été transmis à l’équipe.",
+          title: t("createAssignment.feedback.thanksTitle"),
+          description: t("createAssignment.feedback.thanksDesc"),
         });
         setSuggestion(""); // clear input
       }
@@ -207,12 +206,15 @@ const CreateAssignmentTeacher: React.FC = () => {
           onClick={() => navigate("/")}
         >
           <ArrowLeft className="w-4 h-4" />
-          Retour à l'accueil
+          {t("createAssignment.backHome")}
         </button>
         <div className="bg-white/90 rounded-xl shadow-xl p-6 flex flex-col gap-5 items-center">
           <h2 className="text-2xl font-bold text-blue-900 mb-2">
-            Créer un devoir / groupe Prompt Renfort
+            {t("createAssignment.title")}
           </h2>
+          <p className="text-gray-800 text-center whitespace-pre-line mb-3">
+            {t("createAssignment.subtitle")}
+          </p>
           <FormProvider {...formMethods}>
             <AssignmentForm
               feedbackSection={
@@ -234,15 +236,15 @@ const CreateAssignmentTeacher: React.FC = () => {
               form={undefined}
               onClick={handleSubmit(onSubmit)}
             >
-              {submitting ? "Création en cours..." 
-              : feedbackSubmitting ? "Envoi du feedback..." 
-              : "Créer le devoir"}
+              {submitting ? t("createAssignment.creating") 
+              : feedbackSubmitting ? t("createAssignment.sendingFeedback") 
+              : t("createAssignment.createBtn")}
             </button>
           </FormProvider>
           {createdAssignment && (
             <div className="mt-6 text-center w-full">
-              <div className="font-semibold text-blue-800 mb-2">Code du devoir : <span className="bg-slate-200 rounded px-2 py-1 font-mono">{createdAssignment.code}</span></div>
-              <div className="mb-2 text-xs text-slate-500">Distribuez ce code ou le QR à vos élèves !</div>
+              <div className="font-semibold text-blue-800 mb-2">{t("createAssignment.codeLabel")} <span className="bg-slate-200 rounded px-2 py-1 font-mono">{createdAssignment.code}</span></div>
+              <div className="mb-2 text-xs text-slate-500">{t("createAssignment.qrInstruction")}</div>
               <QrCode text={createdAssignment.code} className="mx-auto" />
             </div>
           )}

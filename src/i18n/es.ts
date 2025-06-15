@@ -93,6 +93,40 @@ Llega cuando el conocimiento quiere echar raíces.`,
     logout: "Cerrar sesión"
   },
   create_assignment: {
+    title: "Crear deber / grupo Prompt Renfort",
+    subtitle: "Esta página permite a docentes y padres crear un deber o grupo de aprendizaje.\nUna vez validado, se generan automáticamente un QR, un código y un enlace para compartir.",
+    createBtn: "Crear el deber",
+    creating: "Creando...",
+    sendingFeedback: "Enviando sugerencia...",
+    codeLabel: "Código del deber:",
+    qrInstruction: "¡Comparte este código o QR con tus alumnos!",
+    backHome: "Volver al inicio",
+    mustBeLoggedIn: "Debes iniciar sesión para crear un deber.",
+    createError: "Error de creación",
+    feedback: {
+      errorTitle: "Error al enviar la sugerencia",
+      errorDesc: "No se pudo enviar tu sugerencia. Por favor, inténtalo de nuevo.",
+      thanksTitle: "¡Gracias por tu sugerencia!",
+      thanksDesc: "Tu idea o comentario ha sido transmitido al equipo.",
+    },
+    levels: {
+      elementary: "Primaria",
+      middle: "Secundaria",
+      high: "Bachillerato",
+      university: "Universidad"
+    },
+    grades: {
+      "6": "6º", "5": "5º", "4": "4º", "3": "3º", "2nde": "2º Bach", "1ère": "1º Bach",
+      terminale: "Final Bach", college: "Secundaria", lycee: "Bachillerato", other: "Otro"
+    },
+    languages: {
+      fr: "Francés", en: "Inglés", es: "Español", de: "Alemán", it: "Italiano"
+    },
+    countries: {
+      FR: "Francia", BE: "Bélgica", ES: "España", DE: "Alemania", IT: "Italia", US: "Estados Unidos",
+      UK: "Reino Unido", CA: "Canadá", PT: "Portugal", CH: "Suiza", MA: "Marruecos", TN: "Túnez",
+      SN: "Senegal", CM: "Camerún", OTHER: "Otro"
+    },
     target_age_range_label: "Rango de edad objetivo (opcional, ej: 12-14 años)",
     target_age_range_placeholder: "Seleccione el rango de edad…",
     age_ranges: {

@@ -110,6 +110,54 @@ Il arrive quand la connaissance veut prendre racine.`,
     dualZoneTitle: "Bientôt : Espace pédagogique double-zone",
     dualZoneDesc: "Une zone de rédaction libre et une fenêtre assistant IA distincte vont permettre de distinguer réflexion autonome et aide de l’IA, pour une pédagogie plus transparente.\nCette fonctionnalité est prioritaire et arrive très bientôt !",
   },
-};
+  createAssignment: {
+    title: "Créer un devoir / groupe Prompt Renfort",
+    subtitle: "Cette page permet aux enseignants et parents de créer un devoir ou groupe d'apprentissage.\nUne fois validé, un QR code, un code et un lien à partager sont générés automatiquement.",
+    createBtn: "Créer le devoir",
+    creating: "Création en cours…",
+    sendingFeedback: "Envoi du feedback…",
+    codeLabel: "Code du devoir :",
+    qrInstruction: "Distribuez ce code ou le QR à vos élèves !",
+    backHome: "Retour à l'accueil",
+    mustBeLoggedIn: "Vous devez être connecté pour créer un devoir.",
+    createError: "Erreur lors de la création",
+    feedback: {
+      errorTitle: "Erreur lors de l’envoi du feedback",
+      errorDesc: "Votre suggestion n’a pas pu être envoyée. Merci de réessayer.",
+      thanksTitle: "Merci beaucoup pour votre suggestion !",
+      thanksDesc: "Votre idée ou retour a bien été transmis à l’équipe.",
+    },
+    levels: {
+      elementary: "Élémentaire",
+      middle: "Collège",
+      high: "Lycée",
+      university: "Université"
+    },
+    grades: {
+      "6": "6ème", "5": "5ème", "4": "4ème", "3": "3ème", "2nde": "2nde", "1ère": "1ère",
+      terminale: "Terminale", college: "Collège", lycee: "Lycée", other: "Autre"
+    },
+    languages: {
+      fr: "Français", en: "Anglais", es: "Espagnol", de: "Allemand", it: "Italien"
+    },
+    countries: {
+      FR: "France", BE: "Belgique", ES: "Espagne", DE: "Allemagne", IT: "Italie", US: "États-Unis",
+      UK: "Royaume-Uni", CA: "Canada", PT: "Portugal", CH: "Suisse", MA: "Maroc", TN: "Tunisie", SN: "Sénégal",
+      CM: "Cameroun", OTHER: "Autre"
+    },
+    target_age_range_label: "Tranche d'âge cible (facultatif, ex: 12-14 ans)",
+    target_age_range_placeholder: "Sélectionner la tranche d'âge…",
+    age_ranges: {
+      ages_6_8: "6–8 ans",
+      ages_9_11: "9–11 ans",
+      ages_12_14: "12–14 ans",
+      ages_15_17: "15–17 ans",
+      ages_18_22: "18–22 ans",
+      ages_23_99: "23 ans et plus",
+      multi_age: "Multi-âge/groupe",
+      other_age: "Autre",
+    },
+  },
+}; 
 
 export default fr;

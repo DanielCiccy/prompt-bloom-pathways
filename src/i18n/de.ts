@@ -93,6 +93,40 @@ Er kommt, wenn das Wissen Wurzeln schlagen will.`,
     logout: "Ausloggen"
   },
   create_assignment: {
+    title: "Aufgabe / Prompt Renfort Gruppe erstellen",
+    subtitle: "Diese Seite ermöglicht es Lehrern und Eltern, eine Aufgabe oder Lerngruppe zu erstellen.\nNach der Validierung werden automatisch ein QR-Code, ein Code und ein Link zum Teilen generiert.",
+    createBtn: "Aufgabe erstellen",
+    creating: "Erstelle...",
+    sendingFeedback: "Feedback wird gesendet...",
+    codeLabel: "Aufgabencode:",
+    qrInstruction: "Teilen Sie diesen Code oder QR mit Ihren Schülern!",
+    backHome: "Zurück zur Startseite",
+    mustBeLoggedIn: "Sie müssen eingeloggt sein, um eine Aufgabe zu erstellen.",
+    createError: "Fehler bei der Erstellung",
+    feedback: {
+      errorTitle: "Fehler beim Senden des Feedbacks",
+      errorDesc: "Ihr Vorschlag konnte nicht gesendet werden. Bitte versuchen Sie es erneut.",
+      thanksTitle: "Danke für Ihren Vorschlag!",
+      thanksDesc: "Ihre Idee oder Rückmeldung wurde an das Team weitergeleitet.",
+    },
+    levels: {
+      elementary: "Grundschule",
+      middle: "Mittelschule",
+      high: "Gymnasium",
+      university: "Universität"
+    },
+    grades: {
+      "6": "6. Klasse", "5": "5. Klasse", "4": "4. Klasse", "3": "3. Klasse", "2nde": "10. Fr", "1ère": "11. Fr",
+      terminale: "12. Fr", college: "Mittelschule", lycee: "Gymnasium", other: "Andere"
+    },
+    languages: {
+      fr: "Französisch", en: "Englisch", es: "Spanisch", de: "Deutsch", it: "Italienisch"
+    },
+    countries: {
+      FR: "Frankreich", BE: "Belgien", ES: "Spanien", DE: "Deutschland", IT: "Italien", US: "USA",
+      UK: "Vereinigtes Königreich", CA: "Kanada", PT: "Portugal", CH: "Schweiz", MA: "Marokko",
+      TN: "Tunesien", SN: "Senegal", CM: "Kamerun", OTHER: "Andere"
+    },
     target_age_range_label: "Zielaltersbereich (optional, z.B. 12-14 Jahre)",
     target_age_range_placeholder: "Wähle den Altersbereich…",
     age_ranges: {
