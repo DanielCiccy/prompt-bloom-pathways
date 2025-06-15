@@ -10,6 +10,9 @@ import { supabase } from "@/integrations/supabase/client";
 import QrCode from "@/components/QrCode";
 import { t } from "@/i18n/i18n";
 import { toast } from "@/hooks/use-toast";
+import AssignmentForm from "@/components/AssignmentForm";
+import SuggestionBox from "@/components/SuggestionBox";
+import { FormProvider, useForm } from "react-hook-form";
 
 // --- Field helpers ---
 const classLevels = [
@@ -109,7 +112,7 @@ const CreateAssignmentTeacher: React.FC = () => {
   const [suggestion, setSuggestion] = useState(""); // For suggestion box
   const [feedbackSubmitting, setFeedbackSubmitting] = useState(false);
 
-  const { control, handleSubmit, reset, formState } = useForm<AssignmentForm>({
+  const formMethods = useForm<AssignmentForm>({
     defaultValues: {
       title: "",
       description: "",
@@ -123,6 +126,7 @@ const CreateAssignmentTeacher: React.FC = () => {
       target_age_range: "",
     },
   });
+  const { control, handleSubmit, reset, formState } = formMethods;
 
   // Fetch current user (should be authenticated)
   React.useEffect(() => {
@@ -210,235 +214,32 @@ const CreateAssignmentTeacher: React.FC = () => {
           <h2 className="text-2xl font-bold text-blue-900 mb-2">
             Créer un devoir / groupe Prompt Renfort
           </h2>
-          <form
-            onSubmit={handleSubmit(onSubmit)}
-            className="w-full flex flex-col gap-4"
-            autoComplete="off"
-          >
-            <div>
-              <label htmlFor="title" className="block text-sm text-blue-900 mb-1 font-semibold">Titre du devoir</label>
-              <Controller
-                name="title"
-                control={control}
-                rules={{ required: "Titre requis" }}
-                render={({ field, fieldState }) => (
-                  <>
-                    <Input
-                      id="title"
-                      placeholder="ex: Projet Géographie"
-                      {...field}
-                    />
-                    {fieldState.error && (
-                      <span className="block text-xs text-red-500 mt-1">{fieldState.error.message}</span>
-                    )}
-                  </>
-                )}
-              />
-            </div>
-            <div>
-              <label htmlFor="description" className="block text-sm text-blue-900 mb-1 font-semibold">Description</label>
-              <Controller
-                name="description"
-                control={control}
-                render={({ field }) => (
-                  <Textarea
-                    id="description"
-                    placeholder="Décrivez le devoir, les ressources, les liens..."
-                    {...field}
-                    rows={3}
-                  />
-                )}
-              />
-            </div>
-            <div className="flex flex-col md:flex-row gap-3">
-              <div className="flex-1">
-                <label htmlFor="deadline_date" className="block text-sm text-blue-900 font-semibold mb-1">Date limite</label>
-                <Controller
-                  name="deadline_date"
-                  control={control}
-                  rules={{ required: "Date requise" }}
-                  render={({ field, fieldState }) => (
-                    <>
-                      <Input id="deadline_date" type="date" {...field} />
-                      {fieldState.error && <span className="block text-xs text-red-500 mt-1">{fieldState.error.message}</span>}
-                    </>
-                  )}
+          <FormProvider {...formMethods}>
+            <AssignmentForm
+              feedbackSection={
+                <SuggestionBox
+                  suggestion={suggestion}
+                  setSuggestion={setSuggestion}
+                  submitting={submitting}
+                  feedbackSubmitting={feedbackSubmitting}
                 />
-              </div>
-              <div className="flex-1">
-                <label htmlFor="deadline_time" className="block text-sm text-blue-900 font-semibold mb-1">Heure limite</label>
-                <Controller
-                  name="deadline_time"
-                  control={control}
-                  rules={{ required: "Heure requise" }}
-                  render={({ field, fieldState }) => (
-                    <>
-                      <Input id="deadline_time" type="time" {...field} />
-                      {fieldState.error && <span className="block text-xs text-red-500 mt-1">{fieldState.error.message}</span>}
-                    </>
-                  )}
-                />
-              </div>
-            </div>
-            <div>
-              <label htmlFor="school_name" className="block text-sm text-blue-900 mb-1 font-semibold">Établissement scolaire</label>
-              <Controller
-                name="school_name"
-                control={control}
-                rules={{ required: "Établissement requis" }}
-                render={({ field, fieldState }) => (
-                  <>
-                    <Input id="school_name" placeholder="Nom de l'école ou lycée" {...field} />
-                    {fieldState.error && <span className="block text-xs text-red-500 mt-1">{fieldState.error.message}</span>}
-                  </>
-                )}
-              />
-            </div>
-            <div className="flex flex-col md:flex-row gap-3">
-              <div className="flex-1">
-                <label htmlFor="city" className="block text-sm text-blue-900 mb-1 font-semibold">Ville</label>
-                <Controller
-                  name="city"
-                  control={control}
-                  rules={{ required: "Ville requise" }}
-                  render={({ field, fieldState }) => (
-                    <>
-                      <Input id="city" placeholder="Ville" {...field} />
-                      {fieldState.error && <span className="block text-xs text-red-500 mt-1">{fieldState.error.message}</span>}
-                    </>
-                  )}
-                />
-              </div>
-              <div className="flex-1">
-                <label htmlFor="country" className="block text-sm text-blue-900 mb-1 font-semibold">Pays</label>
-                <Controller
-                  name="country"
-                  control={control}
-                  rules={{ required: "Pays requis" }}
-                  render={({ field, fieldState }) => (
-                    <>
-                      <Select
-                        value={field.value}
-                        onValueChange={field.onChange}
-                      >
-                        <SelectTrigger>
-                          <SelectValue placeholder="Sélectionnez le pays…" />
-                        </SelectTrigger>
-                        <SelectContent>
-                          {countries.map((opt) => (
-                            <SelectItem key={opt.value} value={opt.value}>{opt.label}</SelectItem>
-                          ))}
-                        </SelectContent>
-                      </Select>
-                      {fieldState.error && <span className="block text-xs text-red-500 mt-1">{fieldState.error.message}</span>}
-                    </>
-                  )}
-                />
-              </div>
-            </div>
-            <div className="flex flex-col md:flex-row gap-3">
-              <div className="flex-1">
-                <label htmlFor="grade_level" className="block text-sm text-blue-900 mb-1 font-semibold">Niveau / Classe</label>
-                <Controller
-                  name="grade_level"
-                  control={control}
-                  rules={{ required: "Niveau requis" }}
-                  render={({ field, fieldState }) => (
-                    <>
-                      <Select
-                        value={field.value}
-                        onValueChange={field.onChange}
-                      >
-                        <SelectTrigger>
-                          <SelectValue placeholder="Sélectionnez le niveau…" />
-                        </SelectTrigger>
-                        <SelectContent>
-                          {grades.map((opt) => (
-                            <SelectItem key={opt.value} value={opt.value}>{opt.label}</SelectItem>
-                          ))}
-                        </SelectContent>
-                      </Select>
-                      {fieldState.error && <span className="block text-xs text-red-500 mt-1">{fieldState.error.message}</span>}
-                    </>
-                  )}
-                />
-              </div>
-              <div className="flex-1">
-                <label htmlFor="language" className="block text-sm text-blue-900 mb-1 font-semibold">Langue</label>
-                <Controller
-                  name="language"
-                  control={control}
-                  rules={{ required: "Langue requise" }}
-                  render={({ field, fieldState }) => (
-                    <>
-                      <Select value={field.value} onValueChange={field.onChange}>
-                        <SelectTrigger>
-                          <SelectValue placeholder="Sélectionnez la langue…" />
-                        </SelectTrigger>
-                        <SelectContent>
-                          {languages.map((opt) => (
-                            <SelectItem key={opt.value} value={opt.value}>{opt.label}</SelectItem>
-                          ))}
-                        </SelectContent>
-                      </Select>
-                      {fieldState.error && <span className="block text-xs text-red-500 mt-1">{fieldState.error.message}</span>}
-                    </>
-                  )}
-                />
-              </div>
-            </div>
-            {/* Target age range dropdown */}
-            <div>
-              <label htmlFor="target_age_range" className="block text-sm text-blue-900 mb-1 font-semibold">
-                {t("create_assignment.target_age_range_label")}
-              </label>
-              <Controller
-                name="target_age_range"
-                control={control}
-                render={({ field }) => (
-                  <Select
-                    value={field.value || ""}
-                    onValueChange={field.onChange}
-                  >
-                    <SelectTrigger>
-                      <SelectValue placeholder={t("create_assignment.target_age_range_placeholder")} />
-                    </SelectTrigger>
-                    <SelectContent>
-                      {ageRanges.map((opt) => (
-                        <SelectItem key={opt.value} value={opt.value}>
-                          {t(`create_assignment.age_ranges.${opt.labelKey}`)}
-                        </SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
-                )}
-              />
-            </div>
-            {/* --- Suggestion box for educators --- */}
-            <div>
-              <label htmlFor="suggestion_box" className="block text-sm text-blue-900 font-semibold mb-1">
-                <span role="img" aria-label="bulb">💡</span> Vous avez une suggestion pour améliorer cet outil ?<br />
-                Partagez votre idée ou retour ci-dessous. Nous écoutons ! <span role="img" aria-label="down-point">👇</span>
-              </label>
-              <textarea
-                id="suggestion_box"
-                className="w-full border border-slate-300 rounded px-3 py-2 min-h-[64px] text-sm resize-y"
-                placeholder="Expliquez votre idée, problème ou remarque pour l’équipe produit (optionnel)"
-                value={suggestion}
-                onChange={e => setSuggestion(e.target.value)}
-                disabled={submitting || feedbackSubmitting}
-                rows={3}
-              />
-            </div>
-            {/* --- End Suggestion box --- */}
-            <Button type="submit" className="w-full flex items-center justify-center gap-2"
+              }
+              onSubmit={handleSubmit(onSubmit)}
+              submitting={submitting}
+              feedbackSubmitting={feedbackSubmitting}
+            />
+            <button
+              type="submit"
+              className="w-full flex items-center justify-center gap-2 bg-primary text-primary-foreground hover:bg-primary/90 rounded-md px-4 py-2 text-sm font-medium mt-2"
               disabled={submitting || feedbackSubmitting}
+              form={undefined}
+              onClick={handleSubmit(onSubmit)}
             >
               {submitting ? "Création en cours..." 
               : feedbackSubmitting ? "Envoi du feedback..." 
               : "Créer le devoir"}
-            </Button>
-          </form>
+            </button>
+          </FormProvider>
           {createdAssignment && (
             <div className="mt-6 text-center w-full">
               <div className="font-semibold text-blue-800 mb-2">Code du devoir : <span className="bg-slate-200 rounded px-2 py-1 font-mono">{createdAssignment.code}</span></div>
