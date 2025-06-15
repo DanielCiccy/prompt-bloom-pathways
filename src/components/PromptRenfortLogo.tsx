@@ -1,13 +1,14 @@
 
 import React from "react";
 
+// Displays the new transparent logo
 const PromptRenfortLogo: React.FC<{className?: string}> = ({ className }) => (
   <img
-    src="/lovable-uploads/4742d357-a0c8-4beb-a803-43620dc768b6.png"
+    src="/lovable-uploads/1fcfeee0-9686-44ed-a718-2cc5a67e4204.png"
     alt="Prompt Renfort Logo"
-    className={className || "w-44 md:w-64 mx-auto block mb-4"}
+    className={className || "w-48 md:w-72 mx-auto block mb-4"}
     draggable={false}
-    style={{userSelect: "none"}}
+    style={{ userSelect: "none" }}
   />
 );
 
