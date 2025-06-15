@@ -90,6 +90,20 @@ Arriva quando la conoscenza vuole mettere radici.`,
     about: "Info",
     login: "Accedi",
     logout: "Disconnetti"
+  },
+  create_assignment: {
+    target_age_range_label: "Fascia d'età destinata (opzionale, es: 12-14 anni)",
+    target_age_range_placeholder: "Seleziona fascia d’età…",
+    age_ranges: {
+      ages_6_8: "6–8 anni",
+      ages_9_11: "9–11 anni",
+      ages_12_14: "12–14 anni",
+      ages_15_17: "15–17 anni",
+      ages_18_22: "18–22 anni",
+      ages_23_99: "23 anni o più",
+      multi_age: "Multi-età/gruppo",
+      other_age: "Altro",
+    },
   }
 };
 

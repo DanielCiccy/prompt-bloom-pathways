@@ -90,6 +90,20 @@ Er kommt, wenn Wissen Wurzeln schlagen will.`,
     about: "Über",
     login: "Anmelden",
     logout: "Abmelden"
+  },
+  create_assignment: {
+    target_age_range_label: "Zielaltersgruppe (optional, z.B. 12-14 Jahre)",
+    target_age_range_placeholder: "Altersbereich auswählen…",
+    age_ranges: {
+      ages_6_8: "6–8 Jahre",
+      ages_9_11: "9–11 Jahre",
+      ages_12_14: "12–14 Jahre",
+      ages_15_17: "15–17 Jahre",
+      ages_18_22: "18–22 Jahre",
+      ages_23_99: "23 Jahre und älter",
+      multi_age: "Mehrere Altersgruppen",
+      other_age: "Andere",
+    },
   }
 };
 

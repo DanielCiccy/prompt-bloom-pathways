@@ -90,6 +90,20 @@ Llega cuando el conocimiento quiere echar raíces.`,
     about: "Acerca de",
     login: "Iniciar sesión",
     logout: "Cerrar sesión"
+  },
+  create_assignment: {
+    target_age_range_label: "Rango de edad objetivo (opcional, ej: 12-14 años)",
+    target_age_range_placeholder: "Seleccione el rango de edad…",
+    age_ranges: {
+      ages_6_8: "6–8 años",
+      ages_9_11: "9–11 años",
+      ages_12_14: "12–14 años",
+      ages_15_17: "15–17 años",
+      ages_18_22: "18–22 años",
+      ages_23_99: "23 años o más",
+      multi_age: "Multi-edad/grupo",
+      other_age: "Otro",
+    },
   }
 };
 
