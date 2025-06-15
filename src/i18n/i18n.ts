@@ -9,9 +9,27 @@ const LANGS = { en, fr, de, it, es };
 
 type LangKey = keyof typeof LANGS;
 
-let lang: LangKey = "en";
+// Helper: detect persisted lang in localStorage or fallback to browser or "en"
+function getInitialLang(): LangKey {
+  if (typeof window !== "undefined") {
+    const stored = localStorage.getItem("lang");
+    if (stored && (stored in LANGS)) return stored as LangKey;
+    const navLang = navigator.language.slice(0,2);
+    if (navLang in LANGS) return navLang as LangKey;
+  }
+  return "en";
+}
 
-export const setLanguage = (l: LangKey) => { lang = l; };
+let lang: LangKey = getInitialLang();
+
+export const setLanguage = (l: LangKey) => {
+  lang = l;
+  if (typeof window !== "undefined") {
+    localStorage.setItem("lang", l);
+  }
+};
+
+export const getLanguage = (): LangKey => lang;
 
 export const t = (key: string) => {
   const keys = key.split(".");

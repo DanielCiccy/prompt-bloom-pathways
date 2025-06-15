@@ -1,6 +1,6 @@
 
-import React, { useState } from "react";
-import { setLanguage, t } from "@/i18n/i18n";
+import React, { useState, useEffect } from "react";
+import { setLanguage, getLanguage } from "@/i18n/i18n";
 import { Languages } from "lucide-react";
 
 const LANG_OPTIONS = [
@@ -14,10 +14,14 @@ const LANG_OPTIONS = [
 export default function LanguageSelector() {
   const [selected, setSelected] = useState<string>("en");
 
+  useEffect(() => {
+    setSelected(getLanguage());
+  }, []);
+
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setSelected(e.target.value);
-    setLanguage(e.target.value as any); // We know this matches LangKey
-    // Optionally, force a re-render of the whole app; otherwise, the page won't update
+    const newLang = e.target.value;
+    setSelected(newLang);
+    setLanguage(newLang as any); // We know this matches LangKey
     window.location.reload();
   };
 
