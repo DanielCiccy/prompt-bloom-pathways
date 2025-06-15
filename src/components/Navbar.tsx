@@ -1,12 +1,14 @@
+
 import React, { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { User, Home, Users2, Info, LogOut } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { t } from "@/i18n/i18n";
 
+// Suppression du lien "Profile"
 const navLinks = [
   { to: "/", labelKey: "navbar.home", icon: <Home className="w-5 h-5" /> },
-  { to: "/profile", labelKey: "navbar.profile", icon: <User className="w-5 h-5" /> },
+  // { to: "/profile", labelKey: "navbar.profile", icon: <User className="w-5 h-5" /> }, // Supprimé
   { to: "/family", labelKey: "navbar.family", icon: <Users2 className="w-5 h-5" /> },
   { to: "/about", labelKey: "navbar.about", icon: <Info className="w-5 h-5" /> },
 ];
@@ -74,3 +76,4 @@ const Navbar: React.FC = () => {
 };
 
 export default Navbar;
+
