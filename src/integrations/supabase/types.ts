@@ -9,6 +9,77 @@ export type Json =
 export type Database = {
   public: {
     Tables: {
+      assignments: {
+        Row: {
+          assignment_code: string
+          city: string
+          country: string
+          created_at: string
+          created_by: string
+          deadline_date: string
+          deadline_time: string
+          description: string | null
+          grade_level: string
+          id: string
+          language: string
+          qr_code_url: string | null
+          school_name: string
+          target_age_range: string | null
+          teacher_hash: string
+          timezone: string
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          assignment_code: string
+          city: string
+          country: string
+          created_at?: string
+          created_by: string
+          deadline_date: string
+          deadline_time: string
+          description?: string | null
+          grade_level: string
+          id?: string
+          language: string
+          qr_code_url?: string | null
+          school_name: string
+          target_age_range?: string | null
+          teacher_hash: string
+          timezone: string
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          assignment_code?: string
+          city?: string
+          country?: string
+          created_at?: string
+          created_by?: string
+          deadline_date?: string
+          deadline_time?: string
+          description?: string | null
+          grade_level?: string
+          id?: string
+          language?: string
+          qr_code_url?: string | null
+          school_name?: string
+          target_age_range?: string | null
+          teacher_hash?: string
+          timezone?: string
+          title?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "assignments_created_by_fkey"
+            columns: ["created_by"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       merci_records: {
         Row: {
           audio_hash: string
