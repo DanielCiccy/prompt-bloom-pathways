@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { User, GraduationCap, Users2, ArrowRight } from "lucide-react";
@@ -16,13 +17,13 @@ const ProfileChoice: React.FC = () => {
 
   const handleProfileSelect = (profile: string) => {
     if (profile === "eleve") return; // Show age range selector
-    if (profile === "enseignant") navigate("/enseignant");
-    if (profile === "parent") navigate("/parent-inscription");
+    if (profile === "enseignant") navigate("/teacher");
+    if (profile === "parent") navigate("/parent-signup");
   };
 
   const handleAgeValidate = () => {
     if (studentAgeRange) {
-      navigate(`/élève-students?tranche=${studentAgeRange}`);
+      navigate(`/eleve-students?level=${studentAgeRange}`);
     }
   };
 

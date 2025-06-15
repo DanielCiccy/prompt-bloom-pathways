@@ -20,7 +20,7 @@ const Index = () => {
       {/* BOUTON CHOIX DU PROFIL */}
       <button
         className="mb-4 mt-2 bg-blue-700 hover:bg-blue-800 text-white rounded-xl px-6 py-3 text-lg font-semibold shadow transition"
-        onClick={() => navigate("/profil")}
+        onClick={() => navigate("/profile")}
       >
         Je choisis mon profil
       </button>
@@ -90,7 +90,7 @@ const Index = () => {
         <div className="bg-white/90 border rounded-xl shadow p-5 flex flex-col gap-4 items-center">
           <button
             className="w-full flex items-center justify-center gap-2 bg-orange-500 hover:bg-orange-600 text-white rounded px-6 py-3 text-lg font-semibold transition"
-            onClick={() => navigate("/élève-students")}
+            onClick={() => navigate("/eleve-students")}
           >
             <LogIn className="w-6 h-6" />
             {t("landing.visitorBlock.button")}

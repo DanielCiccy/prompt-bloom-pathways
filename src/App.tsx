@@ -25,10 +25,10 @@ const App = () => (
         {/* SUPPRIMÉ : <Navbar /> */}
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/profil" element={<ProfileChoice />} />
-          <Route path="/élève-students" element={<EleveStudents />} />
-          <Route path="/parent-inscription" element={<ParentSignup />} />
-          <Route path="/famille" element={<FamilyManagement />} />
+          <Route path="/profile" element={<ProfileChoice />} />
+          <Route path="/eleve-students" element={<EleveStudents />} />
+          <Route path="/parent-signup" element={<ParentSignup />} />
+          <Route path="/family" element={<FamilyManagement />} />
           <Route path="/about" element={<About />} />
           <Route path="/auth" element={<Auth />} />
           <Route path="*" element={<NotFound />} />
