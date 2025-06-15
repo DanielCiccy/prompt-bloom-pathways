@@ -2,7 +2,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { User, GraduationCap, Users2, ArrowRight } from "lucide-react";
-import AppHeader from "@/components/AppHeader";
 
 const ageRanges = [
   { id: "primaire", label: "École primaire (6-11 ans)" },
@@ -29,7 +28,6 @@ const ProfileChoice: React.FC = () => {
 
   return (
     <div className="min-h-screen w-full bg-gradient-to-b from-orange-50 via-white to-blue-50 flex flex-col items-center justify-center">
-      <AppHeader />
       <div className="bg-white/80 p-6 rounded-2xl shadow-xl max-w-md w-full flex flex-col items-center gap-6">
         <h1 className="text-2xl font-bold text-blue-900 mb-2">Qui es-tu ?</h1>
         <div className="flex flex-col gap-3 w-full">
@@ -82,7 +80,8 @@ const ProfileChoice: React.FC = () => {
             <ArrowRight className="ml-auto w-5 h-5 text-green-600" />
           </button>
         </div>
-        <div className="text-xs mt-4 text-slate-500 text-center">Ce choix permet d’adapter au mieux l’expérience et la sécurité.
+        <div className="text-xs mt-4 text-slate-500 text-center">
+          Ce choix permet d’adapter au mieux l’expérience et la sécurité.
         </div>
       </div>
     </div>
