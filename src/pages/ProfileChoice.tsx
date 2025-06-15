@@ -1,7 +1,8 @@
 
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { User, GraduationCap, Users2, BookOpenCheck, ArrowRight } from "lucide-react";
+import { User, GraduationCap, Users2, ArrowRight } from "lucide-react";
+import AppHeader from "@/components/AppHeader";
 
 const ageRanges = [
   { id: "primaire", label: "École primaire (6-11 ans)" },
@@ -28,6 +29,7 @@ const ProfileChoice: React.FC = () => {
 
   return (
     <div className="min-h-screen w-full bg-gradient-to-b from-orange-50 via-white to-blue-50 flex flex-col items-center justify-center">
+      <AppHeader />
       <div className="bg-white/80 p-6 rounded-2xl shadow-xl max-w-md w-full flex flex-col items-center gap-6">
         <h1 className="text-2xl font-bold text-blue-900 mb-2">Qui es-tu ?</h1>
         <div className="flex flex-col gap-3 w-full">

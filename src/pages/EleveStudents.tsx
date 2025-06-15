@@ -1,4 +1,3 @@
-
 import React from "react";
 import PromptRenfortLogo from "@/components/PromptRenfortLogo";
 import { t } from "@/i18n/i18n";
@@ -7,37 +6,22 @@ import BrandingBar from "@/components/BrandingBar";
 import AssignmentEntry from "@/components/AssignmentEntry";
 import { Lock, Book, Check } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import AppHeader from "@/components/AppHeader";
 
 const EleveStudents = () => {
   const navigate = useNavigate();
 
   return (
     <div className="min-h-screen w-full bg-gradient-to-b from-orange-50 via-white to-blue-50 flex flex-col items-center justify-center">
-      <header className="w-full max-w-xl mx-auto mt-8 mb-6 flex flex-col items-center">
-        <div className="w-full flex justify-end mb-2">
-          <LanguageSelector />
-        </div>
-        <PromptRenfortLogo />
-
-        <BrandingBar />
-
-        <div className="text-xl md:text-2xl text-orange-600 mb-1 font-semibold text-center">
-          {t("landing.motto_bold")}
-        </div>
-        <div className="text-base md:text-lg font-light text-orange-800 mb-2 text-center">
-          {t("landing.motto_light")}
-        </div>
-
-        {/* Bloc d'instructions élève */}
-        <div className="text-base text-gray-700 mt-5 mb-3 max-w-md text-center">
-          <span className="font-semibold">{t("landing.preceptorLead")}</span>
-          <br />
-          {t("landing.entryInstructions1")}
-          <br />
-          {t("landing.entryInstructions2")}
-        </div>
-      </header>
-
+      <AppHeader />
+      {/* Bloc d'instructions élève */}
+      <div className="text-base text-gray-700 mt-5 mb-3 max-w-md text-center">
+        <span className="font-semibold">{t("landing.preceptorLead")}</span>
+        <br />
+        {t("landing.entryInstructions1")}
+        <br />
+        {t("landing.entryInstructions2")}
+      </div>
       {/* Zone entrée mission */}
       <main className="w-full flex-1 justify-center items-center flex flex-col">
         <AssignmentEntry onStart={code => navigate("/")} />
