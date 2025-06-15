@@ -52,6 +52,11 @@ const ParentSignup: React.FC = () => {
               autoComplete="email"
             />
           </label>
+          <div className="text-xs text-orange-900 bg-orange-50 rounded p-2 border border-orange-200 mb-2">
+            Vous êtes sur le point de transmettre des données personnelles (nom, prénom, email).<br />
+            <strong>Conformément au RGPD</strong>, votre consentement est requis et vos informations ne seront jamais partagées sans votre accord.<br />
+            Vous pouvez demander l’accès, la modification ou la suppression de vos données à tout moment. 
+          </div>
           <button
             type="submit"
             className="bg-blue-700 hover:bg-blue-800 text-white font-semibold rounded px-4 py-2"
@@ -65,4 +70,3 @@ const ParentSignup: React.FC = () => {
 };
 
 export default ParentSignup;
-
