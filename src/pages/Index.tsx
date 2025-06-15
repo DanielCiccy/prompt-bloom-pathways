@@ -66,7 +66,7 @@ const Index = () => {
               S’identifier
             </button>
             <div className="text-sm text-blue-900 font-normal text-center">
-              <strong>Avantage :</strong> En t’identifiant, tu seras accompagné(e) par un(e) éducateur(trice) ou enseignant(e), qui pourra t’encourager, suivre tes progrès et personnaliser tes parcours.
+              <strong>Avantage :</strong> En t’identifiant, tu pourras prouver que tu as vraiment échangé, réfléchi et construit avec l’IA : ce n’est pas un simple copié-collé d’une réponse, mais un vrai cheminement personnel, traçable et valorisable.
             </div>
           </div>
           {/* Bloc visiteur libre */}
