@@ -138,6 +138,9 @@ const FamilyManagement: React.FC = () => {
                 </button>
               ))}
             </div>
+            <div className="mt-1 text-xs text-yellow-700 bg-yellow-50 border border-yellow-200 rounded px-2 py-1">
+              <strong>Solution provisoire&nbsp;:</strong> Ce choix d’avatars est purement démonstratif pour la preuve de concept. Il sera amené à évoluer dans la version finale.
+            </div>
           </div>
           <input
             type="text"
