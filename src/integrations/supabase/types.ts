@@ -9,6 +9,38 @@ export type Json =
 export type Database = {
   public: {
     Tables: {
+      assignment_feedback: {
+        Row: {
+          assignment_id: string | null
+          created_at: string
+          id: string
+          suggestion_feedback: string
+          teacher_hash: string
+        }
+        Insert: {
+          assignment_id?: string | null
+          created_at?: string
+          id?: string
+          suggestion_feedback: string
+          teacher_hash: string
+        }
+        Update: {
+          assignment_id?: string | null
+          created_at?: string
+          id?: string
+          suggestion_feedback?: string
+          teacher_hash?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "assignment_feedback_assignment_id_fkey"
+            columns: ["assignment_id"]
+            isOneToOne: false
+            referencedRelation: "assignments"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       assignments: {
         Row: {
           assignment_code: string

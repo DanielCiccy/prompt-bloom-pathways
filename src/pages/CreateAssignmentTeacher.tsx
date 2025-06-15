@@ -1,4 +1,3 @@
-
 import React, { useMemo, useState } from "react";
 import { ArrowLeft } from "lucide-react";
 import { useNavigate } from "react-router-dom";
@@ -10,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import { supabase } from "@/integrations/supabase/client";
 import QrCode from "@/components/QrCode";
 import { t } from "@/i18n/i18n";
+import { toast } from "@/hooks/use-toast";
 
 // --- Field helpers ---
 const classLevels = [
@@ -93,7 +93,9 @@ const CreateAssignmentTeacher: React.FC = () => {
   const navigate = useNavigate();
   const [user, setUser] = useState<any>(null);
   const [submitting, setSubmitting] = useState(false);
-  const [createdAssignment, setCreatedAssignment] = useState<null | {code: string, qr_url: string}>(null);
+  const [createdAssignment, setCreatedAssignment] = useState<null | {code: string, qr_url: string, id?: string}>(null);
+  const [suggestion, setSuggestion] = useState(""); // For suggestion box
+  const [feedbackSubmitting, setFeedbackSubmitting] = useState(false);
 
   const { control, handleSubmit, reset, formState } = useForm<AssignmentForm>({
     defaultValues: {
@@ -126,7 +128,6 @@ const CreateAssignmentTeacher: React.FC = () => {
     const timezone = getTimezone();
     const teacher_hash = hashTeacherId(user.id);
 
-    // Compose insert object
     const insertObj = {
       ...data,
       assignment_code,
@@ -136,19 +137,50 @@ const CreateAssignmentTeacher: React.FC = () => {
     };
 
     // Insert into Supabase
-    const { error } = await supabase
+    const { data: inserted, error } = await supabase
       .from("assignments")
-      .insert([insertObj]);
+      .insert([insertObj])
+      .select("id")
+      .maybeSingle();
 
     if (error) {
       alert("Erreur lors de la création : " + error.message);
       setSubmitting(false);
       return;
     }
+    const assignmentId = inserted?.id || null;
     // QR contains a join URL
     const qr_url = `${window.location.origin}/rejoindre?code=${assignment_code}`;
-    setCreatedAssignment({ code: assignment_code, qr_url });
+    setCreatedAssignment({ code: assignment_code, qr_url, id: assignmentId });
     reset();
+
+    // Suggestion box: If filled, save feedback
+    if (suggestion.trim() !== "") {
+      setFeedbackSubmitting(true);
+      const feedbackObj = {
+        assignment_id: assignmentId,
+        suggestion_feedback: suggestion.trim(),
+        teacher_hash,
+      };
+      const { error: feedbackError } = await supabase
+        .from("assignment_feedback")
+        .insert([feedbackObj]);
+      if (feedbackError) {
+        toast({
+          title: "Erreur lors de l’envoi du feedback",
+          description: "Votre suggestion n’a pas pu être envoyée. Merci de réessayer.",
+          variant: "destructive"
+        });
+      } else {
+        toast({
+          title: "Merci beaucoup pour votre suggestion !",
+          description: "Votre idée ou retour a bien été transmis à l’équipe.",
+        });
+        setSuggestion(""); // clear input
+      }
+      setFeedbackSubmitting(false);
+    }
+
     setSubmitting(false);
   };
 
@@ -353,8 +385,29 @@ const CreateAssignmentTeacher: React.FC = () => {
                 )}
               />
             </div>
-            <Button type="submit" className="w-full" disabled={submitting}>
-              {submitting ? "Création en cours..." : "Créer le devoir"}
+            {/* --- Suggestion box for educators --- */}
+            <div>
+              <label htmlFor="suggestion_box" className="block text-sm text-blue-900 font-semibold mb-1">
+                <span role="img" aria-label="bulb">💡</span> Vous avez une suggestion pour améliorer cet outil ?<br />
+                Partagez votre idée ou retour ci-dessous. Nous écoutons ! <span role="img" aria-label="down-point">👇</span>
+              </label>
+              <textarea
+                id="suggestion_box"
+                className="w-full border border-slate-300 rounded px-3 py-2 min-h-[64px] text-sm resize-y"
+                placeholder="Expliquez votre idée, problème ou remarque pour l’équipe produit (optionnel)"
+                value={suggestion}
+                onChange={e => setSuggestion(e.target.value)}
+                disabled={submitting || feedbackSubmitting}
+                rows={3}
+              />
+            </div>
+            {/* --- End Suggestion box --- */}
+            <Button type="submit" className="w-full flex items-center justify-center gap-2"
+              disabled={submitting || feedbackSubmitting}
+            >
+              {submitting ? "Création en cours..." 
+              : feedbackSubmitting ? "Envoi du feedback..." 
+              : "Créer le devoir"}
             </Button>
           </form>
           {createdAssignment && (
