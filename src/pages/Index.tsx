@@ -1,4 +1,3 @@
-
 import React from "react";
 import PromptRenfortLogo from "@/components/PromptRenfortLogo";
 import { t } from "@/i18n/i18n";
@@ -15,8 +14,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen w-full bg-gradient-to-b from-orange-50 via-white to-blue-50 flex flex-col items-center justify-center">
-      <AppHeader />
-      <Navbar /> {/* AJOUTÉ ICI */}
+      {/* Header et Navbar déplacés à App.tsx */}
       {/* BOUTON CHOIX DU PROFIL */}
       <button
         className="mb-4 mt-2 bg-blue-700 hover:bg-blue-800 text-white rounded-xl px-6 py-3 text-lg font-semibold shadow transition"

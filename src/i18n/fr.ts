@@ -38,12 +38,12 @@ const fr = {
         "Ouvrir une évaluation équitable qui reconnaît le travail accompli, pas juste le résultat",
       ],
       button: "S’identifier",
-      alert: "L’authentification sera bientôt disponible.\nTu seras alors accompagné(e), ton parcours sera suivi et tu pourras retrouver tes progrès d’une session à l’autre.",
-      info: "<strong>Avantage :</strong> En t’identifiant, tu pourras prouver que tu as vraiment échangé, réfléchi et construit avec l’IA : ce n’est pas un simple copié-collé d’une réponse, mais un vrai cheminement personnel, traçable et valorisable.",
+      alert: "L’authentification sera bientôt disponible.\nVous serez alors accompagné, votre parcours sera suivi et vous pourrez retrouver vos progrès d’une session à l’autre.",
+      info: "<strong>Avantage :</strong> En vous identifiant, vous pourrez prouver que vous avez vraiment échangé, réfléchi et construit avec l’IA : ce n’est pas un simple copié-collé d’une réponse, mais un vrai cheminement personnel, traçable et valorisable.",
     },
     visitorBlock: {
       button: "Découvrir en visiteur libre",
-      info: `<strong>Visiteur libre :</strong> Tu accèdes à Prompt Renfort en autonomie, sans qu’aucune donnée nominative ne soit enregistrée.<br />Ton expérience sera guidée par l’IA pour encourager ta réflexion et valoriser ton effort.`
+      info: `<strong>Visiteur libre :</strong> Vous accédez à Prompt Renfort en autonomie, sans qu’aucune donnée nominative ne soit enregistrée.<br />Votre expérience sera guidée par l’IA pour encourager votre réflexion et valoriser votre effort.`
     }
   },
   chat: {
