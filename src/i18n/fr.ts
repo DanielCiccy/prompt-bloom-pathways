@@ -92,7 +92,22 @@ Il arrive au moment où la connaissance s’enracine.`,
     about: "À propos",
     login: "Se connecter",
     logout: "Déconnexion"
-  }
+  },
+  common: {
+    comingSoon: "À venir :",
+    backHome: "Retour accueil",
+  },
+  createAssignment: {
+    title: "Créer un devoir",
+    subtitle: "Cette interface permet aux enseignants et aux parents de créer rapidement un devoir collectif.\nAprès validation, un QR code, un code et un lien de partage seront générés automatiquement pour les élèves.",
+    soonBlock: "Le formulaire paramétrant le devoir s'affichera ici.",
+  },
+  joinAssignment: {
+    title: "Rejoindre un devoir",
+    instructions: "Pour démarrer, scanne le QR code donné par ton enseignant ou saisis un code ci-dessous.\n",
+    experience: "Expérience simplifiée, sans compte, pour un démarrage rapide.",
+    soonBlock: "Zone de saisie du code/scan QR et démarrage de la session individuelle.",
+  },
 };
 
 export default fr;

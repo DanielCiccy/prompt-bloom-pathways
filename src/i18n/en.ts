@@ -90,7 +90,22 @@ It arrives when knowledge seeks to take root.`,
     about: "About",
     login: "Sign In",
     logout: "Sign Out"
-  }
+  },
+  common: {
+    comingSoon: "Coming soon:",
+    backHome: "Back to home",
+  },
+  createAssignment: {
+    title: "Create assignment",
+    subtitle: "This page allows teachers and parents to quickly create a group assignment.\nOnce validated, a QR code, code, and shareable link will be automatically generated for learners.",
+    soonBlock: "The assignment settings form will appear here.",
+  },
+  joinAssignment: {
+    title: "Join assignment",
+    instructions: "To start, scan the QR code given by your teacher or enter a code below.\n",
+    experience: "Simplified experience, no account needed, for a quick start.",
+    soonBlock: "Area for entering code/scanning QR and starting the individual session.",
+  },
 };
 
 export default en;
