@@ -1,4 +1,3 @@
-
 import React, { useMemo, useState } from "react";
 import { ArrowLeft } from "lucide-react";
 import { useNavigate } from "react-router-dom";
@@ -13,6 +12,8 @@ import { t } from "@/i18n/i18n";
 import { toast } from "@/hooks/use-toast";
 import AssignmentForm from "@/components/AssignmentForm";
 import SuggestionBox from "@/components/SuggestionBox";
+import CreatedAssignmentDisplay from "@/components/CreatedAssignmentDisplay";
+import { useAssignmentFormData } from "@/hooks/useAssignmentFormData";
 
 // --- Field helpers ---
 const classLevels = [
@@ -109,6 +110,9 @@ const CreateAssignmentTeacher: React.FC = () => {
   const [createdAssignment, setCreatedAssignment] = useState<null | {code: string, qr_url: string, id?: string}>(null);
   const [suggestion, setSuggestion] = useState(""); // For suggestion box
   const [feedbackSubmitting, setFeedbackSubmitting] = useState(false);
+
+  // Utilisation du hook custom
+  const { classLevels, grades, languages, countries, ageRanges } = useAssignmentFormData();
 
   const formMethods = useForm<AssignmentForm>({
     defaultValues: {
@@ -242,11 +246,7 @@ const CreateAssignmentTeacher: React.FC = () => {
             </button>
           </FormProvider>
           {createdAssignment && (
-            <div className="mt-6 text-center w-full">
-              <div className="font-semibold text-blue-800 mb-2">{t("createAssignment.codeLabel")} <span className="bg-slate-200 rounded px-2 py-1 font-mono">{createdAssignment.code}</span></div>
-              <div className="mb-2 text-xs text-slate-500">{t("createAssignment.qrInstruction")}</div>
-              <QrCode text={createdAssignment.code} className="mx-auto" />
-            </div>
+            <CreatedAssignmentDisplay code={createdAssignment.code} qr_url={createdAssignment.qr_url} />
           )}
         </div>
       </div>
