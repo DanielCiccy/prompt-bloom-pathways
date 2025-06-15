@@ -1,3 +1,4 @@
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -7,7 +8,7 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import EleveStudents from "./pages/EleveStudents";
 import ProfileChoice from "./pages/ProfileChoice";
-import Navbar from "@/components/Navbar";
+// RETIRÉ : import Navbar from "@/components/Navbar";
 import ParentSignup from "@/pages/ParentSignup";
 import FamilyManagement from "@/pages/FamilyManagement";
 import About from "./pages/About";
@@ -21,7 +22,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <Navbar />
+        {/* SUPPRIMÉ : <Navbar /> */}
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/profil" element={<ProfileChoice />} />

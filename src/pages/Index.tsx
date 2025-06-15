@@ -1,3 +1,4 @@
+
 import React from "react";
 import PromptRenfortLogo from "@/components/PromptRenfortLogo";
 import { t } from "@/i18n/i18n";
@@ -7,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 import { User, LogIn, Clock2, Brain, ShieldCheck, Puzzle, Award } from "lucide-react";
 import AppHeader from "@/components/AppHeader";
 import { Link } from "react-router-dom";
+import Navbar from "@/components/Navbar"; // AJOUTÉ
 
 const Index = () => {
   const navigate = useNavigate();
@@ -14,6 +16,7 @@ const Index = () => {
   return (
     <div className="min-h-screen w-full bg-gradient-to-b from-orange-50 via-white to-blue-50 flex flex-col items-center justify-center">
       <AppHeader />
+      <Navbar /> {/* AJOUTÉ ICI */}
       {/* BOUTON CHOIX DU PROFIL */}
       <button
         className="mb-4 mt-2 bg-blue-700 hover:bg-blue-800 text-white rounded-xl px-6 py-3 text-lg font-semibold shadow transition"
