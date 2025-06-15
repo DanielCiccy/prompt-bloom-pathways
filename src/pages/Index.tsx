@@ -8,6 +8,7 @@ import { User, LogIn, Clock2, Brain, ShieldCheck, Puzzle, Award } from "lucide-r
 import AppHeader from "@/components/AppHeader";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar"; // AJOUTÉ
+import SessionEntry from "@/components/SessionEntry";
 
 const Index = () => {
   const navigate = useNavigate();
@@ -15,6 +16,12 @@ const Index = () => {
   return (
     <div className="min-h-screen w-full bg-gradient-to-b from-orange-50 via-white to-blue-50 flex flex-col items-center justify-center">
       {/* Header et Navbar déplacés à App.tsx */}
+
+      {/* Bloc déclencheur du workflow d’entrée session */}
+      <div className="max-w-xl w-full">
+        <SessionEntry />
+      </div>
+
       {/* BOUTON CHOIX DU PROFIL */}
       <button
         className="mb-4 mt-2 bg-blue-700 hover:bg-blue-800 text-white rounded-xl px-6 py-3 text-lg font-semibold shadow transition"
