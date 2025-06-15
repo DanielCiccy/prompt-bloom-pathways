@@ -15,6 +15,7 @@ import About from "./pages/About";
 import Auth from "@/pages/Auth";
 import CreateAssignmentTeacher from "./pages/CreateAssignmentTeacher";
 import JoinAssignment from "./pages/JoinAssignment";
+import AssignmentSession from "./pages/AssignmentSession";
 
 const queryClient = new QueryClient();
 
@@ -30,6 +31,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/create-assignment" element={<CreateAssignmentTeacher />} />
           <Route path="/join-assignment" element={<JoinAssignment />} />
+          <Route path="/assignment-session" element={<AssignmentSession />} />
           <Route path="/profile" element={<ProfileChoice />} />
           <Route path="/eleve-students" element={<EleveStudents />} />
           <Route path="/parent-signup" element={<ParentSignup />} />
