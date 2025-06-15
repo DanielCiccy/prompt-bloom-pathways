@@ -1,4 +1,3 @@
-
 const es = {
   landing: {
     title: "Prompt Renfort",
@@ -18,7 +17,17 @@ const es = {
     preceptorLead: "Prompt Renfort es tu preceptor de IA.",
     entryInstructions1: "Escanea el código QR de tu asignación o ingresa el código para comenzar una sesión guiada.",
     entryInstructions2: "Tu esfuerzo será reconocido — no solo el resultado.",
-    footer: (params?: { year: number }) => `© ${params?.year ?? new Date().getFullYear()} Prompt Renfort – Asistente cognitivo (prototipo).`
+    footer: (params?: { year: number }) => `© ${params?.year ?? new Date().getFullYear()} Prompt Renfort – Asistente cognitivo (prototipo).`,
+    immutableLearningRecord: {
+      title: "🧠 Huella de aprendizaje inmutable",
+      desc: "Prompt Renfort no solo te ayuda a aprender—recuerda tu recorrido.\nCada interacción significativa—de una tarea o iniciativa personal—se registra, se sella con hora y puede guardarse en blockchain.",
+      list: [
+        "Esta huella se convierte en tu libro cognitivo: muestra el tiempo invertido, los caminos intelectuales, los momentos clave.",
+        "Certifica tus esfuerzos, no solo los resultados.",
+        "Ofrece acceso a ventajas reales: descuentos, actividades, reconocimientos."
+      ],
+      cta: "⏳ Esta función estará pronto disponible.\nAyúdanos a construirla—tu experiencia cuenta.",
+    }
   },
   chat: {
     welcome: "Hola, soy Prompt Renfort. Comparte tu tarea o pregunta cuando estés listo.",

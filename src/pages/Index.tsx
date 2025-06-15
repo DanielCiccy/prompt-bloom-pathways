@@ -1,4 +1,3 @@
-
 import React from "react";
 import PromptRenfortLogo from "@/components/PromptRenfortLogo";
 import { t } from "@/i18n/i18n";
@@ -91,18 +90,19 @@ const Index = () => {
         <div className="rounded-xl border bg-gradient-to-r from-blue-50 via-white to-orange-50 shadow-md px-4 py-5 flex flex-col gap-2 items-start">
           <div className="flex items-center gap-2 text-lg font-bold text-blue-950 mb-1">
             <Award className="w-6 h-6 text-yellow-500" />
-            🧠 Immutable Learning Record
+            {t("landing.immutableLearningRecord.title")}
           </div>
-          <div className="text-base text-blue-900 mb-1">
-            Prompt Renfort doesn’t just help you learn — it remembers.<br />
-            Every meaningful interaction — whether from a teacher’s assignment or your own initiative — is recorded, timestamped, and prepared to be sealed on the blockchain.
+          <div className="text-base text-blue-900 mb-1 whitespace-pre-line">
+            {t("landing.immutableLearningRecord.desc")}
           </div>
           <ul className="list-disc pl-6 text-sm text-slate-800 mb-1">
-            <li>This record becomes your cognitive ledger: showing your time spent, your intellectual path, your turning points.</li>
-            <li>Certifying your efforts, not just your results.</li>
-            <li>Opening access to real-world incentives: discounts, activities, recognition.</li>
+            {(t("landing.immutableLearningRecord.list") as string[]).map((line, i) => (
+              <li key={i}>{line}</li>
+            ))}
           </ul>
-          <div className="mt-2 mb-1 text-sm text-blue-900 italic">⏳ This feature is coming soon.<br />Help us shape it — your journey matters.</div>
+          <div className="mt-2 mb-1 text-sm text-blue-900 italic whitespace-pre-line">
+            {t("landing.immutableLearningRecord.cta")}
+          </div>
         </div>
       </section>
 

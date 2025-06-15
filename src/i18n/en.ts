@@ -1,4 +1,3 @@
-
 const en = {
   landing: {
     title: "Prompt Renfort",
@@ -18,7 +17,17 @@ const en = {
     preceptorLead: "Prompt Renfort is your AI preceptor.",
     entryInstructions1: "Scan your assignment’s QR code or enter the code to begin a guided learning session.",
     entryInstructions2: "Your effort will be recognized — not just your result.",
-    footer: (params?: { year: number }) => `© ${params?.year ?? new Date().getFullYear()} Prompt Renfort – Cognitive Assistant Prototype.`
+    footer: (params?: { year: number }) => `© ${params?.year ?? new Date().getFullYear()} Prompt Renfort – Cognitive Assistant Prototype.`,
+    immutableLearningRecord: {
+      title: "🧠 Immutable Learning Record",
+      desc: "Prompt Renfort doesn't just help you learn—it remembers.\nEvery meaningful interaction—whether from a teacher’s assignment or your own initiative—is recorded, timestamped, and can be sealed on the blockchain.",
+      list: [
+        "This record becomes your cognitive ledger: showing your time spent, your intellectual path, your turning points.",
+        "Certifying your efforts, not just your results.",
+        "Opening access to real-world incentives: discounts, activities, recognition."
+      ],
+      cta: "⏳ This feature is coming soon.\nHelp us shape it—your journey matters.",
+    }
   },
   chat: {
     welcome: "Hello, I’m Prompt Renfort. Please share your assignment or question when you’re ready.",

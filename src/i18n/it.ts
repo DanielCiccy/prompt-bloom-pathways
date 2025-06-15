@@ -1,4 +1,3 @@
-
 const it = {
   landing: {
     title: "Prompt Renfort",
@@ -34,6 +33,16 @@ const it = {
     recognitions: "Riconoscimenti",
     sessionData: "Dati sessione (DevMode)",
     newSession: "Inizia nuova sessione"
+  },
+  immutableLearningRecord: {
+    title: "🧠 Registro di apprendimento immutabile",
+    desc: "Prompt Renfort non si limita ad aiutarti a imparare—ricorda il tuo percorso.\nOgni interazione significativa—da un compito o da iniziative personali—viene registrata, con data e ora, e può essere sigillata sulla blockchain.",
+    list: [
+      "Questo registro diventa il tuo libro cognitivo: mostra il tempo investito, il percorso intellettuale, i tuoi punti di svolta.",
+      "Certifica i tuoi sforzi, non solo i risultati.",
+      "Offre accesso a incentivi concreti: sconti, attività, riconoscimenti."
+    ],
+    cta: "⏳ Questa funzione sarà presto disponibile.\nAiutaci a plasmarla—il tuo percorso è importante.",
   }
 };
 export default it;

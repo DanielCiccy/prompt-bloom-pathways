@@ -1,4 +1,3 @@
-
 const de = {
   landing: {
     title: "Prompt Renfort",
@@ -18,7 +17,17 @@ const de = {
     preceptorLead: "Prompt Renfort ist Ihr KI-Präzeptor.",
     entryInstructions1: "Scannen Sie den QR-Code Ihrer Aufgabe oder geben Sie den Code ein, um eine betreute Lernsitzung zu starten.",
     entryInstructions2: "Ihr Einsatz wird anerkannt – nicht nur Ihr Ergebnis.",
-    footer: (params?: { year: number }) => `© ${params?.year ?? new Date().getFullYear()} Prompt Renfort – Kognitiver Assistent (Prototyp).`
+    footer: (params?: { year: number }) => `© ${params?.year ?? new Date().getFullYear()} Prompt Renfort – Kognitiver Assistent (Prototyp).`,
+    immutableLearningRecord: {
+      title: "🧠 Unveränderlicher Lernnachweis",
+      desc: "Prompt Renfort hilft nicht nur beim Lernen—es merkt sich deinen Weg.\nJede bedeutende Interaktion—ob von einer Aufgabe oder eigener Initiative—wird aufgezeichnet, mit Zeitstempel versehen und kann in der Blockchain gesichert werden.",
+      list: [
+        "Dieser Nachweis wird zu deinem kognitiven Register: Er zeigt deine investierte Zeit, deinen Denkweg, deine Wendepunkte.",
+        "Bestätigt deine Bemühungen, nicht nur die Ergebnisse.",
+        "Eröffnet Zugang zu echten Vorteilen: Rabatten, Aktivitäten, Anerkennung."
+      ],
+      cta: "⏳ Diese Funktion kommt bald.\nHilf uns, sie zu gestalten—dein Weg zählt.",
+    }
   },
   chat: {
     welcome: "Hallo, ich bin Prompt Renfort. Teile deine Aufgabe oder Frage, wann immer du bereit bist.",

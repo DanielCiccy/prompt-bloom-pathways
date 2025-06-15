@@ -1,4 +1,3 @@
-
 const fr = {
   landing: {
     title: "Prompt Renfort",
@@ -18,7 +17,17 @@ const fr = {
     preceptorLead: "Prompt Renfort est votre précepteur IA.",
     entryInstructions1: "Scannez le QR code de votre devoir ou entrez le code pour démarrer une session guidée.",
     entryInstructions2: "Votre effort sera valorisé — pas seulement le résultat.",
-    footer: (params?: { year: number }) => `© ${params?.year ?? new Date().getFullYear()} Prompt Renfort – Assistant cognitif (prototype).`
+    footer: (params?: { year: number }) => `© ${params?.year ?? new Date().getFullYear()} Prompt Renfort – Assistant cognitif (prototype).`,
+    immutableLearningRecord: {
+      title: "🧠 Empreinte cognitive inviolable",
+      desc: "Prompt Renfort ne se contente pas de t'aider à apprendre — il garde la mémoire de ton parcours.\nChaque interaction — d’un devoir ou d’une initiative personnelle — est tracée, horodatée et peut être scellée dans une blockchain.",
+      list: [
+        "Cette empreinte devient ton registre cognitif : elle affiche ton temps investi, tes chemins intellectuels, tes déclics.",
+        "Elle certifie tes efforts, pas seulement tes résultats.",
+        "Elle offre l’accès à des avantages concrets : réductions, activités, reconnaissance."
+      ],
+      cta: "⏳ Cette fonctionnalité arrive bientôt.\nAide-nous à la construire — ton parcours compte.",
+    }
   },
   chat: {
     welcome: "Bonjour, je suis Prompt Renfort. Partage ton devoir ou ta question quand tu veux.",
