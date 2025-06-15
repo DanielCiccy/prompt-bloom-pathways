@@ -11,7 +11,7 @@ const JoinAssignmentStudent: React.FC = () => {
   return (
     <div className="min-h-screen w-full bg-gradient-to-b from-orange-50 via-white to-blue-50 flex flex-col items-center">
       <AppHeader />
-      <div className="w-full max-w-lg mt-6">
+      <main className="w-full max-w-lg mt-6 flex flex-col items-center">
         <button
           className="flex items-center gap-2 text-blue-700 hover:underline hover:text-blue-900 text-sm mb-4"
           onClick={() => navigate("/")}
@@ -34,9 +34,10 @@ const JoinAssignmentStudent: React.FC = () => {
             {t("joinAssignment.soonBlock")}
           </div>
         </div>
-      </div>
+      </main>
     </div>
   );
 };
 
 export default JoinAssignmentStudent;
+
