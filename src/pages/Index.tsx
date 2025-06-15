@@ -1,7 +1,7 @@
 
+
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import AppHeader from "@/components/AppHeader";
 import { UserPlus, QrCode, ArrowRight } from "lucide-react";
 
 const Index: React.FC = () => {
@@ -9,7 +9,7 @@ const Index: React.FC = () => {
 
   return (
     <div className="min-h-screen w-full bg-gradient-to-b from-orange-50 via-white to-blue-50 flex flex-col items-center">
-      <AppHeader />
+      {/* En-tête déjà géré dans AppHeader global */}
       <main className="flex-1 flex flex-col items-center justify-center w-full max-w-lg mx-auto gap-8 mt-10">
         {/* Bouton Créer un devoir */}
         <button
