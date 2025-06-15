@@ -1,4 +1,3 @@
-
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { UserPlus, QrCode, ArrowRight } from "lucide-react";
@@ -40,7 +39,7 @@ const Index: React.FC = () => {
 
         {/* Bouton Créer un devoir */}
         <button
-          onClick={() => navigate("/creer-devoir")}
+          onClick={() => navigate("/create-assignment")}
           className="flex flex-col items-center justify-center bg-blue-700 hover:bg-blue-800 text-white rounded-2xl px-8 py-8 font-bold text-2xl shadow-lg transition gap-3 w-full"
         >
           <UserPlus className="w-12 h-12 mb-2" />

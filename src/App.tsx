@@ -27,7 +27,7 @@ const App = () => (
         <AppHeader />
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/creer-devoir" element={<CreateAssignmentTeacher />} />
+          <Route path="/create-assignment" element={<CreateAssignmentTeacher />} />
           <Route path="/rejoindre" element={<JoinAssignmentStudent />} />
           <Route path="/profile" element={<ProfileChoice />} />
           <Route path="/eleve-students" element={<EleveStudents />} />
