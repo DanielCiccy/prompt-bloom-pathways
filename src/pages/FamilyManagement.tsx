@@ -1,7 +1,7 @@
-
 import React, { useState } from "react";
 import AppHeader from "@/components/AppHeader";
 import Navbar from "@/components/Navbar";
+import { useNavigate } from "react-router-dom";
 
 // Définition du type d'enfant
 type Child = {
@@ -47,6 +47,8 @@ const FamilyManagement: React.FC = () => {
     school: "",
     ageRange: "",
   });
+
+  const navigate = useNavigate();
 
   const handleAddChild = (e: React.FormEvent) => {
     e.preventDefault();
@@ -194,7 +196,7 @@ const FamilyManagement: React.FC = () => {
               {children.map((enf, idx) => (
                 <li key={idx} className="border rounded p-2 flex items-center gap-4">
                   <img
-                    src={enf.avatarUrl || defaultAvatar}
+                    src={enf.avatarUrl || "/placeholder.svg"}
                     alt="avatar"
                     className="w-10 h-10 rounded-full object-cover border"
                   />
@@ -204,9 +206,23 @@ const FamilyManagement: React.FC = () => {
                       {ageRanges.find(a => a.id === enf.ageRange)?.label} • {enf.school}
                     </div>
                   </div>
-                  <span className="ml-auto text-xs text-slate-500">
+                  <span className="ml-auto text-xs text-slate-500 mr-2">
                     Profil enfant prêt
                   </span>
+                  <button
+                    className="bg-blue-600 hover:bg-blue-700 text-white rounded px-3 py-1 text-xs font-semibold transition"
+                    onClick={() =>
+                      navigate("/élève-students", {
+                        state: {
+                          pseudo: enf.pseudo,
+                          ageRange: enf.ageRange,
+                          school: enf.school,
+                        },
+                      })
+                    }
+                  >
+                    Démarrer la session IA
+                  </button>
                 </li>
               ))}
             </ul>
