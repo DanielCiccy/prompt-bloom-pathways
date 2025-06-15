@@ -1,12 +1,59 @@
+
 import React from "react";
 import { toast } from "@/hooks/use-toast";
-import { Camera } from "lucide-react";
 import { t } from "@/i18n/i18n";
 
 export interface Message {
   role: "user" | "ai";
   content: string;
   time: number;
+}
+
+// Move AI openers and prompts to i18n
+const AI_OPENERS_KEYS = [
+  "chat.ai_opener_1",
+  "chat.ai_opener_2",
+  "chat.ai_opener_3",
+  "chat.ai_opener_4",
+  "chat.ai_opener_5",
+  "chat.ai_opener_6",
+];
+const AI_GUIDANCE_KEYS = [
+  "chat.ai_guidance_1",
+  "chat.ai_guidance_2",
+  "chat.ai_guidance_3",
+  "chat.ai_guidance_4",
+  "chat.ai_guidance_5",
+  "chat.ai_guidance_6",
+  "chat.ai_guidance_7",
+  "chat.ai_guidance_8",
+];
+const RECOGNITION_LABEL_KEYS = [
+  "chat.recognition_curiosity",
+  "chat.recognition_persistence",
+  "chat.recognition_growth_streak",
+];
+
+// Recognition colors should remain hardcoded
+const RECOGNITION_COLORS = [
+  "#21a179",
+  "#ff9911",
+  "#297373",
+];
+
+// Returns the internationalized welcoming message
+function getWelcomeMessage() {
+  return t("chat.invite_basic");
+}
+
+// Compose AI gentle reply with all pieces internationalized
+function gentleAIReply(question: string, progressCount: number): string {
+  let recog = "";
+  if (progressCount % 4 === 1) recog = t("chat.recognition_grow");
+  if (progressCount % 4 === 3) recog = t("chat.recognition_effort");
+  const opener = t(AI_OPENERS_KEYS[progressCount % AI_OPENERS_KEYS.length]);
+  const inspire = t(AI_GUIDANCE_KEYS[progressCount % AI_GUIDANCE_KEYS.length]);
+  return `${opener} ${inspire}${recog ? "\n\n" + recog : ""}`;
 }
 
 export function useChatSessionLogic({
@@ -19,11 +66,6 @@ export function useChatSessionLogic({
   onSessionEnd: () => void;
 }) {
   const DEFAULT_EXAM_TIME_MINUTES = 30;
-
-  // Génère le message de bienvenue spécialisé selon l'existence du devoir
-  function getWelcomeMessage(): string {
-    return t("chat.invite_basic");
-  }
 
   const [messages, setMessages] = React.useState<Message[]>([
     {
@@ -85,10 +127,8 @@ export function useChatSessionLogic({
   function triggerPhotoCheck() {
     setPhotoRequested(true);
     toast({
-      title: "Vérification de présence",
-      description: "Merci de montrer votre visage devant la caméra. (Aucune donnée n'est enregistrée, uniquement contrôle visuel)",
-      // Retrait de l'option "icon" qui n'est pas supportée
-      // Ajout possible : le composant Toast accepte des composants React dans le title/description
+      title: t("chat.photo_check_title"),
+      description: t("chat.photo_check_desc"),
     });
     setTimeout(() => {
       setPhotoRequested(false);
@@ -138,38 +178,13 @@ export function useChatSessionLogic({
   // Recognitions calcul
   function getRecognitions(session: Message[]): { label: string; color: string }[] {
     const recognitions: { label: string; color: string }[] = [];
-    if (session.length > 2) recognitions.push({ label: "Curiosity", color: "#21a179" });
-    if (session.length > 5) recognitions.push({ label: "Persistence", color: "#ff9911" });
-    if (session.length > 8) recognitions.push({ label: "Growth Streak", color: "#297373" });
+    if (session.length > 2)
+      recognitions.push({ label: t(RECOGNITION_LABEL_KEYS[0]), color: RECOGNITION_COLORS[0] });
+    if (session.length > 5)
+      recognitions.push({ label: t(RECOGNITION_LABEL_KEYS[1]), color: RECOGNITION_COLORS[1] });
+    if (session.length > 8)
+      recognitions.push({ label: t(RECOGNITION_LABEL_KEYS[2]), color: RECOGNITION_COLORS[2] });
     return recognitions;
-  }
-
-  // Génération réponse AI pédagogue :
-  function gentleAIReply(question: string, progressCount: number): string {
-    const openers = [
-      "Let's reflect on your approach.",
-      "That's a thoughtful question!",
-      "Progress!",
-      "You’re on the right track.",
-      "Interesting, let’s explore this together.",
-      "Great, let’s break it down step by step.",
-    ];
-    const guidance = [
-      "How would you begin to tackle this problem?",
-      "Can you explain your thinking so far?",
-      "What do you notice about the information provided?",
-      "What’s a first step you might try?",
-      "If you get stuck, what could you ask?",
-      "What connections can you make to things you already know?",
-      "What’s your confidence level on your current approach?",
-      "Let’s rephrase the problem together—how would you put it in your own words?",
-    ];
-    let recog = "";
-    if (progressCount % 4 === 1) recog = "🌱 Keep going, every question grows your understanding.";
-    if (progressCount % 4 === 3) recog = "🍃 I can see your effort building.";
-    const opener = openers[progressCount % openers.length];
-    const inspire = guidance[progressCount % guidance.length];
-    return `${opener} ${inspire}${recog ? "\n\n" + recog : ""}`;
   }
 
   return {
@@ -190,3 +205,4 @@ export function useChatSessionLogic({
     startTime,
   };
 }
+
