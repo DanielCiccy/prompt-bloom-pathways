@@ -1,3 +1,4 @@
+
 import React from "react";
 import PromptRenfortLogo from "@/components/PromptRenfortLogo";
 import { t } from "@/i18n/i18n";
@@ -36,6 +37,26 @@ const Index = () => {
             {t("landing.privacyBlock")}
           </div>
         </div>
+        {/* Bloc Future Feature : Cognitive Trace & Value Ledger */}
+        <section className="w-full max-w-lg mx-auto mt-4 mb-0">
+          <div className="rounded-xl border bg-gradient-to-r from-blue-50 via-white to-orange-50 shadow-md px-4 py-5 flex flex-col gap-2 items-start">
+            <div className="flex items-center gap-2 text-lg font-bold text-blue-950 mb-1">
+              <Award className="w-6 h-6 text-yellow-500" />
+              {t("landing.immutableLearningRecord.title")}
+            </div>
+            <div className="text-base text-blue-900 mb-1 whitespace-pre-line">
+              {t("landing.immutableLearningRecord.desc")}
+            </div>
+            <ul className="list-disc pl-6 text-sm text-slate-800 mb-1">
+              {(t("landing.immutableLearningRecord.list") as string[]).map((line, i) => (
+                <li key={i}>{line}</li>
+              ))}
+            </ul>
+            <div className="mt-2 mb-1 text-sm text-blue-900 italic whitespace-pre-line">
+              {t("landing.immutableLearningRecord.cta")}
+            </div>
+          </div>
+        </section>
         {/* Choix utilisateur */}
         <div className="mt-2 w-full max-w-lg flex flex-col gap-6">
           {/* Bloc connexion avec avantages */}
@@ -89,27 +110,7 @@ const Index = () => {
         </div>
       </header>
 
-      {/* Bloc Future Feature : Cognitive Trace & Value Ledger */}
-      <section className="w-full max-w-lg mx-auto mt-4 mb-0">
-        <div className="rounded-xl border bg-gradient-to-r from-blue-50 via-white to-orange-50 shadow-md px-4 py-5 flex flex-col gap-2 items-start">
-          <div className="flex items-center gap-2 text-lg font-bold text-blue-950 mb-1">
-            <Award className="w-6 h-6 text-yellow-500" />
-            {t("landing.immutableLearningRecord.title")}
-          </div>
-          <div className="text-base text-blue-900 mb-1 whitespace-pre-line">
-            {t("landing.immutableLearningRecord.desc")}
-          </div>
-          <ul className="list-disc pl-6 text-sm text-slate-800 mb-1">
-            {(t("landing.immutableLearningRecord.list") as string[]).map((line, i) => (
-              <li key={i}>{line}</li>
-            ))}
-          </ul>
-          <div className="mt-2 mb-1 text-sm text-blue-900 italic whitespace-pre-line">
-            {t("landing.immutableLearningRecord.cta")}
-          </div>
-        </div>
-      </section>
-
+      {/* Le bloc a été déplacé ci-dessus */}
       <footer className="text-xs text-slate-500 mt-8 mb-2 select-none">
         {typeof t("landing.footer") === "function"
           ? t("landing.footer")({ year: new Date().getFullYear() })
