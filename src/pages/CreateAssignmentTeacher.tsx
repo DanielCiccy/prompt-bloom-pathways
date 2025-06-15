@@ -1,7 +1,7 @@
 import React, { useMemo, useState } from "react";
 import { ArrowLeft } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import { useForm, Controller } from "react-hook-form";
+import { useForm, Controller, FormProvider } from "react-hook-form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
@@ -12,7 +12,6 @@ import { t } from "@/i18n/i18n";
 import { toast } from "@/hooks/use-toast";
 import AssignmentForm from "@/components/AssignmentForm";
 import SuggestionBox from "@/components/SuggestionBox";
-import { FormProvider, useForm } from "react-hook-form";
 
 // --- Field helpers ---
 const classLevels = [
