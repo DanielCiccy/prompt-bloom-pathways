@@ -1,88 +1,101 @@
-# Welcome to your Lovable project
 
-## Project info
+# Prompt Renfort
 
-**URL**: https://lovable.dev/projects/33547a50-a196-4510-a5e2-a3e537d1cde7
+Bienvenue sur Prompt Renfort : un précepteur numérique bienveillant pour accompagner chaque apprenant, parent ou éducateur.
 
-## How can I edit this code?
+---
 
-There are several ways of editing your application.
+## ✨ Vision
 
-**Use Lovable**
+Prompt Renfort vise à offrir un accompagnement IA personnalisé, traçable et éthique dans une interface qui valorise la croissance, l’autonomie et la pédagogie active.  
+L’utilisateur bénéficie d’un assistant numérique et d’une progression visuelle inspirée de l’arbre ou des graines, dans le respect de la confidentialité (privacy/RGPD).
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/33547a50-a196-4510-a5e2-a3e537d1cde7) and start prompting.
+---
 
-Changes made via Lovable will be committed automatically to this repo.
+## 🚀 Démarrer le projet
 
-**Use your preferred IDE**
+### Avec Lovable
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- Rendez-vous sur [Lovable Project](https://lovable.dev/projects/33547a50-a196-4510-a5e2-a3e537d1cde7) et éditez le projet par chat ou en mode Dev.
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+### En local
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
 git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
 cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+npm install
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+---
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## 🌱 Fonctionnalités clés
 
-**Use GitHub Codespaces**
+- **Précepteur numérique** : Chat IA contextuel centré sur le devoir, stimule la réflexion et l’autonomie.
+- **Saisie et impression de devoirs** : Création, accès rapide par code/QR, impression stylée.
+- **Progression visuelle** : Arbre de progression pour rendre visible l’apprentissage.
+- **Consentement et privacy** : RGPD dès l’accueil, respect de l’anonymat possible.
+- **Traçabilité** : Sessions loguées et logiques de badges ou blockchain à terme.
+- **Accompagnement « Socratique »** : Encouragement à la réflexion, réponses pédagogiques bienveillantes.
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+---
 
-## Project Ambition
+## 🏗️ Stack technique
 
-Prompt Renfort vise à offrir un accompagnement IA bienveillant, personnalisé, et traçable pour chaque apprenant, parent ou éducateur—en respectant la confidentialité, l’éthique, et la pédagogie active.
+- **React** + **Vite**
+- **TypeScript**  
+- **shadcn/ui** (composants UI ergonomiques)
+- **Tailwind CSS** (design responsive)
+- **Radix-UI**  
+- **Supabase** (Auth + DB, si besoin)
+- **Lucide Icons**  
+- **Tanstack React Query** (état distant)
 
-**Points clés :**
-- L’utilisateur bénéficie d’un “précepteur” numérique (Prompt Renfort) et non d’une simple interface de chat.
-- Les sessions sont lancées par QR code, code d’activation, ou mode exploration, selon la progression de l’apprenant.
-- L’IA repose sur OpenAI mais valorise la privacy, la RGPD et permet, à termes, la traçabilité décentralisée (blockchain/badge).
-- L’interface renforce la métaphore de la croissance (arbre, graines, progression visuelle).
-- Toute la logique métier est pensée pour être modulaire et documentée, et chaque contribution est encouragée à suivre la philosophie du projet (aide “socratique”, autonomie de l’utilisateur).
+---
 
-## Documentation technique
+## ✍️ Documentation & Architecture
 
-Voir le fichier [NOTES.md](./NOTES.md) pour les diagrammes techniques, l’architecture des flux, et les discussions sur les choix techniques.
+- Notes techniques, schémas d’architecture et réflexions dans [NOTES.md](./NOTES.md).
+- Chaque contribution doit privilégier la modularité, l’éthique et la clarté.
+- Pour toute question : ouvrez une [Issue](https://github.com).
 
-## What technologies are used for this project?
+---
 
-This project is built with:
+## 🖨️ Impression & Session
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+- Les élèves peuvent imprimer le sujet d’un devoir depuis l’en-tête (« Imprimer »).
+- Les sessions s’ouvrent par code rapide (prof, élève, parent) ou QR.
+- RGPD/consentement à l’entrée.
 
-## How can I deploy this project?
+---
 
-Simply open [Lovable](https://lovable.dev/projects/33547a50-a196-4510-a5e2-a3e537d1cde7) and click on Share -> Publish.
+## 🌍 Déploiement
 
-## Can I connect a custom domain to my Lovable project?
+- Déployer facilement via l’interface Lovable : bouton « Publish ».
+- Pour connecter un domaine personnalisé :  
+  Project &gt; Settings &gt; Domains &gt; Connect Domain  
+  [Guide custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
 
-Yes, you can!
+---
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## 🔒 Ethique / Sécurité
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+- Jamais de donnée nominative transmise à OpenAI.
+- Auth/Stockage local autorisé.
+- Possibilité de logs anonymisés et badges/brevets blockchain (option).
+
+---
+
+## 🤝 Contributions
+
+- Favorisez la documentation et le clean code.
+- Respectez la philosophie : bienveillance, autonomie, traçabilité, pédagogie.
+
+---
+
+## 📝 Licence
+
+Ce projet est publié sous licence MIT.
+
+---
+
