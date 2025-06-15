@@ -1,9 +1,9 @@
-
 import React from "react";
 import AppHeader from "@/components/AppHeader";
 import ChatSession from "@/components/ChatSession";
 import { useNavigate, useLocation } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
+import { t } from "@/i18n/i18n";
 
 function useQueryParam(param: string) {
   const { search } = useLocation();
