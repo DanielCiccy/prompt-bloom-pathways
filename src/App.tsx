@@ -13,6 +13,8 @@ import ParentSignup from "@/pages/ParentSignup";
 import FamilyManagement from "@/pages/FamilyManagement";
 import About from "./pages/About";
 import Auth from "@/pages/Auth";
+import CreateAssignmentTeacher from "./pages/CreateAssignmentTeacher";
+import JoinAssignmentStudent from "./pages/JoinAssignmentStudent";
 
 const queryClient = new QueryClient();
 
@@ -26,6 +28,8 @@ const App = () => (
         <Navbar />
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/creer-devoir" element={<CreateAssignmentTeacher />} />
+          <Route path="/rejoindre" element={<JoinAssignmentStudent />} />
           <Route path="/profile" element={<ProfileChoice />} />
           <Route path="/eleve-students" element={<EleveStudents />} />
           <Route path="/parent-signup" element={<ParentSignup />} />
