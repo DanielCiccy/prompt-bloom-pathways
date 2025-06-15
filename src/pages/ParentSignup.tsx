@@ -13,7 +13,6 @@ const ParentSignup: React.FC = () => {
       <Navbar />
       <div className="bg-white/90 p-6 rounded-xl shadow-xl mt-8 w-full max-w-md">
         <h2 className="text-xl font-bold mb-4 text-blue-900">Inscription Parent</h2>
-        {/* Formulaire d'inscription parent placeholder */}
         <form
           className="flex flex-col gap-4"
           onSubmit={e => {
@@ -21,20 +20,36 @@ const ParentSignup: React.FC = () => {
             navigate("/famille");
           }}
         >
-          <label className="flex flex-col gap-1">
-            Nom et prénom
-            <input
-              type="text"
-              className="border rounded px-2 py-1"
-              required
-            />
-          </label>
+          <div className="flex gap-4">
+            <label className="flex flex-col gap-1 w-1/2">
+              Nom
+              <input
+                type="text"
+                className="border rounded px-2 py-1"
+                required
+                name="nom"
+                autoComplete="family-name"
+              />
+            </label>
+            <label className="flex flex-col gap-1 w-1/2">
+              Prénom
+              <input
+                type="text"
+                className="border rounded px-2 py-1"
+                required
+                name="prenom"
+                autoComplete="given-name"
+              />
+            </label>
+          </div>
           <label className="flex flex-col gap-1">
             Email
             <input
               type="email"
               className="border rounded px-2 py-1"
               required
+              name="email"
+              autoComplete="email"
             />
           </label>
           <button
@@ -50,3 +65,4 @@ const ParentSignup: React.FC = () => {
 };
 
 export default ParentSignup;
+
