@@ -27,7 +27,20 @@ const fr = {
         "Elle offre l’accès à des avantages concrets : réductions, activités, reconnaissance."
       ],
       cta: "⏳ Cette fonctionnalité arrive bientôt.\nAide-nous à la construire — ton parcours compte.",
-    }
+    },
+    // Ajout bloc connexion
+    loginBlock: {
+      title: "Pourquoi se connecter ?",
+      advantages: [
+        "Tracer le temps passé sur chaque devoir (toutes origines)",
+        "Stocker et analyser les échanges avec l’IA pour valoriser progrès, effort, créativité",
+        "Sécuriser et valider le processus (base cryptée, blockchain à venir, partage fiable)",
+        "Ouvrir une évaluation équitable qui reconnaît le travail accompli, pas juste le résultat",
+      ],
+      button: "S’identifier",
+      alert: "L’authentification sera bientôt disponible.\nTu seras alors accompagné(e), ton parcours sera suivi et tu pourras retrouver tes progrès d’une session à l’autre.",
+      info: "<strong>Avantage :</strong> En t’identifiant, tu pourras prouver que tu as vraiment échangé, réfléchi et construit avec l’IA : ce n’est pas un simple copié-collé d’une réponse, mais un vrai cheminement personnel, traçable et valorisable.",
+    },
   },
   chat: {
     welcome: "Bonjour, je suis Prompt Renfort. Partage ton devoir ou ta question quand tu veux.",

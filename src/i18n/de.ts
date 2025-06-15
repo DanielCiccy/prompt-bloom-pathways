@@ -27,7 +27,19 @@ const de = {
         "Eröffnet Zugang zu echten Vorteilen: Rabatten, Aktivitäten, Anerkennung."
       ],
       cta: "⏳ Diese Funktion kommt bald.\nHilf uns, sie zu gestalten—dein Weg zählt.",
-    }
+    },
+    loginBlock: {
+      title: "Warum anmelden?",
+      advantages: [
+        "Erfasse die Zeit für jede Aufgabe (egal woher)",
+        "Speichere und analysiere deine Unterhaltungen mit der KI für Fortschritt, Einsatz und Kreativität",
+        "Sichere und verifiziere den Prozess (verschlüsselte Datenbank, Blockchain folgt, verlässliches Teilen)",
+        "Ermögliche eine faire Bewertung, die die geleistete Arbeit anerkennt, nicht nur das Ergebnis",
+      ],
+      button: "Anmelden",
+      alert: "Authentifizierung ist bald verfügbar.\nDu wirst begleitet, dein Weg wird nachverfolgt und du findest deine Fortschritte in allen Sitzungen.",
+      info: "<strong>Vorteil:</strong> Mit Anmeldung kannst du beweisen, dass du wirklich mit der KI gearbeitet, reflektiert und aufgebaut hast: Das ist nicht einfach nur eine kopierte Antwort, sondern ein persönlicher, nachvollziehbarer Weg.",
+    },
   },
   chat: {
     welcome: "Hallo, ich bin Prompt Renfort. Teile deine Aufgabe oder Frage, wann immer du bereit bist.",

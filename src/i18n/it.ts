@@ -17,7 +17,29 @@ const it = {
     preceptorLead: "Prompt Renfort è il tuo precettore IA.",
     entryInstructions1: "Scansiona il codice QR dell’assegnazione o inserisci il codice per iniziare una sessione guidata.",
     entryInstructions2: "Il tuo impegno sarà riconosciuto — non solo il risultato.",
-    footer: (params?: { year: number }) => `© ${params?.year ?? new Date().getFullYear()} Prompt Renfort – Assistente cognitivo (prototipo).`
+    footer: (params?: { year: number }) => `© ${params?.year ?? new Date().getFullYear()} Prompt Renfort – Assistente cognitivo (prototipo).`,
+    immutableLearningRecord: {
+      title: "🧠 Registro di apprendimento immutabile",
+      desc: "Prompt Renfort non si limita ad aiutarti a imparare—ricorda il tuo percorso.\nOgni interazione significativa—da un compito o da iniziative personali—viene registrata, con data e ora, e può essere sigillata sulla blockchain.",
+      list: [
+        "Questo registro diventa il tuo libro cognitivo: mostra il tempo investito, il percorso intellettuale, i tuoi punti di svolta.",
+        "Certifica i tuoi sforzi, non solo i risultati.",
+        "Offre accesso a incentivi concreti: sconti, attività, riconoscimenti."
+      ],
+      cta: "⏳ Questa funzione sarà presto disponibile.\nAiutaci a plasmarla—il tuo percorso è importante.",
+    },
+    loginBlock: {
+      title: "Perché accedere?",
+      advantages: [
+        "Traccia il tempo impiegato su ogni compito (di qualsiasi origine)",
+        "Salva e analizza le interazioni con l’IA per valorizzare i progressi, l’impegno e la creatività",
+        "Metti in sicurezza e valida il processo (database criptato, blockchain in arrivo, condivisione affidabile)",
+        "Apri a una valutazione equa che riconosce il lavoro svolto, non solo il risultato",
+      ],
+      button: "Accedi",
+      alert: "L’autenticazione sarà presto disponibile.\nSarai accompagnato, il tuo percorso sarà seguito e potrai ritrovare i tuoi progressi tra una sessione e l’altra.",
+      info: "<strong>Vantaggio:</strong> Accedendo potrai dimostrare di aver veramente dialogato, riflettuto e costruito con l’IA: non si tratta di una semplice risposta incollata, ma di un vero percorso personale, tracciabile e valorizzabile.",
+    },
   },
   chat: {
     welcome: "Ciao, sono Prompt Renfort. Condividi la tua assegnazione o domanda appena sei pronto.",
@@ -34,15 +56,5 @@ const it = {
     sessionData: "Dati sessione (DevMode)",
     newSession: "Inizia nuova sessione"
   },
-  immutableLearningRecord: {
-    title: "🧠 Registro di apprendimento immutabile",
-    desc: "Prompt Renfort non si limita ad aiutarti a imparare—ricorda il tuo percorso.\nOgni interazione significativa—da un compito o da iniziative personali—viene registrata, con data e ora, e può essere sigillata sulla blockchain.",
-    list: [
-      "Questo registro diventa il tuo libro cognitivo: mostra il tempo investito, il percorso intellettuale, i tuoi punti di svolta.",
-      "Certifica i tuoi sforzi, non solo i risultati.",
-      "Offre accesso a incentivi concreti: sconti, attività, riconoscimenti."
-    ],
-    cta: "⏳ Questa funzione sarà presto disponibile.\nAiutaci a plasmarla—il tuo percorso è importante.",
-  }
 };
 export default it;

@@ -27,7 +27,19 @@ const es = {
         "Ofrece acceso a ventajas reales: descuentos, actividades, reconocimientos."
       ],
       cta: "⏳ Esta función estará pronto disponible.\nAyúdanos a construirla—tu experiencia cuenta.",
-    }
+    },
+    loginBlock: {
+      title: "¿Por qué iniciar sesión?",
+      advantages: [
+        "Registrar el tiempo dedicado a cada tarea (de cualquier origen)",
+        "Almacenar y analizar tus intercambios con la IA para poner en valor progreso, esfuerzo y creatividad",
+        "Asegurar y validar el proceso (base de datos cifrada, blockchain próximamente, compartición fiable)",
+        "Abrir una evaluación justa que reconozca el trabajo realizado, no solo el resultado",
+      ],
+      button: "Iniciar sesión",
+      alert: "La autenticación estará disponible pronto.\nEstarás acompañado, tu recorrido será seguido y podrás consultar tus progresos entre sesiones.",
+      info: "<strong>Ventaja:</strong> Al iniciar sesión, podrás demostrar que realmente has interactuado, reflexionado y construido con la IA: no es un simple copia-pega de una respuesta, sino un verdadero recorrido personal, trazable y revalorizable.",
+    },
   },
   chat: {
     welcome: "Hola, soy Prompt Renfort. Comparte tu tarea o pregunta cuando estés listo.",

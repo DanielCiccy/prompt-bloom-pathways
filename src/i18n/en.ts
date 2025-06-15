@@ -27,7 +27,19 @@ const en = {
         "Opening access to real-world incentives: discounts, activities, recognition."
       ],
       cta: "⏳ This feature is coming soon.\nHelp us shape it—your journey matters.",
-    }
+    },
+    loginBlock: {
+      title: "Why sign in?",
+      advantages: [
+        "Track the time spent on each assignment (from any source)",
+        "Store and analyze your exchanges with AI to value progress, effort, creativity",
+        "Secure and validate the process (encrypted database, blockchain coming soon, reliable sharing)",
+        "Open up fair assessment that recognizes work accomplished, not just the result",
+      ],
+      button: "Sign In",
+      alert: "Authentication will be available soon.\nYou will be accompanied; your journey will be tracked, and you’ll be able to find your progress across sessions.",
+      info: "<strong>Advantage:</strong> By signing in, you can prove you truly interacted, thought, and built with AI: this is not just a copy-paste answer, but a real personal journey that is traceable and rewarding.",
+    },
   },
   chat: {
     welcome: "Hello, I’m Prompt Renfort. Please share your assignment or question when you’re ready.",

@@ -43,30 +43,34 @@ const Index = () => {
             {/* Objectif de la connexion */}
             <div className="w-full text-left space-y-2">
               <div className="text-blue-900 font-semibold mb-1 flex items-center gap-2 text-base">
-                <User className="inline mr-1 w-5 h-5" /> 
-                Pourquoi se connecter ?
+                <User className="inline mr-1 w-5 h-5" />
+                {t("landing.loginBlock.title")}
               </div>
               <ul className="text-sm text-blue-900 font-normal pl-0 space-y-1">
-                <li className="flex items-start gap-2"><Clock2 className="w-4 h-4 mt-[2px] text-blue-500" /> Tracer le temps passé sur chaque devoir (toutes origines)</li>
-                <li className="flex items-start gap-2"><Brain className="w-4 h-4 mt-[2px] text-orange-500" /> Stocker et analyser les échanges avec l’IA pour valoriser progrès, effort, créativité</li>
-                <li className="flex items-start gap-2"><ShieldCheck className="w-4 h-4 mt-[2px] text-green-600" /> Sécuriser et valider le processus (base cryptée, blockchain à venir, partage fiable)</li>
-                <li className="flex items-start gap-2"><Puzzle className="w-4 h-4 mt-[2px] text-indigo-500" /> Ouvrir une évaluation équitable qui reconnaît le travail accompli, pas juste le résultat</li>
+                {(t("landing.loginBlock.advantages") as string[]).map((adv, i) => (
+                  <li key={i} className="flex items-start gap-2">
+                    {i === 0 && <Clock2 className="w-4 h-4 mt-[2px] text-blue-500" />}
+                    {i === 1 && <Brain className="w-4 h-4 mt-[2px] text-orange-500" />}
+                    {i === 2 && <ShieldCheck className="w-4 h-4 mt-[2px] text-green-600" />}
+                    {i === 3 && <Puzzle className="w-4 h-4 mt-[2px] text-indigo-500" />}
+                    <span dangerouslySetInnerHTML={{ __html: adv }} />
+                  </li>
+                ))}
               </ul>
             </div>
             <button
               className="w-full flex items-center justify-center gap-2 bg-blue-700 hover:bg-blue-800 text-white rounded px-6 py-3 text-lg font-semibold transition"
               onClick={() => {
-                alert(
-                  "L’authentification sera bientôt disponible.\nTu seras alors accompagné(e), ton parcours sera suivi et tu pourras retrouver tes progrès d’une session à l’autre."
-                );
+                alert(t("landing.loginBlock.alert"));
               }}
             >
               <User className="w-6 h-6" />
-              S’identifier
+              {t("landing.loginBlock.button")}
             </button>
-            <div className="text-sm text-blue-900 font-normal text-center">
-              <strong>Avantage :</strong> En t’identifiant, tu pourras prouver que tu as vraiment échangé, réfléchi et construit avec l’IA : ce n’est pas un simple copié-collé d’une réponse, mais un vrai cheminement personnel, traçable et valorisable.
-            </div>
+            <div
+              className="text-sm text-blue-900 font-normal text-center"
+              dangerouslySetInnerHTML={{ __html: t("landing.loginBlock.info") as string }}
+            ></div>
           </div>
           {/* Bloc visiteur libre */}
           <div className="bg-white/90 border rounded-xl shadow p-5 flex flex-col gap-4 items-center">
