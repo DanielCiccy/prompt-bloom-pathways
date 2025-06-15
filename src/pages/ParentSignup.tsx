@@ -57,6 +57,10 @@ const ParentSignup: React.FC = () => {
             <strong>Conformément au RGPD</strong>, votre consentement est requis et vos informations ne seront jamais partagées sans votre accord.<br />
             Vous pouvez demander l’accès, la modification ou la suppression de vos données à tout moment. 
           </div>
+          <div className="text-xs text-blue-900 bg-blue-50 rounded p-2 border border-blue-200 mb-4">
+            <strong>Prochaine étape :</strong> Après la création de votre compte parent, vous pourrez créer votre espace famille, ajouter les membres de votre foyer (enfants, co-parents…) et leur attribuer des accès personnalisés.<br />
+            <span className="font-semibold">Pas d’inquiétude</span> : tout est fait pour vous guider pas à pas dans la prise en main de votre espace sécurisé.
+          </div>
           <button
             type="submit"
             className="bg-blue-700 hover:bg-blue-800 text-white font-semibold rounded px-4 py-2"
