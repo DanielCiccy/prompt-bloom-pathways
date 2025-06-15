@@ -96,6 +96,19 @@ const AssignmentSession: React.FC = () => {
     <div className="min-h-screen w-full bg-gradient-to-b from-orange-50 via-white to-blue-50">
       <AppHeader />
       <main className="w-full flex flex-col items-center px-2 mb-8">
+        {/* Encadré roadmap double-zone */}
+        <div className="max-w-2xl mx-auto bg-yellow-50 border-l-4 border-yellow-400 text-yellow-900 px-5 py-4 mb-4 rounded-lg shadow-sm flex items-center gap-4">
+          <span className="text-2xl font-bold">🎓</span>
+          <div>
+            <div className="font-semibold">
+              {t("assignmentSession.dualZoneTitle") || "Bientôt : Espace pédagogique double-zone"}
+            </div>
+            <p className="text-sm mt-1 whitespace-pre-line">
+              {t("assignmentSession.dualZoneDesc") || 
+                "Une zone de rédaction libre et une fenêtre assistant IA distincte vont permettre de distinguer réflexion autonome et aide de l’IA, pour une pédagogie plus transparente. Cette fonctionnalité est prioritaire et arrive très bientôt !"}
+            </p>
+          </div>
+        </div>
         <ChatSession 
           assignmentCode={assignmentCode}
           assignment={assignment}

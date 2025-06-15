@@ -125,6 +125,10 @@ It arrives when knowledge seeks to take root.`,
     experience: "Simplified experience, no account needed, for a quick start.",
     soonBlock: "Area for entering code/scanning QR and starting the individual session.",
   },
+  assignmentSession: {
+    dualZoneTitle: "Coming soon: Dual-Zone Pedagogical Workspace",
+    dualZoneDesc: "A free writing area and a distinct AI assistant window will allow students and educators to distinguish between autonomous thinking and AI assistance. This feature is a priority and will be released soon!",
+  },
 };
 
 export default en;

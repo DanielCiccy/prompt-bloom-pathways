@@ -1,89 +1,88 @@
 const fr = {
   landing: {
     title: "Prompt Renfort",
-    subtitle: "Votre compagnon cognitif IA. Commencez un parcours d’auto-découverte et de croissance.",
-    intro: "Prompt Renfort est un précepteur IA bienveillant pour guider votre apprentissage. Scannez le QR code ou entrez le code de votre devoir pour démarrer.",
+    subtitle: "Votre copilote cognitif IA. Démarrez un parcours de découverte et d’épanouissement.",
+    intro: "Prompt Renfort est un précepteur IA pour vous guider dans votre apprentissage. Scannez le QR de votre devoir ou entrez le code pour démarrer.",
     enterCode: "Entrer le code du devoir",
-    scanQR: "Scanner le QR",
+    scanQR: "Scanner un QR code",
     start: "Démarrer la session",
-    motto_bold: "Moteur universel de confiance cognitive",
-    motto_light: "au service des élèves, enseignants & parents",
+    motto_bold: "Moteur Universel de Confiance Cognitive",
+    motto_light: "au service des élèves, des enseignants et des familles",
     welcomeTitle: "Bienvenue sur Prompt Renfort",
-    welcomeDesc: "Un espace sécurisé et respectueux pour un accompagnement cognitif guidé.",
-    privacyBlock: "Nous ne stockons jamais de données personnelles sans consentement.\nCette expérience est conforme au RGPD européen.\nVotre libre arbitre, votre temps de réflexion et votre droit à grandir sont protégés.",
+    welcomeDesc: "Un espace sûr et bienveillant pour l’accompagnement cognitif guidé.",
+    privacyBlock: "Nous ne conservons jamais de données personnelles sans consentement.\nCette expérience est conforme au RGPD européen.\nNous protégeons votre libre arbitre, votre temps de réflexion et votre droit à grandir.",
     dataBelongs: "Les données vous appartiennent",
-    noAnswersStored: "Aucune réponse d’IA n’est stockée",
-    trustedMind: "Votre esprit est respecté ici",
+    noAnswersStored: "Aucune réponse IA n’est stockée",
+    trustedMind: "Ici, on fait confiance à votre esprit",
     preceptorLead: "Prompt Renfort est votre précepteur IA.",
     entryInstructions1: "Scannez le QR code de votre devoir ou entrez le code pour démarrer une session guidée.",
-    entryInstructions2: "Votre effort sera valorisé — pas seulement le résultat.",
+    entryInstructions2: "Votre effort sera reconnu — pas seulement le résultat.",
     footer: (params?: { year: number }) => `© ${params?.year ?? new Date().getFullYear()} Prompt Renfort – Assistant cognitif (prototype).`,
     immutableLearningRecord: {
-      title: "🧠 Empreinte cognitive inviolable",
-      desc: "Prompt Renfort ne se contente pas de t'aider à apprendre — il garde la mémoire de ton parcours.\nIl témoigne que tu n'as pas triché.\nChaque interaction — d’un devoir ou d’une initiative personnelle — est tracée, horodatée et peut être scellée dans une blockchain.",
+      title: "🧠 Empreinte d’apprentissage immuable",
+      desc: "Prompt Renfort ne se contente pas de vous aider à apprendre — il se souvient de votre parcours.\nChaque interaction significative — qu’il s’agisse d’un devoir ou d’une initiative personnelle — est enregistrée, horodatée et peut être sauvegardée sur la blockchain.",
       list: [
-        "Cette empreinte devient ton registre cognitif : elle affiche ton temps investi, tes chemins intellectuels, tes déclics.",
-        "Elle certifie tes efforts, pas seulement tes résultats.",
-        "Elle offre l’accès à des avantages concrets : réductions, activités, reconnaissance."
+        "Cette empreinte devient votre journal cognitif : elle témoigne du temps investi, des chemins intellectuels empruntés, des moments clés.",
+        "Elle certifie vos efforts, pas seulement vos résultats.",
+        "Elle vous donne accès à des avantages concrets : réductions, activités, reconnaissances."
       ],
-      cta: "⏳ Cette fonctionnalité arrive bientôt.\nAide-nous à la construire — ton parcours compte.",
+      cta: "⏳ Cette fonctionnalité sera bientôt disponible.\nAidez-nous à la construire — votre expérience compte.",
     },
-    // Ajout bloc connexion
     loginBlock: {
       title: "Pourquoi se connecter ?",
       advantages: [
-        "Tracer le temps passé sur chaque devoir (toutes origines)",
-        "Stocker et analyser les échanges avec l’IA pour valoriser progrès, effort, créativité",
-        "Sécuriser et valider le processus (base cryptée, blockchain à venir, partage fiable)",
-        "Ouvrir une évaluation équitable qui reconnaît le travail accompli, pas juste le résultat",
+        "Enregistrer le temps passé sur chaque tâche (quelle qu’en soit l’origine)",
+        "Stocker et analyser vos échanges avec l’IA pour valoriser le progrès, l’effort et la créativité",
+        "Sécuriser et valider le processus (base de données chiffrée, blockchain à terme, partage fiable)",
+        "Ouvrir une évaluation juste qui reconnaît le travail accompli, pas seulement le résultat",
       ],
-      button: "S’identifier",
-      alert: "L’authentification sera bientôt disponible.\nVous serez alors accompagné, votre parcours sera suivi et vous pourrez retrouver vos progrès d’une session à l’autre.",
-      info: "<strong>Avantage :</strong> En vous identifiant, vous pourrez prouver que vous avez vraiment échangé, réfléchi et construit avec l’IA : ce n’est pas un simple copié-collé d’une réponse, mais un vrai cheminement personnel, traçable et valorisable.",
+      button: "Se connecter",
+      alert: "L’authentification sera bientôt disponible.\nVous serez accompagné, votre parcours sera suivi et vous pourrez consulter vos progrès entre les sessions.",
+      info: "<strong>Avantage :</strong> En vous connectant, vous pourrez prouver que vous avez réellement interagi, réfléchi et construit avec l’IA : il ne s’agit pas d’un simple copier-coller d’une réponse, mais d’un véritable parcours personnel, traçable et revalorisable.",
     },
     visitorBlock: {
-      button: "Découvrir en visiteur libre",
-      info: `<strong>Visiteur libre :</strong> Vous accédez à Prompt Renfort en autonomie, sans qu’aucune donnée nominative ne soit enregistrée.<br />Votre expérience sera guidée par l’IA pour encourager votre réflexion et valoriser votre effort.`
+      button: "Découvrir en tant qu’invité",
+      info: `<strong>Mode invité :</strong> Vous accédez à Prompt Renfort de manière autonome, sans qu’aucune donnée personnelle ne soit enregistrée.<br />Votre expérience sera guidée par l’IA pour encourager votre réflexion et valoriser votre effort.`
     }
   },
   chat: {
-    welcome: "Bonjour, je suis Prompt Renfort. Partage ton devoir ou ta question quand tu veux.",
-    placeholder: "Tape ta question ou problème ici…",
+    welcome: "Bonjour, je suis Prompt Renfort. Partagez votre devoir ou posez votre question quand vous êtes prêt(e).",
+    placeholder: "Écrivez votre question ou votre problème ici…",
     send: "Envoyer",
     endSession: "Terminer la session",
-    recognitions: "Récompenses obtenues"
+    recognitions: "Reconnaissances obtenues",
+    invite_basic: "Lis le devoir et, quand tu es prêt, commençons à travailler…",
   },
   summary: {
     sessionSummary: "Résumé de la session",
     timeSpent: "Temps passé",
     questionsAsked: "Questions posées",
-    recognitions: "Récompenses",
+    recognitions: "Reconnaissances",
     sessionData: "Données de session (mode Dev)",
     newSession: "Démarrer une nouvelle session"
   },
-  // Ajout bloc about
   about: {
-    title: "🏆 Pourquoi « Prompt Renfort » ?",
-    intro: `Prompt Renfort est une expression française venue du théâtre classique : elle apparaît dans <b>Le Cid</b> de Pierre Corneille (XVIIe siècle), et signifie littéralement « un renfort soudain », un appui décisif qui surgit au moment du doute ou de l’honneur blessé.
+    title: "🏆 Pourquoi « Prompt Renfort » ?",
+    intro: `Prompt Renfort est une expression française issue du théâtre classique : elle apparaît dans <b>Le Cid</b> de Pierre Corneille (XVIIe siècle) et signifie littéralement « un secours soudain », une aide décisive qui survient au moment du doute ou de l’honneur blessé.
 
-Dans la pièce, Don Rodrigue se voit sommer par son père d’agir avec courage devant un dilemme moral. L’expression « prompt renfort » désigne l’irruption d’une force intérieure, d’un sursaut moral permettant d’agir noblement.
+Dans la pièce, Don Rodrigue est appelé par son père à agir avec bravoure face à un dilemme moral. Le « prompt renfort » désigne l’irruption d’une force intérieure, une impulsion morale qui permet d’agir noblement.
 
-<b>C’est exactement ce que fait notre IA :</b>`,
+<b>C’est exactement ce que fait notre IA :</b>`,
     values: [
-      "Elle ne remplace pas l'élève. Elle lui apporte du soutien.",
-      "Elle ne commande pas. Elle propose.",
-      "Ce n’est pas une machine à réponses. C’est un précepteur symbolique.",
+      "Elle ne remplace pas l’élève. Elle l’épaule.",
+      "Elle ne donne pas d’ordres. Elle invite.",
+      "Elle n’est pas une machine à réponses. Elle est un précepteur symbolique.",
     ],
-    conclusion: `Prompt Renfort accompagne l’élève lorsqu’il commence à douter, se retrouve seul face à la page blanche, ou quand il essaie de reformuler ce qu’il croit avoir compris.
+    conclusion: `Prompt Renfort accompagne l’élève lorsqu’il commence à douter, qu’il se retrouve seul face à la page blanche ou qu’il essaie de reformuler ce qu’il croit avoir compris.
 
-C’est un nom que nous avons souhaité conserver en français.
+Nous avons choisi de conserver le nom en français.
 Parce que la langue porte la mémoire.
 Parce qu’une marque peut aussi être un vers.
-Parce qu’apprendre n’est pas un acte solitaire, apprendre est un acte de volonté.
+Parce qu’apprendre n’est pas un acte solitaire, et qu’apprendre est un acte de volonté.
 
 Comme dans la pièce, Prompt Renfort n’agit pas à la place de l’élève.
-Il apparaît au moment où il faut du courage.
-Il arrive au moment où la connaissance s’enracine.`,
+Il apparaît au moment où le courage est nécessaire.
+Il arrive quand la connaissance veut prendre racine.`,
   },
   navbar: {
     home: "Accueil",
@@ -91,34 +90,25 @@ Il arrive au moment où la connaissance s’enracine.`,
     family: "Famille",
     about: "À propos",
     login: "Se connecter",
-    logout: "Déconnexion"
+    logout: "Se déconnecter"
   },
-  common: {
-    comingSoon: "À venir :",
-    backHome: "Retour accueil",
-  },
-  createAssignment: {
-    title: "Créer un devoir",
-    subtitle: "Cette interface permet aux enseignants et aux parents de créer rapidement un devoir collectif.\nAprès validation, un QR code, un code et un lien de partage seront générés automatiquement pour les élèves.",
-    soonBlock: "Le formulaire paramétrant le devoir s'affichera ici.",
-    target_age_range_label: "Tranche d'âge cible (optionnel, ex: 12-14 ans)",
-    target_age_range_placeholder: "Sélectionnez la tranche d'âge…",
+  create_assignment: {
+    target_age_range_label: "Tranche d'âge cible (facultatif, ex: 12-14 ans)",
+    target_age_range_placeholder: "Sélectionner la tranche d'âge…",
     age_ranges: {
-      ages_6_8: "6-8 ans",
-      ages_9_11: "9-11 ans",
-      ages_12_14: "12-14 ans",
-      ages_15_17: "15-17 ans",
-      ages_18_22: "18-22 ans",
+      ages_6_8: "6–8 ans",
+      ages_9_11: "9–11 ans",
+      ages_12_14: "12–14 ans",
+      ages_15_17: "15–17 ans",
+      ages_18_22: "18–22 ans",
       ages_23_99: "23 ans et plus",
       multi_age: "Multi-âge/groupe",
       other_age: "Autre",
     },
   },
-  joinAssignment: {
-    title: "Rejoindre un devoir",
-    instructions: "Pour démarrer, scanne le QR code donné par ton enseignant ou saisis un code ci-dessous.\n",
-    experience: "Expérience simplifiée, sans compte, pour un démarrage rapide.",
-    soonBlock: "Zone de saisie du code/scan QR et démarrage de la session individuelle.",
+  assignmentSession: {
+    dualZoneTitle: "Bientôt : Espace pédagogique double-zone",
+    dualZoneDesc: "Une zone de rédaction libre et une fenêtre assistant IA distincte vont permettre de distinguer réflexion autonome et aide de l’IA, pour une pédagogie plus transparente.\nCette fonctionnalité est prioritaire et arrive très bientôt !",
   },
 };
 

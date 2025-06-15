@@ -1,99 +1,100 @@
 const it = {
   landing: {
     title: "Prompt Renfort",
-    subtitle: "Il tuo compagno cognitivo IA. Inizia un percorso di autoscoperta e crescita.",
-    intro: "Prompt Renfort è un precettore IA di supporto per guidare il tuo apprendimento. Scansiona il QR code dell’assegnazione o inserisci il codice per iniziare.",
-    enterCode: "Inserisci il codice dell’assegnazione",
+    subtitle: "Il tuo compagno cognitivo AI. Inizia un viaggio di scoperta di te stesso e crescita.",
+    intro: "Prompt Renfort è un precettore AI per guidarti nel tuo apprendimento. Scansiona il QR del tuo compito o inserisci il codice per iniziare.",
+    enterCode: "Inserisci il codice dell'assegnazione",
     scanQR: "Scansiona QR",
-    start: "Avvia sessione",
+    start: "Inizia sessione",
     motto_bold: "Motore Universale di Fiducia Cognitiva",
-    motto_light: "per studenti, insegnanti e genitori",
+    motto_light: "al servizio di studenti, insegnanti e famiglie",
     welcomeTitle: "Benvenuto su Prompt Renfort",
-    welcomeDesc: "Uno spazio sicuro e rispettoso per l’apprendimento cognitivo guidato.",
-    privacyBlock: "Non memorizziamo mai dati personali senza consenso.\nQuesta esperienza è conforme al GDPR europeo.\nProteggiamo il tuo libero arbitrio, il tuo tempo di riflessione e il tuo diritto a crescere.",
-    dataBelongs: "I dati appartengono a te",
-    noAnswersStored: "Nessuna risposta dell’IA viene memorizzata",
-    trustedMind: "Qui la tua mente è al sicuro",
-    preceptorLead: "Prompt Renfort è il tuo precettore IA.",
-    entryInstructions1: "Scansiona il codice QR dell’assegnazione o inserisci il codice per iniziare una sessione guidata.",
-    entryInstructions2: "Il tuo impegno sarà riconosciuto — non solo il risultato.",
+    welcomeDesc: "Uno spazio sicuro e rispettoso per l'apprendimento cognitivo guidato.",
+    privacyBlock: "Non memorizziamo mai dati personali senza consenso.\nQuesta esperienza è conforme al GDPR europeo.\nProteggiamo il tuo libero arbitrio, il tuo tempo di riflessione e il tuo diritto di crescere.",
+    dataBelongs: "I dati ti appartengono",
+    noAnswersStored: "Nessuna risposta AI memorizzata",
+    trustedMind: "Qui ci si fida della tua mente",
+    preceptorLead: "Prompt Renfort è il tuo precettore AI.",
+    entryInstructions1: "Scansiona il codice QR del tuo compito o inserisci il codice per iniziare una sessione guidata.",
+    entryInstructions2: "Il tuo sforzo sarà riconosciuto — non solo il risultato.",
     footer: (params?: { year: number }) => `© ${params?.year ?? new Date().getFullYear()} Prompt Renfort – Assistente cognitivo (prototipo).`,
     immutableLearningRecord: {
-      title: "🧠 Registro di apprendimento immutabile",
-      desc: "Prompt Renfort non si limita ad aiutarti a imparare—ricorda il tuo percorso.\nOgni interazione significativa—da un compito o da iniziative personali—viene registrata, con data e ora, e può essere sigillata sulla blockchain.",
+      title: "🧠 Impronta di apprendimento immutabile",
+      desc: "Prompt Renfort non solo ti aiuta a imparare—ricorda il tuo percorso.\nOgni interazione significativa—da un compito o iniziativa personale—viene registrata, timbrata e può essere salvata su blockchain.",
       list: [
-        "Questo registro diventa il tuo libro cognitivo: mostra il tempo investito, il percorso intellettuale, i tuoi punti di svolta.",
+        "Questa impronta diventa il tuo libro cognitivo: mostra il tempo investito, i percorsi intellettuali, i momenti chiave.",
         "Certifica i tuoi sforzi, non solo i risultati.",
-        "Offre accesso a incentivi concreti: sconti, attività, riconoscimenti."
+        "Offre accesso a vantaggi reali: sconti, attività, riconoscimenti."
       ],
-      cta: "⏳ Questa funzione sarà presto disponibile.\nAiutaci a plasmarla—il tuo percorso è importante.",
+      cta: "⏳ Questa funzione sarà presto disponibile.\nAiutaci a costruirla—la tua esperienza conta.",
     },
     loginBlock: {
-      title: "Perché accedere?",
+      title: "Perché effettuare il login?",
       advantages: [
-        "Traccia il tempo impiegato su ogni compito (di qualsiasi origine)",
-        "Salva e analizza le interazioni con l’IA per valorizzare i progressi, l’impegno e la creatività",
-        "Metti in sicurezza e valida il processo (database criptato, blockchain in arrivo, condivisione affidabile)",
-        "Apri a una valutazione equa che riconosce il lavoro svolto, non solo il risultato",
+        "Registrare il tempo dedicato a ogni compito (di qualsiasi origine)",
+        "Memorizzare e analizzare i tuoi scambi con l'IA per valorizzare progresso, sforzo e creatività",
+        "Assicurare e validare il processo (database crittografato, blockchain prossimamente, condivisione affidabile)",
+        "Aprire una valutazione equa che riconosca il lavoro svolto, non solo il risultato",
       ],
-      button: "Accedi",
-      alert: "L’autenticazione sarà presto disponibile.\nSarai accompagnato, il tuo percorso sarà seguito e potrai ritrovare i tuoi progressi tra una sessione e l’altra.",
-      info: "<strong>Vantaggio:</strong> Accedendo potrai dimostrare di aver veramente dialogato, riflettuto e costruito con l’IA: non si tratta di una semplice risposta incollata, ma di un vero percorso personale, tracciabile e valorizzabile.",
+      button: "Effettua il login",
+      alert: "L'autenticazione sarà disponibile a breve.\nSarai accompagnato, il tuo percorso sarà seguito e potrai consultare i tuoi progressi tra le sessioni.",
+      info: "<strong>Vantaggio:</strong> Effettuando il login, potrai dimostrare di aver realmente interagito, riflettuto e costruito con l'IA: non è un semplice copia-incolla di una risposta, ma un vero percorso personale, tracciabile e rivalutabile.",
     },
     visitorBlock: {
       button: "Scopri come ospite",
-      info: `<strong>Modalità ospite:</strong> Accedi a Prompt Renfort in completa autonomia, senza che vengano registrati dati personali.<br />La tua esperienza sarà guidata dall’IA per valorizzare il tuo pensiero e il tuo impegno.`
-    },
+      info: `<strong>Modalità ospite:</strong> Accedi a Prompt Renfort in modo autonomo, senza che venga registrato alcun dato personale.<br />La tua esperienza sarà guidata dall'IA per favorire la tua riflessione e valorizzare il tuo sforzo.`
+    }
   },
   chat: {
-    welcome: "Ciao, sono Prompt Renfort. Condividi la tua assegnazione o domanda appena sei pronto.",
+    welcome: "Ciao, sono Prompt Renfort. Condividi il tuo compito o domanda quando sei pronto.",
     placeholder: "Scrivi qui la tua domanda o problema…",
     send: "Invia",
     endSession: "Termina sessione",
-    recognitions: "Riconoscimenti ottenuti"
+    recognitions: "Riconoscimenti ottenuti",
+    invite_basic: "Leggi il compito e, quando sei pronto, iniziamo a lavorare…",
   },
   summary: {
-    sessionSummary: "Riepilogo sessione",
-    timeSpent: "Tempo trascorso",
+    sessionSummary: "Riepilogo della sessione",
+    timeSpent: "Tempo impiegato",
     questionsAsked: "Domande poste",
     recognitions: "Riconoscimenti",
-    sessionData: "Dati sessione (DevMode)",
+    sessionData: "Dati della sessione (modalità Dev)",
     newSession: "Inizia nuova sessione"
   },
   about: {
     title: "🏆 Perché «Prompt Renfort»?",
-    intro: `Prompt Renfort è un'espressione francese che proviene dal teatro classico: appare in <b>Le Cid</b> di Pierre Corneille (XVII secolo) e significa letteralmente “un rinforzo improvviso”, un aiuto decisivo che arriva nel momento del dubbio o dell’onore ferito.
+    intro: `Prompt Renfort è un'espressione francese originata nel teatro classico: appare in <b>Le Cid</b> di Pierre Corneille (XVII secolo) e significa letteralmente “un rinforzo improvviso”, un aiuto decisivo che sorge nel momento del dubbio o dell'onore ferito.
 
-Nell’opera, Don Rodrigue viene invitato dal padre a comportarsi con coraggio davanti a un dilemma morale. “Prompt renfort” indica il sorgere di una forza interiore, di uno slancio morale che permette di agire nobilmente.
+Nell'opera, Don Rodrigue è chiamato da suo padre ad agire con valore di fronte a un dilemma morale. “Prompt renfort” designa l'irruzione di una forza interiore, un impulso morale che permette di agire nobilmente.
 
-<b>È esattamente ciò che fa la nostra IA:</b>`,
+<b>Questo è esattamente ciò che fa la nostra IA:</b>`,
     values: [
-      "Non sostituisce lo studente. Gli dà sostegno.",
-      "Non comanda. Propone.",
+      "Non sostituisce lo studente. Lo supporta.",
+      "Non ordina. Invita.",
       "Non è una macchina di risposte. È un precettore simbolico.",
     ],
-    conclusion: `Prompt Renfort accompagna lo studente quando inizia a dubitare, si trova da solo di fronte alla pagina bianca, o cerca di riformulare ciò che pensa di aver compreso.
+    conclusion: `Prompt Renfort accompagna lo studente quando inizia a dubitare, si ritrova solo di fronte alla pagina bianca o quando cerca di riformulare ciò che crede di aver capito.
 
-Abbiamo voluto mantenere il nome in francese.
-Perché la lingua porta memoria.
-Perché un marchio può essere anche un verso.
-Perché imparare non è un atto solitario, ma un atto di volontà.
+Abbiamo deciso di mantenere il nome in francese.
+Perché la lingua porta la memoria.
+Perché un marchio può anche essere un verso.
+Perché imparare non è un atto solitario, e imparare è un atto di volontà.
 
-Come nell’opera, Prompt Renfort non agisce al posto dello studente.
-Appare nel momento in cui serve coraggio.
+Come nell'opera, Prompt Renfort non agisce al posto dello studente.
+Appare nel momento in cui è necessario coraggio.
 Arriva quando la conoscenza vuole mettere radici.`,
   },
   navbar: {
     home: "Home",
     profile: "Profilo",
     family: "Famiglia",
-    about: "Info",
+    about: "Chi siamo",
     login: "Accedi",
-    logout: "Disconnetti"
+    logout: "Esci"
   },
   create_assignment: {
-    target_age_range_label: "Fascia d'età destinata (opzionale, es: 12-14 anni)",
-    target_age_range_placeholder: "Seleziona fascia d’età…",
+    target_age_range_label: "Fascia d'età target (opzionale, es: 12-14 anni)",
+    target_age_range_placeholder: "Seleziona la fascia d'età…",
     age_ranges: {
       ages_6_8: "6–8 anni",
       ages_9_11: "9–11 anni",
@@ -104,7 +105,11 @@ Arriva quando la conoscenza vuole mettere radici.`,
       multi_age: "Multi-età/gruppo",
       other_age: "Altro",
     },
-  }
+  },
+  assignmentSession: {
+    dualZoneTitle: "In arrivo: Spazio pedagogico doppia-zona",
+    dualZoneDesc: "Una zona di scrittura libera e una finestra assistente IA separata permetteranno di distinguere tra riflessione autonoma e aiuto IA, per una pedagogia più trasparente.\nQuesta funzione è prioritaria e arriverà presto!",
+  },
 };
 
 export default it;

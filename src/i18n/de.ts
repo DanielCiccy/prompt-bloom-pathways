@@ -1,110 +1,115 @@
 const de = {
   landing: {
     title: "Prompt Renfort",
-    subtitle: "Ihr KI-Kognitionsbegleiter. Beginnen Sie eine Reise der Selbstentdeckung und Entwicklung.",
-    intro: "Prompt Renfort ist ein unterstützender KI-Lehrmeister, der Sie beim Lernen begleitet. Scannen Sie den Aufgaben-QR-Code oder geben Sie den Code ein, um zu starten.",
+    subtitle: "Dein kognitiver KI-Begleiter. Starte eine Reise der Selbstentdeckung und des Wachstums.",
+    intro: "Prompt Renfort ist ein KI-gestützter Tutor, der dich beim Lernen unterstützt. Scanne den QR-Code deiner Aufgabe oder gib den Code ein, um zu beginnen.",
     enterCode: "Aufgabencode eingeben",
-    scanQR: "QR scannen",
+    scanQR: "QR-Code scannen",
     start: "Sitzung starten",
-    motto_bold: "Universelle Cognitive Trust Engine",
-    motto_light: "für Lernende, Lehrende & Eltern",
+    motto_bold: "Universelle Engine für kognitives Vertrauen",
+    motto_light: "im Dienste von Schülern, Lehrern und Familien",
     welcomeTitle: "Willkommen bei Prompt Renfort",
-    welcomeDesc: "Ein sicherer und respektvoller Raum für kognitives Lernen mit Begleitung.",
-    privacyBlock: "Wir speichern niemals personenbezogene Daten ohne Einwilligung.\nDieses Angebot erfüllt die Vorgaben der europäischen DSGVO.\nIhr freier Wille, Ihre Denkzeit und Ihr Recht auf Entwicklung werden geschützt.",
-    dataBelongs: "Die Daten gehören Ihnen",
-    noAnswersStored: "Keine KI-Antworten werden gespeichert",
-    trustedMind: "Ihr Geist wird hier geschätzt",
-    preceptorLead: "Prompt Renfort ist Ihr KI-Präzeptor.",
-    entryInstructions1: "Scannen Sie den QR-Code Ihrer Aufgabe oder geben Sie den Code ein, um eine betreute Lernsitzung zu starten.",
-    entryInstructions2: "Ihr Einsatz wird anerkannt – nicht nur Ihr Ergebnis.",
+    welcomeDesc: "Ein sicherer und respektvoller Raum für geführtes kognitives Lernen.",
+    privacyBlock: "Wir speichern niemals persönliche Daten ohne Zustimmung.\nDiese Erfahrung entspricht der europäischen DSGVO.\nWir schützen deinen freien Willen, deine Reflexionszeit und dein Recht zu wachsen.",
+    dataBelongs: "Die Daten gehören dir",
+    noAnswersStored: "Es werden keine KI-Antworten gespeichert",
+    trustedMind: "Hier wird deinem Verstand vertraut",
+    preceptorLead: "Prompt Renfort ist dein KI-Tutor.",
+    entryInstructions1: "Scanne den QR-Code deiner Aufgabe oder gib den Code ein, um eine geführte Sitzung zu starten.",
+    entryInstructions2: "Deine Bemühungen werden anerkannt — nicht nur das Ergebnis.",
     footer: (params?: { year: number }) => `© ${params?.year ?? new Date().getFullYear()} Prompt Renfort – Kognitiver Assistent (Prototyp).`,
     immutableLearningRecord: {
       title: "🧠 Unveränderlicher Lernnachweis",
-      desc: "Prompt Renfort hilft nicht nur beim Lernen—es merkt sich deinen Weg.\nJede bedeutende Interaktion—ob von einer Aufgabe oder eigener Initiative—wird aufgezeichnet, mit Zeitstempel versehen und kann in der Blockchain gesichert werden.",
+      desc: "Prompt Renfort hilft dir nicht nur beim Lernen—es erinnert sich an deinen Weg.\nJede bedeutsame Interaktion—von einer Aufgabe oder persönlichen Initiative—wird aufgezeichnet, mit Zeitstempel versehen und kann in der Blockchain gespeichert werden.",
       list: [
-        "Dieser Nachweis wird zu deinem kognitiven Register: Er zeigt deine investierte Zeit, deinen Denkweg, deine Wendepunkte.",
-        "Bestätigt deine Bemühungen, nicht nur die Ergebnisse.",
-        "Eröffnet Zugang zu echten Vorteilen: Rabatten, Aktivitäten, Anerkennung."
+        "Dieser Nachweis wird zu deinem kognitiven Buch: Er zeigt die investierte Zeit, die intellektuellen Wege, die Schlüsselmomente.",
+        "Er zertifiziert deine Bemühungen, nicht nur die Ergebnisse.",
+        "Er bietet Zugang zu echten Vorteilen: Rabatte, Aktivitäten, Anerkennungen."
       ],
-      cta: "⏳ Diese Funktion kommt bald.\nHilf uns, sie zu gestalten—dein Weg zählt.",
+      cta: "⏳ Diese Funktion wird bald verfügbar sein.\nHilf uns, sie zu bauen—deine Erfahrung zählt.",
     },
     loginBlock: {
-      title: "Warum anmelden?",
+      title: "Warum einloggen?",
       advantages: [
-        "Erfasse die Zeit für jede Aufgabe (egal woher)",
-        "Speichere und analysiere deine Unterhaltungen mit der KI für Fortschritt, Einsatz und Kreativität",
-        "Sichere und verifiziere den Prozess (verschlüsselte Datenbank, Blockchain folgt, verlässliches Teilen)",
-        "Ermögliche eine faire Bewertung, die die geleistete Arbeit anerkennt, nicht nur das Ergebnis",
+        "Die für jede Aufgabe aufgewendete Zeit erfassen (jeglicher Herkunft)",
+        "Deine Interaktionen mit der KI speichern und analysieren, um Fortschritt, Anstrengung und Kreativität hervorzuheben",
+        "Den Prozess sichern und validieren (verschlüsselte Datenbank, Blockchain in Kürze, zuverlässige Weitergabe)",
+        "Eine faire Bewertung ermöglichen, die die geleistete Arbeit anerkennt, nicht nur das Ergebnis",
       ],
-      button: "Anmelden",
-      alert: "Authentifizierung ist bald verfügbar.\nDu wirst begleitet, dein Weg wird nachverfolgt und du findest deine Fortschritte in allen Sitzungen.",
-      info: "<strong>Vorteil:</strong> Mit Anmeldung kannst du beweisen, dass du wirklich mit der KI gearbeitet, reflektiert und aufgebaut hast: Das ist nicht einfach nur eine kopierte Antwort, sondern ein persönlicher, nachvollziehbarer Weg.",
+      button: "Einloggen",
+      alert: "Die Authentifizierung wird bald verfügbar sein.\nDu wirst begleitet, dein Weg wird verfolgt und du kannst deine Fortschritte zwischen den Sitzungen einsehen.",
+      info: "<strong>Vorteil:</strong> Durch das Einloggen kannst du nachweisen, dass du wirklich mit der KI interagiert, reflektiert und aufgebaut hast: Es ist kein einfaches Kopieren und Einfügen einer Antwort, sondern ein echter persönlicher Weg, der nachvollziehbar und wiederverwertbar ist.",
     },
     visitorBlock: {
       button: "Als Gast entdecken",
-      info: `<strong>Gastmodus:</strong> Du nutzt Prompt Renfort eigenständig, ohne dass personenbezogene Daten gespeichert werden.<br />Die KI begleitet dich, regt zum Nachdenken an und würdigt deinen Einsatz.`
+      info: `<strong>Gastmodus:</strong> Du greifst autonom auf Prompt Renfort zu, ohne dass persönliche Daten erfasst werden.<br />Deine Erfahrung wird von KI geleitet, um deine Reflexion zu fördern und deine Bemühungen zu würdigen.`
     }
   },
   chat: {
-    welcome: "Hallo, ich bin Prompt Renfort. Teile deine Aufgabe oder Frage, wann immer du bereit bist.",
-    placeholder: "Schreibe hier deine Frage oder dein Problem…",
+    welcome: "Hallo, ich bin Prompt Renfort. Teile deine Aufgabe oder Frage, wenn du bereit bist.",
+    placeholder: "Schreibe deine Frage oder dein Problem hier…",
     send: "Senden",
     endSession: "Sitzung beenden",
-    recognitions: "Anerkennungen verdient"
+    recognitions: "Erreichte Anerkennungen",
+    invite_basic: "Lies die Aufgabe und wenn du bereit bist, lass uns anfangen zu arbeiten…",
   },
   summary: {
-    sessionSummary: "Sitzungsübersicht",
-    timeSpent: "Verbrachte Zeit",
+    sessionSummary: "Sitzungszusammenfassung",
+    timeSpent: "Verwendete Zeit",
     questionsAsked: "Gestellte Fragen",
     recognitions: "Anerkennungen",
-    sessionData: "Sitzungsdaten (DevModus)",
+    sessionData: "Sitzungsdaten (Dev-Modus)",
     newSession: "Neue Sitzung starten"
   },
   about: {
     title: "🏆 Warum «Prompt Renfort»?",
-    intro: `Prompt Renfort ist ein französischer Ausdruck aus dem klassischen Theater: Er taucht in <b>Le Cid</b> von Pierre Corneille (17. Jahrhundert) auf und bedeutet wörtlich „plötzliche Verstärkung“, eine entscheidende Hilfe, die im Moment des Zweifels oder der verletzten Ehre auftritt.
+    intro: `Prompt Renfort ist ein französischer Ausdruck, der aus dem klassischen Theater stammt: Er erscheint in <b>Le Cid</b> von Pierre Corneille (17. Jahrhundert) und bedeutet wörtlich „eine plötzliche Verstärkung“, eine entscheidende Hilfe, die im Moment des Zweifels oder der verletzten Ehre auftaucht.
 
-Im Stück wird Don Rodrigue von seinem Vater aufgefordert, sich in einem moralischen Dilemma tapfer zu verhalten. „Prompt renfort“ bezeichnet das plötzliche Auftreten einer inneren Kraft, eines moralischen Aufbäumens, das edles Handeln ermöglicht.
+In dem Stück wird Don Rodrigue von seinem Vater aufgefordert, angesichts eines moralischen Dilemmas mutig zu handeln. „Prompt renfort“ bezeichnet das Aufkommen einer inneren Kraft, eines moralischen Impulses, der es ermöglicht, edel zu handeln.
 
-<b>Genau das tut unsere KI:</b>`,
+<b>Das ist genau das, was unsere KI tut:</b>`,
     values: [
       "Sie ersetzt den Schüler nicht. Sie unterstützt ihn.",
       "Sie befiehlt nicht. Sie lädt ein.",
-      "Sie ist keine Antwortmaschine. Sie ist ein symbolischer Mentor.",
+      "Sie ist keine Antwortmaschine. Sie ist ein symbolischer Tutor.",
     ],
-    conclusion: `Prompt Renfort begleitet den Schüler, wenn Zweifel aufkommen, er vor dem leeren Blatt sitzt oder versucht, das Verstandene umzuformulieren.
+    conclusion: `Prompt Renfort begleitet den Schüler, wenn er anfängt zu zweifeln, allein vor dem leeren Blatt steht oder versucht, das, was er verstanden zu haben glaubt, neu zu formulieren.
 
-Wir wollten den Namen auf Französisch belassen.
-Weil Sprache Erinnerung trägt.
+Wir haben beschlossen, den Namen auf Französisch zu belassen.
+Weil die Sprache die Erinnerung trägt.
 Weil eine Marke auch ein Vers sein kann.
-Weil Lernen keine Einzelhandlung ist, sondern eine Willenshandlung.
+Weil Lernen kein einsamer Akt ist und Lernen ein Akt des Willens ist.
 
-Wie im Stück handelt Prompt Renfort nicht anstelle des Schülers.
-Er erscheint, wenn Mut gefragt ist.
-Er kommt, wenn Wissen Wurzeln schlagen will.`,
+Wie im Stück agiert Prompt Renfort nicht anstelle des Schülers.
+Er erscheint in dem Moment, in dem Mut gebraucht wird.
+Er kommt, wenn das Wissen Wurzeln schlagen will.`,
   },
   navbar: {
     home: "Startseite",
     profile: "Profil",
     family: "Familie",
-    about: "Über",
-    login: "Anmelden",
-    logout: "Abmelden"
+    about: "Über uns",
+    login: "Einloggen",
+    logout: "Ausloggen"
   },
   create_assignment: {
-    target_age_range_label: "Zielaltersgruppe (optional, z.B. 12-14 Jahre)",
-    target_age_range_placeholder: "Altersbereich auswählen…",
+    target_age_range_label: "Zielaltersbereich (optional, z.B. 12-14 Jahre)",
+    target_age_range_placeholder: "Wähle den Altersbereich…",
     age_ranges: {
       ages_6_8: "6–8 Jahre",
       ages_9_11: "9–11 Jahre",
       ages_12_14: "12–14 Jahre",
       ages_15_17: "15–17 Jahre",
       ages_18_22: "18–22 Jahre",
-      ages_23_99: "23 Jahre und älter",
-      multi_age: "Mehrere Altersgruppen",
+      ages_23_99: "23 Jahre oder älter",
+      multi_age: "Mehrere Altersgruppen/Gruppe",
       other_age: "Andere",
     },
-  }
+  },
+  assignmentSession: {
+    dualZoneTitle: "Demnächst: Pädagogischer Dual-Zonen-Arbeitsbereich",
+    dualZoneDesc: "Ein freier Schreibbereich und ein separates KI-Assistenzfenster ermöglichen es, eigenständiges Denken von KI-Unterstützung zu unterscheiden. Diese Funktion ist prioritär und kommt bald!",
+  },
 };
 
 export default de;

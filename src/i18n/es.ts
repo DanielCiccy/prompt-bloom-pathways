@@ -50,7 +50,8 @@ const es = {
     placeholder: "Escribe tu pregunta o problema aquí…",
     send: "Enviar",
     endSession: "Terminar sesión",
-    recognitions: "Reconocimientos logrados"
+    recognitions: "Reconocimientos logrados",
+    invite_basic: "Lee tu tarea y, cuando estés listo, empezamos a trabajar…"
   },
   summary: {
     sessionSummary: "Resumen de la sesión",
@@ -104,7 +105,11 @@ Llega cuando el conocimiento quiere echar raíces.`,
       multi_age: "Multi-edad/grupo",
       other_age: "Otro",
     },
-  }
+  },
+  assignmentSession: {
+    dualZoneTitle: "Próximamente: Espacio pedagógico doble-zona",
+    dualZoneDesc: "Un área de redacción libre y una ventana de asistencia IA separada permitirán distinguir la reflexión autónoma de la ayuda IA, para una pedagogía más transparente.\n¡Esta función es prioritaria y llegará muy pronto!",
+  },
 };
 
 export default es;
