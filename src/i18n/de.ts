@@ -83,5 +83,14 @@ Wie im Stück handelt Prompt Renfort nicht anstelle des Schülers.
 Er erscheint, wenn Mut gefragt ist.
 Er kommt, wenn Wissen Wurzeln schlagen will.`,
   },
+  navbar: {
+    home: "Startseite",
+    profile: "Profil",
+    family: "Familie",
+    about: "Über",
+    login: "Anmelden",
+    logout: "Abmelden"
+  }
 };
+
 export default de;

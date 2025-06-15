@@ -85,6 +85,14 @@ Comme dans la pièce, Prompt Renfort n’agit pas à la place de l’élève.
 Il apparaît au moment où il faut du courage.
 Il arrive au moment où la connaissance s’enracine.`,
   },
+  navbar: {
+    home: "Accueil",
+    profile: "Profil",
+    family: "Famille",
+    about: "À propos",
+    login: "Se connecter",
+    logout: "Déconnexion"
+  }
 };
 
 export default fr;

@@ -3,12 +3,13 @@ import React, { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { User, Home, Users2, Info, LogOut } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
+import { t } from "@/i18n/i18n";
 
 const navLinks = [
-  { to: "/", label: "Accueil", icon: <Home className="w-5 h-5" /> },
-  { to: "/profil", label: "Profil", icon: <User className="w-5 h-5" /> },
-  { to: "/famille", label: "Famille", icon: <Users2 className="w-5 h-5" /> },
-  { to: "/about", label: "À propos", icon: <Info className="w-5 h-5" /> },
+  { to: "/", labelKey: "navbar.home", icon: <Home className="w-5 h-5" /> },
+  { to: "/profile", labelKey: "navbar.profile", icon: <User className="w-5 h-5" /> },
+  { to: "/famille", labelKey: "navbar.family", icon: <Users2 className="w-5 h-5" /> },
+  { to: "/about", labelKey: "navbar.about", icon: <Info className="w-5 h-5" /> },
 ];
 
 const Navbar: React.FC = () => {
@@ -48,7 +49,7 @@ const Navbar: React.FC = () => {
             }`}
           >
             {link.icon}
-            <span>{link.label}</span>
+            <span>{t(link.labelKey)}</span>
           </Link>
         ))}
         {!session ? (
@@ -57,7 +58,7 @@ const Navbar: React.FC = () => {
             className="ml-3 flex items-center gap-2 px-3 py-1 rounded text-blue-700 font-semibold hover:bg-blue-50 transition"
           >
             <User className="w-5 h-5" />
-            Se connecter
+            {t("navbar.login")}
           </Link>
         ) : (
           <button
@@ -65,7 +66,7 @@ const Navbar: React.FC = () => {
             onClick={handleLogout}
           >
             <LogOut className="w-5 h-5" />
-            Déconnexion
+            {t("navbar.logout")}
           </button>
         )}
       </div>

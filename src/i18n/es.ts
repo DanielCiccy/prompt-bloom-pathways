@@ -83,5 +83,14 @@ Como en la obra, Prompt Renfort no actúa en lugar del estudiante.
 Aparece en el momento en que se necesita coraje.
 Llega cuando el conocimiento quiere echar raíces.`,
   },
+  navbar: {
+    home: "Inicio",
+    profile: "Perfil",
+    family: "Familia",
+    about: "Acerca de",
+    login: "Iniciar sesión",
+    logout: "Cerrar sesión"
+  }
 };
+
 export default es;

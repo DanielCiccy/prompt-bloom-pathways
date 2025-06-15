@@ -83,6 +83,14 @@ Like in the play, Prompt Renfort does not act in place of the student.
 It appears when courage is needed.
 It arrives when knowledge seeks to take root.`,
   },
+  navbar: {
+    home: "Home",
+    profile: "Profile",
+    family: "Family",
+    about: "About",
+    login: "Sign In",
+    logout: "Sign Out"
+  }
 };
 
 export default en;
