@@ -7,6 +7,9 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import EleveStudents from "./pages/EleveStudents";
 import ProfileChoice from "./pages/ProfileChoice";
+import Navbar from "@/components/Navbar";
+import ParentSignup from "@/pages/ParentSignup";
+import FamilyManagement from "@/pages/FamilyManagement";
 
 const queryClient = new QueryClient();
 
@@ -16,10 +19,13 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        {/* Affiche Navbar juste après AppHeader (sur toutes les pages) */}
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/profil" element={<ProfileChoice />} />
           <Route path="/élève-students" element={<EleveStudents />} />
+          <Route path="/parent-inscription" element={<ParentSignup />} />
+          <Route path="/famille" element={<FamilyManagement />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
