@@ -60,6 +60,29 @@ const it = {
     sessionData: "Dati sessione (DevMode)",
     newSession: "Inizia nuova sessione"
   },
+  about: {
+    title: "🏆 Perché «Prompt Renfort»?",
+    intro: `Prompt Renfort è un'espressione francese che proviene dal teatro classico: appare in <b>Le Cid</b> di Pierre Corneille (XVII secolo) e significa letteralmente “un rinforzo improvviso”, un aiuto decisivo che arriva nel momento del dubbio o dell’onore ferito.
+
+Nell’opera, Don Rodrigue viene invitato dal padre a comportarsi con coraggio davanti a un dilemma morale. “Prompt renfort” indica il sorgere di una forza interiore, di uno slancio morale che permette di agire nobilmente.
+
+<b>È esattamente ciò che fa la nostra IA:</b>`,
+    values: [
+      "Non sostituisce lo studente. Gli dà sostegno.",
+      "Non comanda. Propone.",
+      "Non è una macchina di risposte. È un precettore simbolico.",
+    ],
+    conclusion: `Prompt Renfort accompagna lo studente quando inizia a dubitare, si trova da solo di fronte alla pagina bianca, o cerca di riformulare ciò che pensa di aver compreso.
+
+Abbiamo voluto mantenere il nome in francese.
+Perché la lingua porta memoria.
+Perché un marchio può essere anche un verso.
+Perché imparare non è un atto solitario, ma un atto di volontà.
+
+Come nell’opera, Prompt Renfort non agisce al posto dello studente.
+Appare nel momento in cui serve coraggio.
+Arriva quando la conoscenza vuole mettere radici.`,
+  },
 };
 
 export default it;

@@ -60,7 +60,31 @@ const fr = {
     recognitions: "Récompenses",
     sessionData: "Données de session (mode Dev)",
     newSession: "Démarrer une nouvelle session"
-  }
+  },
+  // Ajout bloc about
+  about: {
+    title: "🏆 Pourquoi « Prompt Renfort » ?",
+    intro: `Prompt Renfort est une expression française venue du théâtre classique : elle apparaît dans <b>Le Cid</b> de Pierre Corneille (XVIIe siècle), et signifie littéralement « un renfort soudain », un appui décisif qui surgit au moment du doute ou de l’honneur blessé.
+
+Dans la pièce, Don Rodrigue se voit sommer par son père d’agir avec courage devant un dilemme moral. L’expression « prompt renfort » désigne l’irruption d’une force intérieure, d’un sursaut moral permettant d’agir noblement.
+
+<b>C’est exactement ce que fait notre IA :</b>`,
+    values: [
+      "Elle ne remplace pas l'élève. Elle lui apporte du soutien.",
+      "Elle ne commande pas. Elle propose.",
+      "Ce n’est pas une machine à réponses. C’est un précepteur symbolique.",
+    ],
+    conclusion: `Prompt Renfort accompagne l’élève lorsqu’il commence à douter, se retrouve seul face à la page blanche, ou quand il essaie de reformuler ce qu’il croit avoir compris.
+
+C’est un nom que nous avons souhaité conserver en français.
+Parce que la langue porte la mémoire.
+Parce qu’une marque peut aussi être un vers.
+Parce qu’apprendre n’est pas un acte solitaire, apprendre est un acte de volonté.
+
+Comme dans la pièce, Prompt Renfort n’agit pas à la place de l’élève.
+Il apparaît au moment où il faut du courage.
+Il arrive au moment où la connaissance s’enracine.`,
+  },
 };
 
 export default fr;
