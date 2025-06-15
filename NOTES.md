@@ -1,47 +1,54 @@
 
-# Technical Notes – Prompt Renfort
+# Prompt Renfort — Notes techniques
 
-## Session Flow – OpenAI / Prompt Renfort
+## 👉 État de l’architecture
 
-```mermaid
-flowchart TD
-    subgraph Utilisateur
-      U((👤))
-      U -.-> QR[Scan QR]
-      U -.-> Entry[Entrer code]
-      U -.-> Explore[Exploration libre]
-    end
+- **Frontend** : React, TypeScript, Shadcn/ui, Tailwind CSS (design responsive, modulaire)
+- **Backend** : Supabase (authentification, DB, API REST)
+- **IA** : Intégration OpenAI (API ou Assistants), logique d’init et de traçabilité via le backend.
+- **Session utilisateur** :  
+  - **Accès** par code ou scan QR  
+  - **Consentement RGPD** systématique
+  - **Anonymat** possible (deviceID, localStorage)
+  - **Progression** visualisée via arbre ou badges
 
-    U -->|Démarre session| Frontend[Frontend React]
-    Frontend -- Affiche modal RGPD/consentement --> Consent[Consentement utilisateur]
-    Consent -- Token ou DeviceID/Profil --> Frontend
+## 🔗 Flux de session (élève)
 
-    Frontend -- Invoque API backend /session/start ---> BackendAPI[API Node/Flask]
-    BackendAPI -- Crée sessionID & log metadata --> Storage[(DB locale/sécurisée)]
-    BackendAPI -- Gère authentification (optionnel) --> Auth[OAuth / Email / Anonyme]
+1. **Accueil/Entrée**
+    - Saisie d’un code ou scan d’un QR
+    - Sélection du profil (élève/parent/enseignant)
+    - Affichage RGPD/consentement obligatoire
 
-    BackendAPI -- Demande session IA --> OpenAI[OpenAI API (Assistants ou Chat)]
-    OpenAI -- Réponse --> BackendAPI
-    BackendAPI -- Réponse enrichie/metadonnée --> Frontend
-    Frontend -- Affiche session arbre/progression --> U
+2. **Démarrage session**
+    - Création et log d’un `sessionID` (via backend/Supabase)
+    - Prise en compte profil, âge, contexte
 
-    BackendAPI -->|Logs résumés (hash, badges, etc – optionnel)| Blockchain[(Blockchain/IPFS)]
+3. **Ouverture du chat précepteur**
+    - Message de bienvenue adapté au devoir
+    - Historique des messages et progression
+    - Chronomètre visible dès début du devoir
 
-    style Blockchain fill:#eef,stroke:#888,stroke-width:1px
-    style OpenAI fill:#ffe,stroke:#666,stroke-width:1px
-    style U fill:#dff,stroke:#666,stroke-width:2px
-    style Frontend fill:#fff,stroke:#1640a0,stroke-width:2px
-    style BackendAPI fill:#fff,stroke:#e37222,stroke-width:2px
-```
+4. **Accompagnement & suivi**
+    - Réponses IA pédagogiques inspirées de la méthode socratique
+    - Encouragement, guidance active
+    - Contrôle visuel (photo simple, sans stockage)
+    - Affichage des reconnaissances (“Curiosity”, “Persistence”, etc.)
 
-## Points techniques/réflexions
+5. **Fin et Résumé de session**
+    - Résumé visualisé
+    - Possibilité d’impression
+    - Logs anonymisés (option)
 
-- L’init “session” côté backend peut stocker sessionID, âge, profil, code d’exercice, timestamp.
-- Les utilisateurs anonymes : stockage local (deviceID, localStorage) et consentement RGPD géré côté frontend, option de synchroniser côté cloud.
-- Traçabilité/éthique : logs encryptés côté serveur (jamais de données nominatives dans OpenAI).
-- Option badges/blockchain: à explorer plus tard — architecture modulaire.
-- Imaginer la possibilité d’exports de logs à la demande (preuve d’apprentissage).
+## 🏷️ Éthique & Confidentialité
+
+- Jamais de données nominatives envoyées à OpenAI
+- Logs sécurisés/anonymes (RLS Supabase)
+- Affichage explicite du consentement, RGPD
+- Possibilité de badges/blockchain (à venir)
+
+## 🛠️ Suivi des évolutions
+
+Voir `TODO.md` pour la liste détaillée des fonctionnalités restant à affiner ou implémenter.
 
 ---
 
-À compléter selon les évolutions du projet.
