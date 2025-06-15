@@ -20,22 +20,20 @@ const en = {
     footer: (params?: { year: number }) => `© ${params?.year ?? new Date().getFullYear()} Prompt Renfort – Cognitive Assistant Prototype.`,
     immutableLearningRecord: {
       title: "🧠 Immutable Learning Record",
-      desc: `Prompt Renfort empowers educators by transforming how AI is used in learning.
-Rather than encouraging shortcuts, it channels AI into a guided, trackable, and pedagogically sound experience.
+      desc: `Prompt Renfort restores trust in AI-powered learning.
+Instead of untraceable shortcuts, each session—triggered by a teacher’s assignment or a student’s initiative—is timestamped, analyzed, and can be sealed on the blockchain.
 
-Each session—triggered by a teacher’s assignment or a student’s own initiative—is recorded, timestamped, and optionally sealed on the blockchain.
-This prevents the kind of untraceable, sterile AI usage often lamented by educators who feel powerless against unearned answers.
+This deters sterile use of AI and offers educators insight into:`,
+      list: [
+        "Time spent",
+        "Cognitive depth",
+        "Key learning turns"
+      ],
+      cta: `Students build a Cognitive Ledger that certifies effort and progress, not just answers.
+A new foundation for recognition, feedback, and real-world incentives.
 
-Instead, teachers gain a window into:
-• Time spent on the task
-• Quality and depth of the student’s dialogue
-• Key turning points in understanding
-
-Students build a Cognitive Ledger—a new kind of academic trace that validates effort, engagement, and growth, not just final results.
-It restores trust and opens doors to incentives, recognition, and collaboration.`,
-      list: [],
-      cta: `⏳ Coming soon.
-Help us shape it—because learning deserves trust.`,
+⏳ Coming soon.
+Shape it with us—because trust matters.`,
     },
     loginBlock: {
       title: "Why sign in?",
