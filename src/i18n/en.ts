@@ -6,7 +6,9 @@ const en = {
     intro: "Prompt Renfort is a supportive AI preceptor here to guide your learning. Scan your assignment QR code or enter its code to begin.",
     enterCode: "Enter Assignment Code",
     scanQR: "Scan QR",
-    start: "Start Session"
+    start: "Start Session",
+    motto_bold: "Universal Cognitive Trust Engine",
+    motto_light: "empowering learners, teachers & parents alike"
   },
   chat: {
     welcome: "Hello, I’m Prompt Renfort. Please share your assignment or question when you’re ready.",

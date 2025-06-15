@@ -13,8 +13,12 @@ const Index = () => {
     <div className="min-h-screen w-full bg-gradient-to-b from-orange-50 via-white to-blue-50 flex flex-col items-center justify-center">
       <header className="w-full max-w-xl mx-auto mt-8 mb-6 flex flex-col items-center">
         <PromptRenfortLogo />
+        {/* Motto block */}
         <div className="text-xl md:text-2xl text-orange-600 mb-1 font-semibold text-center">
-          Universal Cognitive Trust Engine
+          {t("landing.motto_bold")}
+        </div>
+        <div className="text-base md:text-lg font-light text-orange-800 mb-2 text-center">
+          {t("landing.motto_light")}
         </div>
 
         {/* Welcome Block */}

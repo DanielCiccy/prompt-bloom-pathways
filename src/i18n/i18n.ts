@@ -1,7 +1,11 @@
 
 import en from "./en";
+import fr from "./fr";
+import de from "./de";
+import it from "./it";
+import es from "./es";
 
-const LANGS = { en };
+const LANGS = { en, fr, de, it, es };
 
 type LangKey = keyof typeof LANGS;
 
