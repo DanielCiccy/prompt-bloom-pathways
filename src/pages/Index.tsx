@@ -6,6 +6,7 @@ import ChatSession from "@/components/ChatSession";
 import { t } from "@/i18n/i18n";
 import { Lock, Book, Check } from "lucide-react";
 import LanguageSelector from "@/components/LanguageSelector";
+import BrandingBar from "@/components/BrandingBar";
 
 const Index = () => {
   const [assignment, setAssignment] = useState<string | null>(null);
@@ -18,6 +19,10 @@ const Index = () => {
           <LanguageSelector />
         </div>
         <PromptRenfortLogo />
+
+        {/* Branding bar */}
+        <BrandingBar />
+
         {/* Motto block */}
         <div className="text-xl md:text-2xl text-orange-600 mb-1 font-semibold text-center">
           {t("landing.motto_bold")}
@@ -75,4 +80,3 @@ const Index = () => {
 };
 
 export default Index;
-
